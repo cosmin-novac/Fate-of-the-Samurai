@@ -16,3 +16,5 @@ Right now, the game is comprised of 4 projects:
 4. And finally, a Castle/Rescue Game which uses a dungeon simulator to create a different castle each time, from which you can save the princess/kill your rival/ etc. The castle generation, some logic and some AI is done, but I'd say this one needs the most work, still.
 
 These are, as of now, separate Construct 2 projects that would need to be brought together eventually but should absolutely be enjoyable by themselves.
+
+-Cos
