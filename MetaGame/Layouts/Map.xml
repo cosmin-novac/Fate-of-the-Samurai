@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2layout>
+    <name>Map</name>
+    <sid>8772685448333849</sid>
+    <event-sheet>Map</event-sheet>
+    <size>
+        <width>3300</width>
+        <height>2100</height>
+    </size>
+    <margins>
+        <horizontal>700</horizontal>
+        <vertical>700</vertical>
+    </margins>
+    <unbounded-scrolling>0</unbounded-scrolling>
+    <layers>
+        <layer name="Background" sid="8282015723322318">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>0</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="Map" uid="0">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Disabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1650</x>
+                        <y>1057.971069336</y>
+                        <z>0</z>
+                        <width>3300</width>
+                        <height>2117</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.500222504</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="CastleTextBG" uid="80">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-275</x>
+                        <y>445.999969482</y>
+                        <z>0</z>
+                        <width>76</width>
+                        <height>27</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.004</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="CastleNameText" uid="12">
+                    <properties>
+                        <text>Castle</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Tempus Sans ITC,-21,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Character</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-277</x>
+                        <y>377</y>
+                        <z>0</z>
+                        <width>242</width>
+                        <height>36</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Castle" uid="7">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <DataUID>0</DataUID>
+                        <CastleIndex>0</CastleIndex>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-262</x>
+                        <y>374</y>
+                        <z>0</z>
+                        <width>95</width>
+                        <height>96</height>
+                        <depth>0</depth>
+                        <hotspotX>0.105263159</hotspotX>
+                        <hotspotY>1.145833373</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="Game" sid="1376529941283646">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="Player" uid="1">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <DirectionCode>0</DirectionCode>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="8Direction">
+                            <properties>
+                                <max-speed>400</max-speed>
+                                <acceleration>1000</acceleration>
+                                <deceleration>500</deceleration>
+                                <directions>8 directions</directions>
+                                <set-angle>360 degree (smooth)</set-angle>
+                                <default-controls>Yes</default-controls>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="BoundToLayout">
+                            <properties>
+                                <bound-by>Edge</bound-by>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="ScrollTo">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Persist" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-160</x>
+                        <y>177</y>
+                        <z>0</z>
+                        <width>50</width>
+                        <height>50</height>
+                        <depth>0</depth>
+                        <hotspotX>0.319999993</hotspotX>
+                        <hotspotY>0.439999998</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="PlayerAnimation" uid="30">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-206</x>
+                        <y>175</y>
+                        <z>0</z>
+                        <width>25</width>
+                        <height>46</height>
+                        <depth>0</depth>
+                        <hotspotX>0.639999986</hotspotX>
+                        <hotspotY>0.478260875</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="ArmyAnimation" uid="32">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-562.718505859</x>
+                        <y>485.281524658</y>
+                        <z>0</z>
+                        <width>160.319244385</width>
+                        <height>109.469085693</height>
+                        <depth>0</depth>
+                        <hotspotX>0.49779737</hotspotX>
+                        <hotspotY>0.496774197</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="UI" sid="1121943123464656">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="InfoTextMap" uid="77">
+                    <properties>
+                        <text>Info</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Tempus Sans ITC,-21,700,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Character</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-644</x>
+                        <y>136</y>
+                        <z>0</z>
+                        <width>261</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="MenuSelectionShadow" uid="18">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Tempus Sans ITC,-48,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Character</wrapping>
+                        <line-height>0</line-height>
+                        <drop-shadow-x-offset>1</drop-shadow-x-offset>
+                        <drop-shadow-y-offset>0</drop-shadow-y-offset>
+                        <drop-shadow-color>0,0,0</drop-shadow-color>
+                        <drop-shadow-blur>5</drop-shadow-blur>
+                    </properties>
+                    <instance-variables>
+                        <functionName></functionName>
+                        <passOnParameter></passOnParameter>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>182</x>
+                        <y>-605</y>
+                        <z>0</z>
+                        <width>1215</width>
+                        <height>75</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="StoryShadow" uid="19">
+                    <properties>
+                        <text>StoryShadow</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Tempus Sans ITC,-48,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                        <drop-shadow-x-offset>1</drop-shadow-x-offset>
+                        <drop-shadow-y-offset>0</drop-shadow-y-offset>
+                        <drop-shadow-color>0,0,0</drop-shadow-color>
+                        <drop-shadow-blur>5</drop-shadow-blur>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>188</x>
+                        <y>-471</y>
+                        <z>0</z>
+                        <width>1207</width>
+                        <height>424</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SamuraiImage" uid="22">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-578</x>
+                        <y>-558</y>
+                        <z>0</z>
+                        <width>310</width>
+                        <height>433</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.501154721</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+    </layers>
+    <nonworld-instances>
+        <instance type="Data" uid="8" />
+        <instance type="NamesCSV" uid="10">
+            <properties>
+                <delimiter>,</delimiter>
+                <eval-mode>No</eval-mode>
+            </properties>
+        </instance>
+        <instance type="CastlePosCSV" uid="24">
+            <properties>
+                <delimiter>,</delimiter>
+                <eval-mode>No</eval-mode>
+            </properties>
+        </instance>
+        <instance type="EventsList" uid="35">
+            <properties>
+                <width>0</width>
+                <height>3</height>
+                <depth>1</depth>
+            </properties>
+        </instance>
+        <instance type="ClanData" uid="3">
+            <properties>
+                <delimiter>,</delimiter>
+                <eval-mode>No</eval-mode>
+            </properties>
+        </instance>
+        <instance type="GlobalDictionary" uid="5" />
+        <instance type="EventsListCSV" uid="73">
+            <properties>
+                <delimiter>,</delimiter>
+                <eval-mode>No</eval-mode>
+            </properties>
+        </instance>
+        <instance type="RenownList" uid="78">
+            <properties>
+                <width>4</width>
+                <height>2</height>
+                <depth>1</depth>
+            </properties>
+        </instance>
+        <instance type="GirlNamesCSV" uid="81">
+            <properties>
+                <delimiter>,</delimiter>
+                <eval-mode>No</eval-mode>
+            </properties>
+        </instance>
+        <instance type="takenNames" uid="103">
+            <properties>
+                <width>0</width>
+                <height>1</height>
+                <depth>1</depth>
+            </properties>
+        </instance>
+        <instance type="takenImages" uid="104">
+            <properties>
+                <width>0</width>
+                <height>1</height>
+                <depth>1</depth>
+            </properties>
+        </instance>
+    </nonworld-instances>
+    <effects />
+</c2layout>

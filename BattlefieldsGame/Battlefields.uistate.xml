@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">BattlefieldLayout</layout>
+        <event-sheet order="1">BattleScenario_1</event-sheet>
+        <event-sheet active="1" order="2">BattlefieldEngine</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="1" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="1" name="FriendlyUnit" />
+        <family expanded="0" name="EnemyUnit" />
+        <family expanded="1" name="Soldier" />
+        <family expanded="1" name="EnemySoldiers" />
+        <family expanded="1" name="FriendlySoldiers" />
+        <family expanded="1" name="Unit" />
+        <family expanded="1" name="Archers" />
+        <family expanded="0" name="Cavalry" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/Battlefield/" />
+        <folder expanded="1" path="object-folder/Battlefield/Unit/" />
+        <folder expanded="1" path="object-folder/Battlefield/Soldiers/" />
+        <folder expanded="1" path="object-folder/Battlefield/BG/" />
+        <folder expanded="1" path="object-folder/Battlefield/System/" />
+        <folder expanded="0" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="1" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/EnemyArchers/" />
+        <folder expanded="1" path="animation-folder/EnemyCavalry/" />
+        <folder expanded="1" path="animation-folder/EnemySpearmen/" />
+        <folder expanded="1" path="animation-folder/EnemySwordsmen/" />
+        <folder expanded="1" path="animation-folder/FriendlyArchers/" />
+        <folder expanded="1" path="animation-folder/FriendlyCavalry/" />
+        <folder expanded="1" path="animation-folder/FriendlySpearmen/" />
+        <folder expanded="1" path="animation-folder/UnitTarget/" />
+        <folder expanded="1" path="animation-folder/EnemySpawnPosition/" />
+        <folder expanded="1" path="animation-folder/FriendlySwordsmen/" />
+        <folder expanded="1" path="animation-folder/FriendlySpawnPosition/" />
+        <folder expanded="1" path="animation-folder/ArcherTarget/" />
+        <folder expanded="1" path="animation-folder/Arrow/" />
+        <folder expanded="1" path="animation-folder/DeadSoldier/" />
+        <folder expanded="1" path="animation-folder/EnemyArcherInfantry/" />
+        <folder expanded="1" path="animation-folder/EnemyMeleeCavalry/" />
+        <folder expanded="1" path="animation-folder/EnemySpearInfantry/" />
+        <folder expanded="1" path="animation-folder/EnemySwordInfantry/" />
+        <folder expanded="1" path="animation-folder/FriendlyArcherInfantry/" />
+        <folder expanded="1" path="animation-folder/FriendlyMeleeCavalry/" />
+        <folder expanded="1" path="animation-folder/FriendlySpearInfantry/" />
+        <folder expanded="1" path="animation-folder/FriendlySwordInfantry/" />
+        <folder expanded="1" path="animation-folder/General/" />
+        <folder expanded="1" path="animation-folder/SoldierCoordinates/" />
+        <folder expanded="1" path="animation-folder/Heads/" />
+        <folder expanded="1" path="animation-folder/Legs/" />
+        <folder expanded="1" path="animation-folder/Horse/" />
+    </folders-expanded>
+</c2uistate>

@@ -1,0 +1,1847 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Functions</name>
+    <events>
+        <variable constant="0" name="currentLayout" sid="9115791799088005" static="0" type="text"></variable>
+        <variable constant="0" name="MenuX" sid="480891141960587" static="0" type="number">330</variable>
+        <variable constant="0" name="MenuY" sid="9846069584559853" static="0" type="number">270</variable>
+        <event-group description="" sid="3160501057461795" title="Events">
+            <sub-events>
+                <comment>make sure names and images are only distributed once</comment>
+                <variable constant="0" name="currentWidthNames" sid="7780514765035381" static="0" type="number">0</variable>
+                <variable constant="0" name="nameIndex" sid="7826446275283529" static="0" type="number">998</variable>
+                <event-block sid="5116893493437031">
+                    <conditions>
+                        <condition id="0" name="On function" sid="4508484053049095" type="Function">
+                            <param id="0" name="Name">&quot;getName&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3934884456136029" type="System">
+                            <param id="0" name="Variable">currentWidthNames</param>
+                            <param id="1" name="Value">takenNames.Width</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5271549237203356">
+                            <conditions>
+                                <condition id="-23" name="While" sid="2278373285887395" type="System" />
+                                <condition id="-8" name="Compare two values" sid="6211082427488095" type="System">
+                                    <param id="0" name="First value">takenNames.Width</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">currentWidthNames+1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="5097764491032597" type="System">
+                                    <param id="0" name="Variable">nameIndex</param>
+                                    <param id="1" name="Value">round(random(1,150))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="7812991421303584">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Contains value" sid="4793558369650259" type="takenNames">
+                                            <param id="0" name="Value">nameIndex</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Push" sid="1253438871028284" type="takenNames">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Value">nameIndex</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                        <action id="1" name="Set return value" sid="2808939376609211" type="Function">
+                                            <param id="0" name="Value">nameIndex</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <variable constant="0" name="currentWidthImages" sid="2383651088878406" static="0" type="number">0</variable>
+                <variable constant="0" name="imageIndex" sid="1314871649408266" static="0" type="number">999</variable>
+                <event-block sid="8925327524139445">
+                    <conditions>
+                        <condition id="0" name="On function" sid="9864619403457215" type="Function">
+                            <param id="0" name="Name">&quot;getImage&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2263645404843887" type="System">
+                            <param id="0" name="Variable">currentWidthImages</param>
+                            <param id="1" name="Value">takenImages.Width</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9210168386721935">
+                            <conditions>
+                                <condition id="-23" name="While" sid="988337143577375" type="System" />
+                                <condition id="-8" name="Compare two values" sid="1355456691475428" type="System">
+                                    <param id="0" name="First value">takenImages.Width</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">currentWidthImages+1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="2201147328101295" type="System">
+                                    <param id="0" name="Variable">imageIndex</param>
+                                    <param id="1" name="Value">round(random(1,41))</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="8101700952694663">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Contains value" sid="5308919728946499" type="takenImages">
+                                            <param id="0" name="Value">imageIndex</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Push" sid="1666841683930613" type="takenImages">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Value">imageIndex</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                        <action id="1" name="Set return value" sid="2437062296972195" type="Function">
+                                            <param id="0" name="Value">imageIndex</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1953019223582507">
+                    <conditions>
+                        <condition id="0" name="On function" sid="5079601040403286" type="Function">
+                            <param id="0" name="Name">&quot;prepareRivalIntros&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4785545696395162">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="4801657551382819" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="4754995172932004" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">&quot;PlayerPresentation&quot;</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="4022786950587696" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">0</param>
+                                </action>
+                                <action id="5" name="Push" sid="408925956365191" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">&quot;RivalPresentation&quot;</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="8987769487999238" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">4</param>
+                                </action>
+                                <action id="5" name="Push" sid="5213270374412217" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">&quot;RivalPresentation&quot;</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="6032745735032598" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">3</param>
+                                </action>
+                                <action id="5" name="Push" sid="7884949890169605" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">&quot;RivalPresentation&quot;</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="6039025246251975" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">2</param>
+                                </action>
+                                <action id="5" name="Push" sid="8975232332800973" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">&quot;IntroducedToNewRivals&quot;</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8096357025383805">
+                    <conditions>
+                        <condition id="0" name="On function" sid="844619493630098" type="Function">
+                            <param id="0" name="Name">&quot;initiateDataSamurai&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="currentCastle" sid="4205057052876819" static="0" type="number">0</variable>
+                        <event-block sid="5941796735028745">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="92784279970867" type="System">
+                                    <param id="0" name="Variable">isNewGame</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="1490284401421211" type="Castle" />
+                                <action id="-9" name="Destroy" sid="7127311639301076" type="Data" />
+                                <action id="1" name="Load table" sid="8103782942736003" type="NamesCSV">
+                                    <param id="0" name="CSV string">&quot;,Name&#x0D;&#x0A;1,AKI&#x0D;&#x0A;2,AKIHIKO&#x0D;&#x0A;3,AKIHIRO&#x0D;&#x0A;4,AKIO&#x0D;&#x0A;5,AKIRA&#x0D;&#x0A;6,AOI&#x0D;&#x0A;7,ARATA&#x0D;&#x0A;8,ATSUSHI&#x0D;&#x0A;9,DAI&#x0D;&#x0A;10,DAICHI&#x0D;&#x0A;11,DAIKI&#x0D;&#x0A;12,DAISUKE&#x0D;&#x0A;13,EIJI&#x0D;&#x0A;14,FUMIO&#x0D;&#x0A;15,GORO&#x0D;&#x0A;16,GOROU&#x0D;&#x0A;17,HACHIRO&#x0D;&#x0A;18,HAJIME&#x0D;&#x0A;19,HARU&#x0D;&#x0A;20,HARUO&#x0D;&#x0A;21,HIDEAKI&#x0D;&#x0A;22,HIDEKI&#x0D;&#x0A;23,HIDEO&#x0D;&#x0A;24,HIKARU&#x0D;&#x0A;25,HIRO&#x0D;&#x0A;26,HIROAKI&#x0D;&#x0A;27,HIROKI&#x0D;&#x0A;28,HIROSHI&#x0D;&#x0A;29,HIROYUKI&#x0D;&#x0A;30,HISAO&#x0D;&#x0A;31,HISASHI&#x0D;&#x0A;32,HISOKA&#x0D;&#x0A;33,HITOSHI&#x0D;&#x0A;34,HOTAKA&#x0D;&#x0A;35,ICHIRO&#x0D;&#x0A;36,ICHIROU&#x0D;&#x0A;37,ISAMU&#x0D;&#x0A;38,ISAO&#x0D;&#x0A;39,IWAO&#x0D;&#x0A;40,IZANAGI&#x0D;&#x0A;41,JIRO&#x0D;&#x0A;42,JIROU&#x0D;&#x0A;43,JUN&#x0D;&#x0A;44,JUNICHI&#x0D;&#x0A;45,JURO&#x0D;&#x0A;46,JUROU&#x0D;&#x0A;47,KAEDE&#x0D;&#x0A;48,KATASHI&#x0D;&#x0A;49,KATSU&#x0D;&#x0A;50,KATSUMI&#x0D;&#x0A;51,KATSUO&#x0D;&#x0A;52,KATSURO&#x0D;&#x0A;53,KAZUHIKO&#x0D;&#x0A;54,KAZUHIRO&#x0D;&#x0A;55,KAZUKI&#x0D;&#x0A;56,KAZUO&#x0D;&#x0A;57,KEI&#x0D;&#x0A;58,KEIICHI&#x0D;&#x0A;59,KEIJI&#x0D;&#x0A;60,KEN&#x0D;&#x0A;61,KENICHI&#x0D;&#x0A;62,KENJI&#x0D;&#x0A;63,KENSHIN&#x0D;&#x0A;64,KENTA&#x0D;&#x0A;65,KICHIRO&#x0D;&#x0A;66,KICHIROU&#x0D;&#x0A;67,KIN&#x0D;&#x0A;68,KIOSHI&#x0D;&#x0A;69,KIYOSHI&#x0D;&#x0A;70,KO&#x0D;&#x0A;71,KOHAKU&#x0D;&#x0A;72,KOICHI&#x0D;&#x0A;73,KOJI&#x0D;&#x0A;74,KOU&#x0D;&#x0A;75,KUNIO&#x0D;&#x0A;76,KURO&#x0D;&#x0A;77,KUROU&#x0D;&#x0A;78,KYO&#x0D;&#x0A;79,KYOU&#x0D;&#x0A;80,MADOKA&#x0D;&#x0A;81,MAKOTO&#x0D;&#x0A;82,MAMORU&#x0D;&#x0A;83,MANABU&#x0D;&#x0A;84,MASA&#x0D;&#x0A;85,MASAAKI&#x0D;&#x0A;86,MASAHIKO&#x0D;&#x0A;87,MASAHIRO&#x0D;&#x0A;88,MASAKI&#x0D;&#x0A;89,MASANORI&#x0D;&#x0A;90,MASAO&#x0D;&#x0A;91,MASARU&#x0D;&#x0A;92,MASASHI&#x0D;&#x0A;93,MASATO&#x0D;&#x0A;94,MASAYOSHI&#x0D;&#x0A;95,MASAYUKI&#x0D;&#x0A;96,MASUMI&#x0D;&#x0A;97,MICHI&#x0D;&#x0A;98,MICHIO&#x0D;&#x0A;99,MIKIO&#x0D;&#x0A;100,MINORI&#x0D;&#x0A;101,MINORU&#x0D;&#x0A;102,MITSUO&#x0D;&#x0A;103,MITSURU&#x0D;&#x0A;104,NAO&#x0D;&#x0A;105,NAOKI&#x0D;&#x0A;106,NOBORU&#x0D;&#x0A;107,NOBU&#x0D;&#x0A;108,NOBUO&#x0D;&#x0A;109,NOBUYUKI&#x0D;&#x0A;110,NORI&#x0D;&#x0A;111,NORIO&#x0D;&#x0A;112,OROCHI&#x0D;&#x0A;113,OSAMU&#x0D;&#x0A;114,RAIDEN&#x0D;&#x0A;115,ROKURO&#x0D;&#x0A;116,RYO&#x0D;&#x0A;117,RYOTA&#x0D;&#x0A;118,RYUU&#x0D;&#x0A;119,SABURO&#x0D;&#x0A;120,SADAO&#x0D;&#x0A;121,SATORU&#x0D;&#x0A;122,SATOSHI&#x0D;&#x0A;123,SEIICHI&#x0D;&#x0A;124,SEIJI&#x0D;&#x0A;125,SHICHIRO&#x0D;&#x0A;126,SHIG&#x0D;&#x0A;127,SHIGEO&#x0D;&#x0A;128,SHIGERU&#x0D;&#x0A;129,SHIN&#x0D;&#x0A;130,SHINICHI&#x0D;&#x0A;131,SHINJI&#x0D;&#x0A;132,SHIRO&#x0D;&#x0A;133,SHO&#x0D;&#x0A;134,SHOICHI&#x0D;&#x0A;135,SHOJI&#x0D;&#x0A;136,SHOU&#x0D;&#x0A;137,SHUICHI&#x0D;&#x0A;138,SHUJI&#x0D;&#x0A;139,SORA&#x0D;&#x0A;140,SUSUMU&#x0D;&#x0A;141,TADAO&#x0D;&#x0A;142,TADASHI&#x0D;&#x0A;143,TAKAHIRO&#x0D;&#x0A;144,TAKAO&#x0D;&#x0A;145,TAKASHI&#x0D;&#x0A;146,TAKAYUKI&#x0D;&#x0A;147,TAKEHIKO&#x0D;&#x0A;148,TAKEO&#x0D;&#x0A;149,TAKESHI&#x0D;&#x0A;150,TAKUMI&quot;</param>
+                                </action>
+                                <action id="1" name="Load table" sid="7687554448939368" type="CastlePosCSV">
+                                    <param id="0" name="CSV string">&quot;,X,Y&#x0D;&#x0A;0,2500,2550&#x0D;&#x0A;1,2004,2700&#x0D;&#x0A;2,1500,2850&#x0D;&#x0A;3,1873,3000&#x0D;&#x0A;4,2509,3114&#x0D;&#x0A;10,2600,2650&#x0D;&#x0A;11,2104,2800&#x0D;&#x0A;12,1600,2950&#x0D;&#x0A;13,1973,3100&#x0D;&#x0A;14,2609,3214&quot;</param>
+                                </action>
+                                <action id="1" name="Load table" sid="413225762584463" type="EventsListCSV">
+                                    <param id="0" name="CSV string">&quot;,0,1,2,3,4&#x0D;&#x0A;BattleAttackClanEnemy,X,0,X,X,X&#x0D;&#x0A;BattleConquerFortress,X,0,X,X,X&#x0D;&#x0A;BattleLiberateFortress,X,0,X,X,X&#x0D;&#x0A;MissionLiberatePass,X,0,X,X,X&#x0D;&#x0A;MissionSavePriest,X,0,X,X,X&#x0D;&#x0A;MissionDefeatRonin,X,0,X,X,X&#x0D;&#x0A;DuelCriminal,X,0,X,X,X&#x0D;&#x0A;DuelLegendaryWarrior,X,0,X,X,X&#x0D;&#x0A;HelpBattleIkkoIkki,X,X,0,0,0&#x0D;&#x0A;HelpBattleBandits,X,X,0,0,0&#x0D;&#x0A;HelpBattleRoninRebels,X,X,0,0,0&#x0D;&#x0A;HelpMissionIkedaSamurai,X,X,0,0,0&#x0D;&#x0A;MapMissionRonin,0,X,X,X,X&#x0D;&#x0A;MapMissionThieves,0,X,X,X,X&#x0D;&#x0A;MapMissionCoastalPirates,0,X,X,X,X&#x0D;&#x0A;MapDuelSamurai,0,X,X,X,X&#x0D;&#x0A;DaimyoMissionWarriorBand,0,X,X,X,X&#x0D;&#x0A;DaimyoMissionBandits,0,X,X,X,X&#x0D;&#x0A;DaimyoMissionRonin,0,X,X,X,X&#x0D;&#x0A;DaimyoDuelLegendaryWarrior,0,X,X,X,X&#x0D;&#x0A;DaimyoDuelCriminal,0,X,X,X,X&quot;</param>
+                                </action>
+                                <action id="1" name="Load table" sid="8551247840670553" type="GirlNamesCSV">
+                                    <param id="0" name="CSV string">&quot;,Name&#x0D;&#x0A;1,Aguri&#x0D;&#x0A;2,Ai&#x0D;&#x0A;3,Aka&#x0D;&#x0A;4,Akai&#x0D;&#x0A;5,Aki&#x0D;&#x0A;6,Akii&#x0D;&#x0A;7,Ama&#x0D;&#x0A;8,Ane&#x0D;&#x0A;9,Asa&#x0D;&#x0A;10,Baba&#x0D;&#x0A;11,Ben&#x0D;&#x0A;12,Bin&#x0D;&#x0A;13,Bo&#x0D;&#x0A;14,Chiki&#x0D;&#x0A;15,Chima&#x0D;&#x0A;16,Chin&#x0D;&#x0A;17,Chiyo&#x0D;&#x0A;18,Cho&#x0D;&#x0A;19,Den&#x0D;&#x0A;20,Fude&#x0D;&#x0A;21,Fudji&#x0D;&#x0A;22,Fuku&#x0D;&#x0A;23,Fume&#x0D;&#x0A;24,Furi&#x0D;&#x0A;25,Fusa&#x0D;&#x0A;26,Fuso&#x0D;&#x0A;27,Futsu&#x0D;&#x0A;28,Gen&#x0D;&#x0A;29,Gin&#x0D;&#x0A;30,Hama&#x0D;&#x0A;31,Hana&#x0D;&#x0A;32,Haru&#x0D;&#x0A;33,Hatsu&#x0D;&#x0A;34,Heya&#x0D;&#x0A;35,Hiina&#x0D;&#x0A;36,Hiki&#x0D;&#x0A;37,Hiko&#x0D;&#x0A;38,Hime&#x0D;&#x0A;39,Hin&#x0D;&#x0A;40,Hinu&#x0D;&#x0A;41,Hisa&#x0D;&#x0A;42,Hitsu&#x0D;&#x0A;43,Hiwa&#x0D;&#x0A;44,Hoso&#x0D;&#x0A;45,Hotsu&#x0D;&#x0A;46,Ichi&#x0D;&#x0A;47,Iku&#x0D;&#x0A;48,Ima&#x0D;&#x0A;49,Ina&#x0D;&#x0A;50,Ine&#x0D;&#x0A;51,Ino&#x0D;&#x0A;52,Inu&#x0D;&#x0A;53,Iri&#x0D;&#x0A;54,Isa&#x0D;&#x0A;55,Ise&#x0D;&#x0A;56,Ishi&#x0D;&#x0A;57,Iso&#x0D;&#x0A;58,Ito&#x0D;&#x0A;59,Iwa&#x0D;&#x0A;60,Jo&#x0D;&#x0A;61,Kachi&#x0D;&#x0A;62,Kaku&#x0D;&#x0A;63,Kama&#x0D;&#x0A;64,Kame&#x0D;&#x0A;65,Kan&#x0D;&#x0A;66,Kana&#x0D;&#x0A;67,Kane&#x0D;&#x0A;68,Kane&#x0D;&#x0A;69,Karu&#x0D;&#x0A;70,Kase&#x0D;&#x0A;71,Katsu&#x0D;&#x0A;72,Kawa&#x0D;&#x0A;73,Kaya&#x0D;&#x0A;74,Kayo&#x0D;&#x0A;75,Kesa&#x0D;&#x0A;76,Kesai&#x0D;&#x0A;77,Kichi&#x0D;&#x0A;78,Kiku&#x0D;&#x0A;79,Kin&#x0D;&#x0A;80,Kina&#x0D;&#x0A;81,Kinu&#x0D;&#x0A;82,Kiri&#x0D;&#x0A;83,Kisa&#x0D;&#x0A;84,Kitsu&#x0D;&#x0A;85,Kiyo&#x0D;&#x0A;86,Ko&#x0D;&#x0A;87,Kogo&#x0D;&#x0A;88,Koku&#x0D;&#x0A;89,Koma&#x0D;&#x0A;90,Kome&#x0D;&#x0A;91,Kona&#x0D;&#x0A;92,Koro&#x0D;&#x0A;93,Koya&#x0D;&#x0A;94,Koyo&#x0D;&#x0A;95,Kuchi&#x0D;&#x0A;96,Kuma&#x0D;&#x0A;97,Kume&#x0D;&#x0A;98,Kuni&#x0D;&#x0A;99,Kura&#x0D;&#x0A;100,Kuri&#x0D;&#x0A;101,Kuro&#x0D;&#x0A;102,Kusu&#x0D;&#x0A;103,Kuu&#x0D;&#x0A;104,Kuwa&#x0D;&#x0A;105,Kuyo&#x0D;&#x0A;106,Machi&#x0D;&#x0A;107,Magi&#x0D;&#x0A;108,Maki&#x0D;&#x0A;109,Mako&#x0D;&#x0A;110,Man&#x0D;&#x0A;111,Mane&#x0D;&#x0A;112,Mare&#x0D;&#x0A;113,Mari&#x0D;&#x0A;114,Masa&#x0D;&#x0A;115,Mashi&#x0D;&#x0A;116,Mata&#x0D;&#x0A;117,Mate&#x0D;&#x0A;118,Matsu&#x0D;&#x0A;119,Mego&#x0D;&#x0A;120,Mimi&#x0D;&#x0A;121,Mina&#x0D;&#x0A;122,Mine&#x0D;&#x0A;123,Mino&#x0D;&#x0A;124,Mitsu&#x0D;&#x0A;125,Miya&#x0D;&#x0A;126,Mochi&#x0D;&#x0A;127,Moku&#x0D;&#x0A;128,Momo&#x0D;&#x0A;129,Muma&#x0D;&#x0A;130,Mume&#x0D;&#x0A;131,Musu&#x0D;&#x0A;132,Mutsu&#x0D;&#x0A;133,Nabe&#x0D;&#x0A;134,Nagu&#x0D;&#x0A;135,Nai&#x0D;&#x0A;136,Naka&#x0D;&#x0A;137,Nana&#x0D;&#x0A;138,Natsu&#x0D;&#x0A;139,Nei&#x0D;&#x0A;140,Neko&#x0D;&#x0A;141,Nene&#x0D;&#x0A;142,Niga&#x0D;&#x0A;143,Niku&#x0D;&#x0A;144,Nino&#x0D;&#x0A;145,Niwa&#x0D;&#x0A;146,Oma&#x0D;&#x0A;147,Ona&#x0D;&#x0A;148,Osa&#x0D;&#x0A;149,Oshi&#x0D;&#x0A;150,Ota&#x0D;&#x0A;151,Oto&#x0D;&#x0A;152,Rin&#x0D;&#x0A;153,Riyo&#x0D;&#x0A;154,Roku&#x0D;&#x0A;155,Run&#x0D;&#x0A;156,Rusu&#x0D;&#x0A;157,Sago&#x0D;&#x0A;158,Sai&#x0D;&#x0A;159,Saka&#x0D;&#x0A;160,Saki&#x0D;&#x0A;161,Sako&#x0D;&#x0A;162,Saku&#x0D;&#x0A;163,Sama&#x0D;&#x0A;164,Same&#x0D;&#x0A;165,San&#x0D;&#x0A;166,Sana&#x0D;&#x0A;167,Sani&#x0D;&#x0A;168,Saru&#x0D;&#x0A;169,Satsu&#x0D;&#x0A;170,Sawa&#x0D;&#x0A;171,Saya&#x0D;&#x0A;172,Sechi&#x0D;&#x0A;173,Seki&#x0D;&#x0A;174,Sen&#x0D;&#x0A;175,Senu&#x0D;&#x0A;176,Shige&#x0D;&#x0A;177,Shima&#x0D;&#x0A;178,Shime&#x0D;&#x0A;179,Shimo&#x0D;&#x0A;180,Shina&#x0D;&#x0A;181,Shino&#x0D;&#x0A;182,Shio&#x0D;&#x0A;183,Sho&#x0D;&#x0A;184,Shuu&#x0D;&#x0A;185,Some&#x0D;&#x0A;186,Sue&#x0D;&#x0A;187,Sugi&#x0D;&#x0A;188,Suka&#x0D;&#x0A;189,Suke&#x0D;&#x0A;190,Suki&#x0D;&#x0A;191,Suko&#x0D;&#x0A;192,Suma&#x0D;&#x0A;193,Sumi&#x0D;&#x0A;194,Suna&#x0D;&#x0A;195,Suo&#x0D;&#x0A;196,Sute&#x0D;&#x0A;197,Take&#x0D;&#x0A;198,Tama&#x0D;&#x0A;199,Tan&#x0D;&#x0A;200,Tane&#x0D;&#x0A;201,Tatsu&#x0D;&#x0A;202,Ten&#x0D;&#x0A;203,Toku&#x0D;&#x0A;204,Toma&#x0D;&#x0A;205,Tome&#x0D;&#x0A;206,Tone&#x0D;&#x0A;207,Tora&#x0D;&#x0A;208,Tori&#x0D;&#x0A;209,Totsu&#x0D;&#x0A;210,Towa&#x0D;&#x0A;211,Toyo&#x0D;&#x0A;212,Tsubo&#x0D;&#x0A;213,Tsuchi&#x0D;&#x0A;214,Tsuji&#x0D;&#x0A;215,Tsuka&#x0D;&#x0A;216,Tsuma&#x0D;&#x0A;217,Tsuna&#x0D;&#x0A;218,Tsune&#x0D;&#x0A;219,Tsuru&#x0D;&#x0A;220,Tsushi&#x0D;&#x0A;221,Tsuta&#x0D;&#x0A;222,Tsuya&#x0D;&#x0A;223,Uba&#x0D;&#x0A;224,Uma&#x0D;&#x0A;225,Ume&#x0D;&#x0A;226,Uno&#x0D;&#x0A;227,Ushi&#x0D;&#x0A;228,Uta&#x0D;&#x0A;229,Yama&#x0D;&#x0A;230,Yasu&#x0D;&#x0A;231,Yaya&#x0D;&#x0A;232,Yen&#x0D;&#x0A;233,Yome&#x0D;&#x0A;234,Yone&#x0D;&#x0A;235,Yono&#x0D;&#x0A;236,Yoshi&#x0D;&#x0A;237,Yoso&#x0D;&#x0A;238,Yote&#x0D;&#x0A;239,Yuki&#x0D;&#x0A;240,Yura&#x0D;&#x0A;241,Yuri&#x0D;&#x0A;242,Yuwa&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>isTraveling can be either &quot;no&quot;, &quot;alone&quot;, &quot;withArmy&quot; or &quot;disguised&quot;&#x0D;&#x0A;When kidnapping someone, a new key &quot;hasHostage0&quot; is added with the name of the hostage and &quot;lordHostage0&quot; with the name of the Lord whose family the hostage belongs to.&#x0D;&#x0A;The bottom 3 keys are only relevant for the Hatamoto.</comment>
+                                <comment>hasDaughter and hasSon are counters -&gt; for each X, a sonXName and sonXAge are added.</comment>
+                                <event-block sid="5150193181799051">
+                                    <conditions>
+                                        <condition id="-10" name="For" sid="1707747063673374" type="System">
+                                            <param id="0" name="Name">&quot;CastleNr&quot;</param>
+                                            <param id="1" name="Start index">0</param>
+                                            <param id="2" name="End index">4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="8541085060920242" type="System">
+                                            <param id="0" name="Variable">currentCastle</param>
+                                            <param id="1" name="Value">loopindex</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="7938175171107698" type="System">
+                                            <param id="0" name="Object to create">Data</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="X">-100</param>
+                                            <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="1412180883755466" type="Data">
+                                            <param id="0" name="Key">&quot;index&quot;</param>
+                                            <param id="1" name="Value">loopindex</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="3666462914283882" type="Data">
+                                            <param id="0" name="Key">&quot;castleX&quot;</param>
+                                            <param id="1" name="Value">int(CastlePosCSV.At(&quot;X&quot;,str(loopindex)))-800</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="9769755528791944" type="Data">
+                                            <param id="0" name="Key">&quot;castleY&quot;</param>
+                                            <param id="1" name="Value">int(CastlePosCSV.At(&quot;Y&quot;,str(loopindex)))-1800</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="7296164822417384" type="Data">
+                                            <param id="0" name="Key">&quot;age&quot;</param>
+                                            <param id="1" name="Value">round(random(20,50))</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="9259336567113611" type="Data">
+                                            <param id="0" name="Key">&quot;hasWife&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="4644801012790597" type="Data">
+                                            <param id="0" name="Key">&quot;wifeName&quot;</param>
+                                            <param id="1" name="Value">GirlNamesCSV.At(&quot;Name&quot;,str(round(random(1,150))))</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="7706137325689975" type="Data">
+                                            <param id="0" name="Key">&quot;wifeAge&quot;</param>
+                                            <param id="1" name="Value">21</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="4477714895976836" type="Data">
+                                            <param id="0" name="Key">&quot;hasDaughter&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="6839953991057258" type="Data">
+                                            <param id="0" name="Key">&quot;hasSon&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="3635500429618823" type="Data">
+                                            <param id="0" name="Key">&quot;brideAwaits&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="3514227379777727" type="Data">
+                                            <param id="0" name="Key">&quot;brideName&quot;</param>
+                                            <param id="1" name="Value">&quot;brideName&quot;</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="2135719539743567" type="Data">
+                                            <param id="0" name="Key">&quot;brideImage&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="55626245081617" type="Data">
+                                            <param id="0" name="Key">&quot;hasRevolt&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="6855391358492264" type="Data">
+                                            <param id="0" name="Key">&quot;isInsulted&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="1843850259412718" type="Data">
+                                            <param id="0" name="Key">&quot;likesPlayer&quot;</param>
+                                            <param id="1" name="Value">round(random(0,30))</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="2330284875232014" type="Data">
+                                            <param id="0" name="Key">&quot;isTraveling&quot;</param>
+                                            <param id="1" name="Value">&quot;No&quot;</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="7103512742689536" type="Data">
+                                            <param id="0" name="Key">&quot;roninInRegion&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="6811122953128173" type="Data">
+                                            <param id="0" name="Key">&quot;generalship&quot;</param>
+                                            <param id="1" name="Value">round(random(10,40))</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="4106447385339127" type="Data">
+                                            <param id="0" name="Key">&quot;swordsmanship&quot;</param>
+                                            <param id="1" name="Value">round(random(10,40))</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="9150389988876915" type="Data">
+                                            <param id="0" name="Key">&quot;land&quot;</param>
+                                            <param id="1" name="Value">round(random(10,40))</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="1575059830495939" type="Data">
+                                            <param id="0" name="Key">&quot;honor&quot;</param>
+                                            <param id="1" name="Value">round(random(10,40))</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="4724334974641495" type="Data">
+                                            <param id="0" name="Key">&quot;renown&quot;</param>
+                                            <param id="1" name="Value">round(random(10,40))</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="4198314990535842" type="Data">
+                                            <param id="0" name="Key">&quot;finishedRound&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="3943799640308757" type="Data">
+                                            <param id="0" name="Key">&quot;samuraiCount&quot;</param>
+                                            <param id="1" name="Value">round(random(5,30))</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="8297234911853919" type="Data">
+                                            <param id="0" name="Key">&quot;name&quot;</param>
+                                            <param id="1" name="Value">NamesCSV.At(&quot;Name&quot;,str(Function.Call(&quot;getName&quot;)))</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="5175330317081417" type="Data">
+                                            <param id="0" name="Key">&quot;imageNr&quot;</param>
+                                            <param id="1" name="Value">Function.Call(&quot;getImage&quot;)</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="2579077431703492">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="8511007946899898" type="System">
+                                                    <param id="0" name="Seconds">0</param>
+                                                </action>
+                                                <action id="14" name="Log" sid="2144048508360548" type="Browser">
+                                                    <param id="0" name="Type">0</param>
+                                                    <param id="1" name="Message">&quot;Created Data &quot;&amp;Data.Get(&quot;index&quot;)&amp; &quot; for Lord &quot;&amp;Data.Get(&quot;name&quot;) &amp;&quot;, age &quot;&amp;Data.Get(&quot;age&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="445090238034957">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="6411172412698065" type="System">
+                                            <param id="0" name="Seconds">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="9681965801866531" type="System">
+                                            <param id="0" name="Variable">isNewGame</param>
+                                            <param id="1" name="Value">9999</param>
+                                        </action>
+                                        <action id="14" name="Log" sid="6588559380641958" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;Initiated New Game&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set web font" sid="4739411716999017" type="StoryShadow">
+                                            <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set web font" sid="3478633916801848" type="MenuSelectionShadow">
+                                            <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                                            <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7309427342655892">
+                    <conditions>
+                        <condition id="0" name="On function" sid="3990899874699328" type="Function">
+                            <param id="0" name="Name">&quot;initiateDataHatamoto&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3098271183314612">
+                            <conditions>
+                                <condition id="-10" name="For" sid="8414875428798619" type="System">
+                                    <param id="0" name="Name">&quot;CastleNr&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">4</param>
+                                </condition>
+                                <condition id="0" name="Compare value" sid="3669661887487966" type="Data">
+                                    <param id="0" name="Key">&quot;index&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">loopindex</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Add key" sid="2081088480749859" type="Data">
+                                    <param id="0" name="Key">&quot;castleX&quot;</param>
+                                    <param id="1" name="Value">int(CastlePosCSV.At(&quot;X&quot;,str(loopindex+10)))-800</param>
+                                </action>
+                                <action id="0" name="Add key" sid="9426117779838516" type="Data">
+                                    <param id="0" name="Key">&quot;castleY&quot;</param>
+                                    <param id="1" name="Value">int(CastlePosCSV.At(&quot;Y&quot;,str(loopindex+10)))-1800</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7290478898549786" type="Data">
+                                    <param id="0" name="Key">&quot;name&quot;</param>
+                                    <param id="1" name="Value">NamesCSV.At(&quot;Name&quot;,str(Function.Call(&quot;getName&quot;)))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="2372987375577777" type="Data">
+                                    <param id="0" name="Key">&quot;imageNr&quot;</param>
+                                    <param id="1" name="Value">Function.Call(&quot;getImage&quot;)</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1961426207965903" type="Data">
+                                    <param id="0" name="Key">&quot;age&quot;</param>
+                                    <param id="1" name="Value">round(random(20,60))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4352383431556037" type="Data">
+                                    <param id="0" name="Key">&quot;hasWife&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="428396935450576" type="Data">
+                                    <param id="0" name="Key">&quot;wifeName&quot;</param>
+                                    <param id="1" name="Value">GirlNamesCSV.At(&quot;Name&quot;,str(round(random(1,150))))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="9317700210133729" type="Data">
+                                    <param id="0" name="Key">&quot;wifeAge&quot;</param>
+                                    <param id="1" name="Value">31</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4524222165514821" type="Data">
+                                    <param id="0" name="Key">&quot;hasDaughter&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7549280378189243" type="Data">
+                                    <param id="0" name="Key">&quot;hasSon&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4888380553539784" type="Data">
+                                    <param id="0" name="Key">&quot;son1name&quot;</param>
+                                    <param id="1" name="Value">NamesCSV.At(&quot;Name&quot;,str(round(random(1,150))))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="3276413443604747" type="Data">
+                                    <param id="0" name="Key">&quot;son1age&quot;</param>
+                                    <param id="1" name="Value">round(random(10,30))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="5007655596698152" type="Data">
+                                    <param id="0" name="Key">&quot;hasRevolt&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Add key" sid="5503242250662718" type="Data">
+                                    <param id="0" name="Key">&quot;isTraveling&quot;</param>
+                                    <param id="1" name="Value">&quot;No&quot;</param>
+                                </action>
+                                <action id="0" name="Add key" sid="9986593498638748" type="Data">
+                                    <param id="0" name="Key">&quot;likesPlayer&quot;</param>
+                                    <param id="1" name="Value">round(random(30,60))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="624247122776947" type="Data">
+                                    <param id="0" name="Key">&quot;roninInRegion&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Add key" sid="343749455790164" type="Data">
+                                    <param id="0" name="Key">&quot;generalship&quot;</param>
+                                    <param id="1" name="Value">round(random(40,80))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="6607446038729269" type="Data">
+                                    <param id="0" name="Key">&quot;swordsmanship&quot;</param>
+                                    <param id="1" name="Value">round(random(40,80))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="7145266480386399" type="Data">
+                                    <param id="0" name="Key">&quot;land&quot;</param>
+                                    <param id="1" name="Value">round(random(40,80))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="1485419384966087" type="Data">
+                                    <param id="0" name="Key">&quot;honor&quot;</param>
+                                    <param id="1" name="Value">round(random(40,80))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4618221150276164" type="Data">
+                                    <param id="0" name="Key">&quot;renown&quot;</param>
+                                    <param id="1" name="Value">round(random(40,80))</param>
+                                </action>
+                                <action id="0" name="Add key" sid="4323592671921232" type="Data">
+                                    <param id="0" name="Key">&quot;finishedRound&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Add key" sid="6996580534138006" type="Data">
+                                    <param id="0" name="Key">&quot;samuraiCount&quot;</param>
+                                    <param id="1" name="Value">round(random(30,60))</param>
+                                </action>
+                                <action id="14" name="Log" sid="7954601654083365" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Created Data &quot;&amp;Data.Get(&quot;index&quot;)&amp; &quot; for Lord &quot;&amp;Data.Get(&quot;name&quot;) &amp;&quot;, age &quot;&amp;Data.Get(&quot;age&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4150277995418996">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="7150747751464802" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="14" name="Log" sid="6538006736025912" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Initiated Hatamoto Phase&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="6295669886332408">
+                                    <conditions>
+                                        <condition id="0" name="Compare value" sid="7242010666175643" type="Data">
+                                            <param id="0" name="Key">&quot;index&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Add key" sid="3958295675046569" type="Data">
+                                            <param id="0" name="Key">&quot;castleX&quot;</param>
+                                            <param id="1" name="Value">int(CastlePosCSV.At(&quot;X&quot;,str(1)))-800</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="6057731222113994" type="Data">
+                                            <param id="0" name="Key">&quot;castleY&quot;</param>
+                                            <param id="1" name="Value">int(CastlePosCSV.At(&quot;Y&quot;,str(1)))-1800</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="8448776237080812" type="System">
+                                            <param id="0" name="Variable">isReturnHome</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="2394046273203861" type="System">
+                                            <param id="0" name="Variable">fiefSizeDefault</param>
+                                            <param id="1" name="Value">150</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4123363244277784">
+                                    <conditions>
+                                        <condition id="0" name="Compare value" sid="8701288098977701" type="Data">
+                                            <param id="0" name="Key">&quot;index&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Add key" sid="2642617565496621" type="Data">
+                                            <param id="0" name="Key">&quot;name&quot;</param>
+                                            <param id="1" name="Value">uppercase(clanName)</param>
+                                        </action>
+                                        <action id="0" name="Add key" sid="9426987787053816" type="Data">
+                                            <param id="0" name="Key">&quot;samuraiCount&quot;</param>
+                                            <param id="1" name="Value">round(random(60,100))</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="6856678219132243" type="System">
+                                            <param id="0" name="Variable">leaderName</param>
+                                            <param id="1" name="Value">Data.Get(&quot;name&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8224437522109941">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-16" name="Wait" sid="587493418729749" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="5919616233128162" type="Function">
+                                            <param id="0" name="Name">&quot;prepareRivalIntros&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Params: 0 - index of dead rival, 1 - optional flag when function should automatically start the next decision.</comment>
+                <event-block sid="8382862884957159">
+                    <conditions>
+                        <condition id="0" name="On function" sid="2307975898919384" type="Function">
+                            <param id="0" name="Name">&quot;RivalPromoted&quot;</param>
+                        </condition>
+                        <condition id="0" name="Compare value" sid="5151422810660077" type="Data">
+                            <param id="0" name="Key">&quot;index&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2061973365249903">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Set key" sid="6466578388290098" type="Data">
+                                    <param id="0" name="Key">&quot;name&quot;</param>
+                                    <param id="1" name="Value">NamesCSV.At(&quot;Name&quot;,str(round(random(1,150))))</param>
+                                </action>
+                                <action id="1" name="Set key" sid="7864091099186716" type="Data">
+                                    <param id="0" name="Key">&quot;age&quot;</param>
+                                    <param id="1" name="Value">round(random(20,50))</param>
+                                </action>
+                                <action id="1" name="Set key" sid="6149934258813488" type="Data">
+                                    <param id="0" name="Key">&quot;imageNr&quot;</param>
+                                    <param id="1" name="Value">round(random(1,41))</param>
+                                </action>
+                                <action id="1" name="Set key" sid="5090349967731441" type="Data">
+                                    <param id="0" name="Key">&quot;hasWife&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="1" name="Set key" sid="5444715923555009" type="Data">
+                                    <param id="0" name="Key">&quot;hasSon&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="1" name="Set key" sid="1582550294843626" type="Data">
+                                    <param id="0" name="Key">&quot;hasDaughter&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="1" name="Set key" sid="3834319750167574" type="Data">
+                                    <param id="0" name="Key">&quot;likesPlayer&quot;</param>
+                                    <param id="1" name="Value">Data.Get(&quot;likesPlayer&quot;)*random(0.5,2)</param>
+                                </action>
+                                <action id="1" name="Set key" sid="4350076964514695" type="Data">
+                                    <param id="0" name="Key">&quot;honor&quot;</param>
+                                    <param id="1" name="Value">round(Data.Get(&quot;honor&quot;)*(2/3))</param>
+                                </action>
+                                <action id="1" name="Set key" sid="6452633907479871" type="Data">
+                                    <param id="0" name="Key">&quot;swordsmanship&quot;</param>
+                                    <param id="1" name="Value">round(random(10,40))</param>
+                                </action>
+                                <action id="1" name="Set key" sid="8137744216211919" type="Data">
+                                    <param id="0" name="Key">&quot;generalship&quot;</param>
+                                    <param id="1" name="Value">round(random(10,40))</param>
+                                </action>
+                                <action id="5" name="Push" sid="9535417666783903" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">&quot;NewRivalTakesOver2&quot;</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="9038787324746119" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">Data.Get(&quot;name&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2992312406761317">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="8147488490920972" type="System">
+                                    <param id="0" name="First value">Function.ParamCount</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="1162033799082636" type="System">
+                                    <param id="0" name="First value">Function.Param(1)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="9109108989423608" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Params: 0 - index of dead rival, 1 - optional flag when function should automatically start the next decision.</comment>
+                <event-block sid="6892326308562303">
+                    <conditions>
+                        <condition id="0" name="On function" sid="4657862246596914" type="Function">
+                            <param id="0" name="Name">&quot;RivalDead&quot;</param>
+                        </condition>
+                        <condition id="0" name="Compare value" sid="7320904768765771" type="Data">
+                            <param id="0" name="Key">&quot;index&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7200611076206163">
+                            <conditions>
+                                <condition id="0" name="Compare value" sid="3162930880231867" type="Data">
+                                    <param id="0" name="Key">&quot;hasSon&quot;</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="8423686886649575">
+                                    <conditions>
+                                        <condition id="0" name="Compare value" sid="8351783323564394" type="Data">
+                                            <param id="0" name="Key">&quot;son1Age&quot;</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Add key" sid="4871709498215847" type="Data">
+                                            <param id="0" name="Key">&quot;deadFather&quot;</param>
+                                            <param id="1" name="Value">Data.Get(&quot;name&quot;)</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="816227330126903" type="Data">
+                                            <param id="0" name="Key">&quot;name&quot;</param>
+                                            <param id="1" name="Value">Data.Get(&quot;son1name&quot;)</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="8335808530572492" type="Data">
+                                            <param id="0" name="Key">&quot;age&quot;</param>
+                                            <param id="1" name="Value">Data.Get(&quot;son1age&quot;)</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="973859779662247" type="Data">
+                                            <param id="0" name="Key">&quot;imageNr&quot;</param>
+                                            <param id="1" name="Value">round(random(1,41))</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="4112097011356873" type="Data">
+                                            <param id="0" name="Key">&quot;hasSon&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="7838923457796437" type="Data">
+                                            <param id="0" name="Key">&quot;hasDaughter&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="9834323936830865" type="Data">
+                                            <param id="0" name="Key">&quot;hasWife&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="9359690152034591" type="Data">
+                                            <param id="0" name="Key">&quot;likesPlayer&quot;</param>
+                                            <param id="1" name="Value">Data.Get(&quot;likesPlayer&quot;)*random(0.5,2)</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="2694473782210056" type="Data">
+                                            <param id="0" name="Key">&quot;honor&quot;</param>
+                                            <param id="1" name="Value">round(Data.Get(&quot;honor&quot;)*(2/3))</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="5432991993250698" type="Data">
+                                            <param id="0" name="Key">&quot;swordsmanship&quot;</param>
+                                            <param id="1" name="Value">round(random(10,40))</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="4042244577553254" type="Data">
+                                            <param id="0" name="Key">&quot;generalship&quot;</param>
+                                            <param id="1" name="Value">round(random(10,40))</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="5843685895369916" type="Data">
+                                            <param id="0" name="Key">&quot;daughter1IsKidnapped&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="863787019403416" type="Data">
+                                            <param id="0" name="Key">&quot;son1IsKidnapped&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="3626559567806621" type="Data">
+                                            <param id="0" name="Key">&quot;wifeIsKidnapped&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="5" name="Push" sid="2212588141736095" type="EventsList">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Value">&quot;HeirTakesOverForRival&quot;</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                        <action id="3" name="Set at XY" sid="154156210984158" type="EventsList">
+                                            <param id="0" name="X">Self.Width-1</param>
+                                            <param id="1" name="Y">1</param>
+                                            <param id="2" name="Value">Function.Param(0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7686822798007355">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="4581516641213579" type="System" />
+                                        <condition id="0" name="Compare value" sid="1706731710215112" type="Data">
+                                            <param id="0" name="Key">&quot;son1Age&quot;</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">16</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set key" sid="9702451264298931" type="Data">
+                                            <param id="0" name="Key">&quot;name&quot;</param>
+                                            <param id="1" name="Value">NamesCSV.At(&quot;Name&quot;,str(round(random(1,150))))</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="2189390872992013" type="Data">
+                                            <param id="0" name="Key">&quot;age&quot;</param>
+                                            <param id="1" name="Value">round(random(20,50))</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="2084462433536828" type="Data">
+                                            <param id="0" name="Key">&quot;imageNr&quot;</param>
+                                            <param id="1" name="Value">round(random(1,41))</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="4235213338299678" type="Data">
+                                            <param id="0" name="Key">&quot;hasWife&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="644462770412714" type="Data">
+                                            <param id="0" name="Key">&quot;hasSon&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="3788318971433318" type="Data">
+                                            <param id="0" name="Key">&quot;hasDaughter&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="8896241301647303" type="Data">
+                                            <param id="0" name="Key">&quot;honor&quot;</param>
+                                            <param id="1" name="Value">round(Data.Get(&quot;honor&quot;)*(2/3))</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="9129925565689967" type="Data">
+                                            <param id="0" name="Key">&quot;swordsmanship&quot;</param>
+                                            <param id="1" name="Value">round(random(20,50))</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="463779458027079" type="Data">
+                                            <param id="0" name="Key">&quot;generalship&quot;</param>
+                                            <param id="1" name="Value">round(random(20,50))</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="8655464959742018" type="Data">
+                                            <param id="0" name="Key">&quot;daughter1IsKidnapped&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="3330177170874077" type="Data">
+                                            <param id="0" name="Key">&quot;son1IsKidnapped&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="1" name="Set key" sid="8971844708926986" type="Data">
+                                            <param id="0" name="Key">&quot;wifeIsKidnapped&quot;</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="5" name="Push" sid="4307978873824273" type="EventsList">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Value">&quot;HeirTooYoungToTakeOverForRival&quot;</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                        <action id="3" name="Set at XY" sid="4680013638966675" type="EventsList">
+                                            <param id="0" name="X">Self.Width-1</param>
+                                            <param id="1" name="Y">1</param>
+                                            <param id="2" name="Value">Function.Param(0)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6624809904787712">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="3070826823727548" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set key" sid="1913116181735795" type="Data">
+                                    <param id="0" name="Key">&quot;name&quot;</param>
+                                    <param id="1" name="Value">NamesCSV.At(&quot;Name&quot;,str(round(random(1,150))))</param>
+                                </action>
+                                <action id="1" name="Set key" sid="3280356330522925" type="Data">
+                                    <param id="0" name="Key">&quot;age&quot;</param>
+                                    <param id="1" name="Value">round(random(20,50))</param>
+                                </action>
+                                <action id="1" name="Set key" sid="864752977024788" type="Data">
+                                    <param id="0" name="Key">&quot;imageNr&quot;</param>
+                                    <param id="1" name="Value">round(random(1,41))</param>
+                                </action>
+                                <action id="1" name="Set key" sid="3209405832339395" type="Data">
+                                    <param id="0" name="Key">&quot;hasWife&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="1" name="Set key" sid="243905118861699" type="Data">
+                                    <param id="0" name="Key">&quot;hasSon&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="1" name="Set key" sid="4169710644747688" type="Data">
+                                    <param id="0" name="Key">&quot;hasDaughter&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="1" name="Set key" sid="9950546114662782" type="Data">
+                                    <param id="0" name="Key">&quot;honor&quot;</param>
+                                    <param id="1" name="Value">round(Data.Get(&quot;honor&quot;)*(2/3))</param>
+                                </action>
+                                <action id="1" name="Set key" sid="5030470330671888" type="Data">
+                                    <param id="0" name="Key">&quot;swordsmanship&quot;</param>
+                                    <param id="1" name="Value">round(random(20,50))</param>
+                                </action>
+                                <action id="1" name="Set key" sid="4210411352903329" type="Data">
+                                    <param id="0" name="Key">&quot;generalship&quot;</param>
+                                    <param id="1" name="Value">round(random(20,50))</param>
+                                </action>
+                                <action id="1" name="Set key" sid="7445319092849207" type="Data">
+                                    <param id="0" name="Key">&quot;daughter1IsKidnapped&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="1" name="Set key" sid="7163994908701413" type="Data">
+                                    <param id="0" name="Key">&quot;son1IsKidnapped&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="1" name="Set key" sid="9701476198372705" type="Data">
+                                    <param id="0" name="Key">&quot;wifeIsKidnapped&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="5" name="Push" sid="7200081155410296" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">&quot;NewRivalTakesOver&quot;</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="1483241019226927" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">Data.Get(&quot;name&quot;)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4873239229356977">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="5964966826384323" type="System">
+                                    <param id="0" name="First value">Function.ParamCount</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="8697752644315834" type="System">
+                                    <param id="0" name="First value">Function.Param(1)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="80359841407993" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7571994813603692" title="Universal Functions">
+            <sub-events>
+                <comment>Params: text to display, MenuX, MenuY (not in but perhaps worth thinking about: Frame to use, BG to use.)</comment>
+                <event-block sid="6463038009452701">
+                    <conditions>
+                        <condition id="0" name="On function" sid="2062609983811395" type="Function">
+                            <param id="0" name="Name">&quot;CreateStoryForDecision&quot;</param>
+                        </condition>
+                        <condition id="-16" name="Pick random instance" sid="1291929214598583" type="System">
+                            <param id="0" name="Object">Frames</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9776300972285962" type="System">
+                            <param id="0" name="Variable">MenuX</param>
+                            <param id="1" name="Value">Function.Param(1)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2611389221022921" type="System">
+                            <param id="0" name="Variable">MenuY</param>
+                            <param id="1" name="Value">Function.Param(2)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9663068388194267" type="System">
+                            <param id="0" name="Object to create">StoryShadow</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">MenuX</param>
+                            <param id="3" name="Y">MenuY</param>
+                        </action>
+                        <action id="0" name="Set text" sid="2213909806425975" type="StoryShadow">
+                            <param id="0" name="Text">Function.Param(0)</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="7452854454830041" type="StoryShadow">
+                            <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                            <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                        </action>
+                        <action id="6" name="Pop" sid="5181501515218022" type="EventsList">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Axis">0</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="6637711989187213" type="TextBG">
+                            <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">round(random(-100,100))</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="5235171569576507" type="TextBG">
+                            <param id="0" name="X">StoryShadow.X-35</param>
+                            <param id="1" name="Y">StoryShadow.Y-35</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="5400927023473788" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="4217001712418073" type="Frames">
+                            <param id="0" name="Width">StoryShadow.TextWidth+85</param>
+                            <param id="1" name="Height">StoryShadow.TextHeight+60</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="6304532440581073" type="Frames">
+                            <param id="0" name="X">StoryShadow.X-35</param>
+                            <param id="1" name="Y">StoryShadow.Y-35</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="7616914954540769" type="Frames">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="7164313630599155" type="TextBG">
+                            <param id="0" name="Width">Frames.Width</param>
+                            <param id="1" name="Height">Frames.Height</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8860980306477157" type="System">
+                            <param id="0" name="Variable">MenuY</param>
+                            <param id="1" name="Value">MenuY+50</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="549474756708822">
+                            <conditions>
+                                <condition id="-14" inverted="1" name="Pick by unique ID" sid="2464073709049396" type="Frames">
+                                    <param id="0" name="Unique ID">Frames.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="9416449912548537" type="Frames">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>This one is for also displaying samurai images above the story text. &#x0D;&#x0A;Params: 0 - text to display, 1- MenuX, 2- MenuY, 3- index of first image to display, 4 - position of first image, e.g. 1 is left, 2 is center, 3 is right etc., (5 - index of second image to display)</comment>
+                <event-block sid="5231625867985632">
+                    <conditions>
+                        <condition id="0" name="On function" sid="2131946826887878" type="Function">
+                            <param id="0" name="Name">&quot;CreateStoryForDecisionWithImage&quot;</param>
+                        </condition>
+                        <condition id="-16" name="Pick random instance" sid="8364067237390576" type="System">
+                            <param id="0" name="Object">Frames</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5716612372435504" type="System">
+                            <param id="0" name="Variable">MenuX</param>
+                            <param id="1" name="Value">Function.Param(1)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3580720759996432" type="System">
+                            <param id="0" name="Variable">MenuY</param>
+                            <param id="1" name="Value">Function.Param(2)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="4821450284660016" type="Function">
+                            <param id="0" name="Name">&quot;createImage&quot;</param>
+                            <param id="1" name="Parameter {n}">Function.Param(3){###}MenuX+Function.Param(4)* 300{###}MenuY+50</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7207948994701835" type="System">
+                            <param id="0" name="Variable">MenuY</param>
+                            <param id="1" name="Value">MenuY+330</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8827860819199429" type="System">
+                            <param id="0" name="Object to create">StoryShadow</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">MenuX</param>
+                            <param id="3" name="Y">MenuY</param>
+                        </action>
+                        <action id="0" name="Set text" sid="3400295578028754" type="StoryShadow">
+                            <param id="0" name="Text">Function.Param(0)</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="2668206936521709" type="StoryShadow">
+                            <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                            <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                        </action>
+                        <action id="6" name="Pop" sid="5380178089574075" type="EventsList">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Axis">0</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="9930964576969082" type="TextBG">
+                            <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">round(random(-100,100))</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="9547830320552009" type="TextBG">
+                            <param id="0" name="X">StoryShadow.X-35</param>
+                            <param id="1" name="Y">StoryShadow.Y-35</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2362134889066291" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="4420714712719267" type="Frames">
+                            <param id="0" name="Width">StoryShadow.TextWidth+85</param>
+                            <param id="1" name="Height">StoryShadow.TextHeight+60</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="1590795739286495" type="Frames">
+                            <param id="0" name="X">StoryShadow.X-35</param>
+                            <param id="1" name="Y">StoryShadow.Y-35</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="3673630656311015" type="Frames">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="4407515259275654" type="TextBG">
+                            <param id="0" name="Width">Frames.Width</param>
+                            <param id="1" name="Height">Frames.Height</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4351309274761817" type="System">
+                            <param id="0" name="Variable">MenuY</param>
+                            <param id="1" name="Value">MenuY+50</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7547293722775609">
+                            <conditions>
+                                <condition id="-14" inverted="1" name="Pick by unique ID" sid="679312775351721" type="Frames">
+                                    <param id="0" name="Unique ID">Frames.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="3848606254508431" type="Frames">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Params: function to call, text to display, layer to place on.</comment>
+                <event-block sid="3508575752755147">
+                    <conditions>
+                        <condition id="0" name="On function" sid="9656903167345209" type="Function">
+                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="876320350459204" type="System">
+                            <param id="0" name="Variable">MenuY</param>
+                            <param id="1" name="Value">MenuY+100</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="1066621596805157" type="System">
+                            <param id="0" name="Object to create">MenuSelectionShadow</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">MenuX+20</param>
+                            <param id="3" name="Y">MenuY</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4616122664146654" type="MenuSelectionShadow">
+                            <param id="0" name="Text">&quot;+ &quot;&amp;Function.Param(1)</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="5563066930794323" type="MenuSelectionShadow">
+                            <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                            <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5206508669186344" type="MenuSelectionShadow">
+                            <param id="0" name="Instance variable">functionName</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>This is an additional, optional parameter, used for passing on data to initiation events (for assassinations etc.)</comment>
+                        <event-block sid="6334249493530005">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="4874604647502341" type="System">
+                                    <param id="0" name="First value">Function.ParamCount</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="2709707637330433" type="MenuSelectionShadow">
+                                    <param id="0" name="Instance variable">passOnParameter</param>
+                                    <param id="1" name="Value">Function.Param(2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3680265147125552">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="705423628222262" type="System">
+                                    <param id="0" name="Seconds">0.01</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="8897554003891968" type="Frames">
+                                    <param id="0" name="Height">Frames.Height+100</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="6216776396677264" type="TextBG">
+                                    <param id="0" name="Height">TextBG.Height+100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Params: 0 - index of Data to display image for. If it&apos;s &apos;999&apos;, display bride image from leader castle, 1 - X, 2 - Y.</comment>
+                <event-block sid="3343566594206239">
+                    <conditions>
+                        <condition id="0" name="On function" sid="1926107059134042" type="Function">
+                            <param id="0" name="Name">&quot;CreateImage&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="8849583997115205">
+                            <conditions>
+                                <condition id="0" name="Compare value" sid="5787156529889241" type="Data">
+                                    <param id="0" name="Key">&quot;index&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="5162587353197457" type="System">
+                                    <param id="0" name="Object to create">SamuraiImage</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">Function.Param(1)</param>
+                                    <param id="3" name="Y">Function.Param(2)</param>
+                                </action>
+                                <action id="2" name="Stop" sid="6698243067720145" type="SamuraiImage" />
+                                <action id="5" name="Set frame" sid="6646718105859111" type="SamuraiImage">
+                                    <param id="0" name="Frame number">Data.Get(&quot;imageNr&quot;)</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="2506037288975326" type="SamuraiImage">
+                                    <param id="0" name="Width">220</param>
+                                    <param id="1" name="Height">330</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="7553589820315288" type="SamuraiImage">
+                                    <param id="0" name="Object">Frames</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="2395548230830398" type="Frames">
+                                    <param id="0" name="Width">SamuraiImage.Width</param>
+                                    <param id="1" name="Height">SamuraiImage.Height</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="7462667545995801" type="Frames">
+                                    <param id="0" name="X">Self.X-(Self.Width/2)</param>
+                                    <param id="1" name="Y">Self.Y-(Self.Height/2)</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="4154278370718844" type="Frames">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="4812967722701064" type="SamuraiName">
+                                    <param id="0" name="X">Function.Param(1)</param>
+                                    <param id="1" name="Y">Function.Param(2)+150</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8746234057954884" type="SamuraiName">
+                                    <param id="0" name="Text">Data.Get(&quot;name&quot;)</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="6749431003794991" type="SamuraiName">
+                                    <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9082072028907209" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6331763357538167">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8913154570249465" type="System" />
+                                <condition id="-8" name="Compare two values" sid="7511426339240639" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">999</param>
+                                </condition>
+                                <condition id="0" name="Compare value" sid="1351055329010504" type="Data">
+                                    <param id="0" name="Key">&quot;index&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="2698134582201825" type="System">
+                                    <param id="0" name="Object to create">BrideImage</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">Function.Param(1)</param>
+                                    <param id="3" name="Y">Function.Param(2)</param>
+                                </action>
+                                <action id="2" name="Stop" sid="6042845450612193" type="BrideImage" />
+                                <action id="5" name="Set frame" sid="3953995412613035" type="BrideImage">
+                                    <param id="0" name="Frame number">Data.Get(&quot;brideImage&quot;)</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="5243522408207919" type="BrideImage">
+                                    <param id="0" name="Width">220</param>
+                                    <param id="1" name="Height">330</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="2897682172922562" type="BrideImage">
+                                    <param id="0" name="Object">Frames</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="985654112802063" type="Frames">
+                                    <param id="0" name="Width">BrideImage.Width</param>
+                                    <param id="1" name="Height">BrideImage.Height</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="3264833813832412" type="Frames">
+                                    <param id="0" name="X">Self.X-(Self.Width/2)</param>
+                                    <param id="1" name="Y">Self.Y-(Self.Height/2)</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="8739701302873758" type="Frames">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9367076041686675" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <variable constant="0" name="Land" sid="801243064865688" static="0" type="number">0</variable>
+                <event-block sid="6679408676983933">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8556194266632586" type="Function">
+                            <param id="0" name="Name">&quot;calculateLand&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="973609644965968" type="System">
+                            <param id="0" name="Variable">Land</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9811860742986022">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1910158790814969" type="System">
+                                    <param id="0" name="First value">Land</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="5579407935201411" type="Function">
+                                    <param id="0" name="Value">&quot;very small&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3990096726056098">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="3808196014917581" type="System" />
+                                <condition id="-8" name="Compare two values" sid="238700117510947" type="System">
+                                    <param id="0" name="First value">Land</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">40</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="1139607782995161" type="Function">
+                                    <param id="0" name="Value">&quot;small&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7933541398678058">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="3038132291106612" type="System" />
+                                <condition id="-8" name="Compare two values" sid="4815332813982736" type="System">
+                                    <param id="0" name="First value">Land</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">60</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="7126921234253597" type="Function">
+                                    <param id="0" name="Value">&quot;moderate&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8830904393881715">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="3073341558993764" type="System" />
+                                <condition id="-8" name="Compare two values" sid="1874300500199806" type="System">
+                                    <param id="0" name="First value">Land</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">80</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="9863060226642597" type="Function">
+                                    <param id="0" name="Value">&quot;large&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6852660413845939">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="7806964727761079" type="System" />
+                                <condition id="-8" name="Compare two values" sid="680015633558712" type="System">
+                                    <param id="0" name="First value">Land</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="7206369323946368" type="Function">
+                                    <param id="0" name="Value">&quot;very large&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7156436238648142">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2019286033129252" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="1341132298311177" type="Function">
+                                    <param id="0" name="Value">&quot;vast&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <variable constant="0" name="Honor" sid="782887703165504" static="0" type="number">0</variable>
+                <event-block sid="7616610340025037">
+                    <conditions>
+                        <condition id="0" name="On function" sid="9489757593082045" type="Function">
+                            <param id="0" name="Name">&quot;calculateHonor&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9418870649746375" type="System">
+                            <param id="0" name="Variable">Honor</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9001495665515472">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="4782012805635237" type="System">
+                                    <param id="0" name="First value">Honor</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="5340158972295319" type="Function">
+                                    <param id="0" name="Value">&quot;barely adequate&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6373669893181719">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8000611662524439" type="System" />
+                                <condition id="-8" name="Compare two values" sid="3652075770808539" type="System">
+                                    <param id="0" name="First value">Honor</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">40</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="7351187232411993" type="Function">
+                                    <param id="0" name="Value">&quot;adequate&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3094814197197337">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="3006182069414466" type="System" />
+                                <condition id="-8" name="Compare two values" sid="9060386027572983" type="System">
+                                    <param id="0" name="First value">Honor</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">60</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="1855344717493949" type="Function">
+                                    <param id="0" name="Value">&quot;commendable&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="926720619883647">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="1830204506713549" type="System" />
+                                <condition id="-8" name="Compare two values" sid="5046420606499497" type="System">
+                                    <param id="0" name="First value">Honor</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">80</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="2850433003354562" type="Function">
+                                    <param id="0" name="Value">&quot;great&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6178085920062101">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8249129685595492" type="System" />
+                                <condition id="-8" name="Compare two values" sid="5378684483292293" type="System">
+                                    <param id="0" name="First value">Honor</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">90</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="2435903937299342" type="Function">
+                                    <param id="0" name="Value">&quot;extreme&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5044775935762631">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5818958078996169" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="6959536535192318" type="Function">
+                                    <param id="0" name="Value">&quot;unsurpassed&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <variable constant="0" name="Age" sid="2452890261771796" static="0" type="number">0</variable>
+                <event-block sid="9627060144519375">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8253034920770681" type="Function">
+                            <param id="0" name="Name">&quot;calculateAge&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="393991746697447" type="System">
+                            <param id="0" name="Variable">Age</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="2517525151776164">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="7830325796629313" type="System">
+                                    <param id="0" name="First value">Age</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="9479210776446143" type="Function">
+                                    <param id="0" name="Value">&quot;child&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4692953305279077">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5299044191992004" type="System" />
+                                <condition id="-8" name="Compare two values" sid="7481758256512331" type="System">
+                                    <param id="0" name="First value">Age</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">16</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="915265710154151" type="Function">
+                                    <param id="0" name="Value">&quot;youth&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6079317369263473">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="7118658246364121" type="System" />
+                                <condition id="-8" name="Compare two values" sid="1012816592207606" type="System">
+                                    <param id="0" name="First value">Age</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">25</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="8644248367895967" type="Function">
+                                    <param id="0" name="Value">&quot;young adult&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2952680820303149">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8139804814115776" type="System" />
+                                <condition id="-8" name="Compare two values" sid="4761410035980357" type="System">
+                                    <param id="0" name="First value">Age</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">40</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="9599413140203603" type="Function">
+                                    <param id="0" name="Value">&quot;adult&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5409568877344386">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6836518105276638" type="System" />
+                                <condition id="-8" name="Compare two values" sid="524015022575325" type="System">
+                                    <param id="0" name="First value">Age</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">55</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="4357425107574049" type="Function">
+                                    <param id="0" name="Value">&quot;mature adult&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2433724781530115">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="291723325590204" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="187416877878794" type="Function">
+                                    <param id="0" name="Value">&quot;elderly&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <variable constant="0" name="likesPlayer" sid="6252751405654988" static="0" type="number">0</variable>
+                <event-block sid="3438318381574677">
+                    <conditions>
+                        <condition id="0" name="On function" sid="6504699198534881" type="Function">
+                            <param id="0" name="Name">&quot;calculateLikesPlayer&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8991611628670032" type="System">
+                            <param id="0" name="Variable">likesPlayer</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8429772990997887">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="2207147670903586" type="System">
+                                    <param id="0" name="First value">likesPlayer</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="3862808525460993" type="Function">
+                                    <param id="0" name="Value">&quot;not at all&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1554859557118756">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4881207734163557" type="System" />
+                                <condition id="-8" name="Compare two values" sid="8839306986916245" type="System">
+                                    <param id="0" name="First value">likesPlayer</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">30</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="4091969449853947" type="Function">
+                                    <param id="0" name="Value">&quot;very little&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6472629093808377">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5044184960868482" type="System" />
+                                <condition id="-8" name="Compare two values" sid="2562542720981341" type="System">
+                                    <param id="0" name="First value">likesPlayer</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="6942403471358483" type="Function">
+                                    <param id="0" name="Value">&quot;moderately&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="523234018814931">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5998081207652789" type="System" />
+                                <condition id="-8" name="Compare two values" sid="6178666592148913" type="System">
+                                    <param id="0" name="First value">likesPlayer</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">70</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="6787252329140092" type="Function">
+                                    <param id="0" name="Value">&quot;a great deal&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6002338097481749">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2930844547953862" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="1942962963932767" type="Function">
+                                    <param id="0" name="Value">&quot;very much&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <variable constant="0" name="Renown" sid="3186739932059449" static="0" type="number">0</variable>
+                <event-block sid="2909333108490898">
+                    <conditions>
+                        <condition id="0" name="On function" sid="1137373563218463" type="Function">
+                            <param id="0" name="Name">&quot;calculateRenown&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7613837805841041" type="System">
+                            <param id="0" name="Variable">Renown</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="1655073256113252">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1243045674820175" type="System">
+                                    <param id="0" name="First value">Renown</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="9008881702320038" type="Function">
+                                    <param id="0" name="Value">&quot;dissapointing&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5052188531810246">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4709304134546706" type="System" />
+                                <condition id="-8" name="Compare two values" sid="6775178643149704" type="System">
+                                    <param id="0" name="First value">Renown</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">30</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="3217263762532896" type="Function">
+                                    <param id="0" name="Value">&quot;cautious&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9048514999859704">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2930561195996113" type="System" />
+                                <condition id="-8" name="Compare two values" sid="2676032686408427" type="System">
+                                    <param id="0" name="First value">Renown</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="65776988269093" type="Function">
+                                    <param id="0" name="Value">&quot;promising&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4105383047129107">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4987034257550823" type="System" />
+                                <condition id="-8" name="Compare two values" sid="993579370487673" type="System">
+                                    <param id="0" name="First value">Renown</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">70</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="4682340924593418" type="Function">
+                                    <param id="0" name="Value">&quot;great&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1214083413015409">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="9877573559465445" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="1793839319975412" type="Function">
+                                    <param id="0" name="Value">&quot;legendary&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="662860074956027" title="Universal Input">
+            <sub-events>
+                <event-block sid="8564705595630084">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="5419248679264939" type="Mouse">
+                            <param id="0" name="Object">SelectionShadow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set font color" sid="4017016554942597" type="SelectionShadow">
+                            <param id="0" name="Color">rgb(0, 0, 0)</param>
+                        </action>
+                        <action id="8" name="Set drop shadow blur amount" sid="3336164582912609" type="SelectionShadow">
+                            <param id="0" name="Blur">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6146311013864373">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="5525725185009467" type="Mouse">
+                            <param id="0" name="Object">SelectionShadow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set font color" sid="7421238720065513" type="SelectionShadow">
+                            <param id="0" name="Color">rgb(255, 255, 255)</param>
+                        </action>
+                        <action id="8" name="Set drop shadow blur amount" sid="3544186875948307" type="SelectionShadow">
+                            <param id="0" name="Blur">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Give the function its own name as Param(0), just in case.</comment>
+                <event-block sid="5127996798667411">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="1504895708645741" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">SelectionShadow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="5755656491764942" type="Function">
+                            <param id="0" name="Name">SelectionShadow.functionName</param>
+                            <param id="1" name="Parameter {n}">SelectionShadow.functionName{###}SelectionShadow.passOnParameter</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7838429868793633">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="7013561226814593" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7116897092250201" type="System">
+                            <param id="0" name="Variable">currentLayout</param>
+                            <param id="1" name="Value">LayoutName</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block any="1" sid="6188848441328588">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="6082547468594909" type="System">
+                                    <param id="0" name="Variable">currentLayout</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Map&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="963007155889356" type="System">
+                                    <param id="0" name="Variable">currentLayout</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;HomeCastle&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="3416715683207091" type="System">
+                                    <param id="0" name="Variable">currentLayout</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;OpponentCastle&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="26045671824987" type="System">
+                                    <param id="0" name="Layout">Menu</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

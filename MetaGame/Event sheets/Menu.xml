@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu</name>
+    <events>
+        <event-group description="" sid="4904006055037512" title="Menu Actions">
+            <sub-events>
+                <variable constant="0" name="isLoaded" sid="6818712831516489" static="1" type="number">0</variable>
+                <event-block sid="2209481726654711">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="4736407454647938" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set web font" sid="9842431099139899" type="TextDifficulty">
+                            <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                            <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3038028945574924" type="System">
+                            <param id="0" name="Variable">isLoaded</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="312274055922104">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="6709130852517415" type="Btn_START" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4362885144249492" type="System">
+                            <param id="0" name="Variable">isNewGame</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="2780518240859933" type="System">
+                            <param id="0" name="Layout">MainMap</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3000045618252032">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="5409791118081998" type="Btn_SAVE" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="628355017867139" type="System">
+                            <param id="0" name="Variable">isNewGame</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-36" name="Save" sid="4198166682290964" type="System">
+                            <param id="0" name="Slot">&quot;save1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8360176626138523">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="4940100108695435" type="Btn_LOAD" />
+                    </conditions>
+                    <actions>
+                        <action id="-37" name="Load" sid="6239592968905297" type="System">
+                            <param id="0" name="Slot">&quot;save1&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8281403816384751">
+                            <conditions />
+                            <actions>
+                                <action id="-16" name="Wait" sid="781149817540125" type="System">
+                                    <param id="0" name="Seconds">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="2896660943144908" type="System">
+                                    <param id="0" name="Variable">isNewGame</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="7389627752059953" type="System">
+                                    <param id="0" name="Variable">isLoaded</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="14" name="Log" sid="2312277819732492" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;loaded: &quot;&amp;isLoaded</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="463696310768159">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="6540227101387158" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5834260027232012" type="System">
+                            <param id="0" name="Variable">isLoaded</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3288145687093693">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5316640897194558" type="System">
+                            <param id="0" name="Variable">isLoaded</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="7142593860841536" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="14" name="Log" sid="1543521242311775" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;current layout: &quot;&amp;currentLayout</param>
+                        </action>
+                        <action id="14" name="Log" sid="1090318514045308" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;In the loop&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4520671526079577">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4750121353092151" type="System">
+                                    <param id="0" name="Variable">currentLayout</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Map&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="4095569357162482" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="3985337183042003" type="System">
+                                    <param id="0" name="Layout">Map</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9536179852972744">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1947103076763088" type="System">
+                                    <param id="0" name="Variable">currentLayout</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;OpponentCastle&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="5468539275725427" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="8689338817367938" type="System">
+                                    <param id="0" name="Layout">OpponentCastle</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4611142939208133">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4700651067862409" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="9930625248727844" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="3801511473660151" type="System">
+                                    <param id="0" name="Layout">HomeCastle</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

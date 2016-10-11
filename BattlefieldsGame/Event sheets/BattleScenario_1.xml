@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>BattleScenario_1</name>
+    <events>
+        <include>BattlefieldEngine</include>
+        <comment>Randomly spawn enemy units and have them attack random soldiers in a friendly unit</comment>
+        <variable constant="0" name="ActiveEnemy" sid="5231227890824918" static="0" type="number">9999</variable>
+        <event-group description="" sid="7391154970803793" title="Spawning">
+            <sub-events>
+                <variable constant="0" name="distanceBetweenAIandP1" sid="3603963131820928" static="0" type="number">900</variable>
+                <variable constant="0" name="distanceBetweenUnits" sid="3933565263200285" static="0" type="number">300</variable>
+                <event-block sid="6279834377565309">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1814061565645651" type="System">
+                            <param id="0" name="First value">EnemyUnit.Count</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                        <condition id="-16" name="Pick random instance" sid="8211885499600226" type="System">
+                            <param id="0" name="Object">EnemySpawnPosition</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="7357565814384124" type="EnemySpawnPosition">
+                            <param id="0" name="Object">EnemyUnit</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8330249112386203" type="System">
+                            <param id="0" name="Variable">ActiveEnemy</param>
+                            <param id="1" name="Value">EnemyUnit.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9377672885290713">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="2847093652965967" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7140202225833185" type="EnemySpawnPosition" />
+                        <action id="-9" name="Destroy" sid="2330317051411626" type="FriendlySpawnPosition" />
+                        <action id="-3" name="Create object" sid="1944769378773307" type="System">
+                            <param id="0" name="Object to create">FriendlySpawnPosition</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">random(600,2600)</param>
+                            <param id="3" name="Y">random(1000,2800)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3538952650887989" type="System">
+                            <param id="0" name="Object to create">FriendlySpearmen</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">FriendlySpawnPosition.X - distanceBetweenUnits*2</param>
+                            <param id="3" name="Y">FriendlySpawnPosition.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="3896786525494208" type="System">
+                            <param id="0" name="Object to create">FriendlyArchers</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">FriendlySpawnPosition.X</param>
+                            <param id="3" name="Y">FriendlySpawnPosition.Y</param>
+                        </action>
+                        <action disabled="1" id="-3" name="Create object" sid="8029274195828446" type="System">
+                            <param id="0" name="Object to create">FriendlyCavalry</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">FriendlySpawnPosition.X +distanceBetweenUnits</param>
+                            <param id="3" name="Y">FriendlySpawnPosition.Y</param>
+                        </action>
+                        <action disabled="1" id="-3" name="Create object" sid="9445453087159262" type="System">
+                            <param id="0" name="Object to create">FriendlySwordsmen</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">FriendlySpawnPosition.X +distanceBetweenUnits*2</param>
+                            <param id="3" name="Y">FriendlySpawnPosition.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6236855416116168" type="System">
+                            <param id="0" name="Object to create">EnemySpawnPosition</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">FriendlySpawnPosition.X -distanceBetweenUnits</param>
+                            <param id="3" name="Y">FriendlySpawnPosition.Y - distanceBetweenAIandP1</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="5898177170122145" type="System">
+                            <param id="0" name="Object to create">EnemySpawnPosition</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">FriendlySpawnPosition.X +distanceBetweenUnits*2</param>
+                            <param id="3" name="Y">FriendlySpawnPosition.Y - distanceBetweenAIandP1</param>
+                        </action>
+                        <action id="-7" name="Scroll to position" sid="4149994127136966" type="System">
+                            <param id="0" name="X">lerp(scrollx, FriendlySpawnPosition.X, 1)</param>
+                            <param id="1" name="Y">lerp(scrolly, FriendlySpawnPosition.Y-500, 1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="4725828243498571" title="Behaviour">
+            <sub-events>
+                <comment>Reposition Enemy units to attack single soldiers in a friendly unit</comment>
+                <event-block sid="2259093078212265">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="9459373417350849" type="EnemyUnit" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="7464688853476962" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block any="1" sid="7613417746941954">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="6232813671283291" type="EnemyUnit">
+                                    <param id="0" name="Unique ID">ActiveEnemy</param>
+                                </condition>
+                                <condition id="-16" name="Pick random instance" sid="4668156968654264" type="System">
+                                    <param id="0" name="Object">EnemyUnit</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9369546393182822">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="2414835592796373" type="Unit">
+                                            <param id="0" name="Unique ID">EnemyUnit.UID</param>
+                                        </condition>
+                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="8327082723136599" type="Unit">
+                                            <param id="0" name="Object">FriendlyUnit</param>
+                                        </condition>
+                                        <condition id="-16" name="Pick random instance" sid="922515924868855" type="System">
+                                            <param id="0" name="Object">FriendlyUnit</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="9548789919433809" type="UnitTarget">
+                                            <param id="0" name="Instance variable">UnitID</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Unit.UID</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="1220730243561029" type="System">
+                                            <param id="0" name="Variable">ActiveEnemy</param>
+                                            <param id="1" name="Value">9999</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="4134346922479612" type="UnitTarget">
+                                            <param id="0" name="Width">FriendlyUnit.Width</param>
+                                            <param id="1" name="Height">FriendlyUnit.Height</param>
+                                        </action>
+                                        <action id="-4" name="Set position to another object" sid="581324985643285" type="UnitTarget">
+                                            <param id="0" name="Object">FriendlyUnit</param>
+                                            <param id="1" name="Image point (optional)">2</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="6379961607781671" type="UnitTarget">
+                                            <param id="0" name="Angle">FriendlyUnit.Angle</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="6248042046088103" type="Function">
+                                            <param id="0" name="Name">&quot;PositionAllSoldiers&quot;</param>
+                                            <param id="1" name="Parameter {n}">UnitTarget.UID</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="8450914181360545" type="Unit">
+                                            <param id="0" name="Instance variable">UnitStatus</param>
+                                            <param id="1" name="Value">&quot;preparesArranging&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5837482208759566">
+                    <conditions>
+                        <condition id="-16" name="Pick random instance" sid="1391477691415209" type="System">
+                            <param id="0" name="Object">EnemyUnit</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="4591543931417834" type="Unit">
+                            <param id="0" name="Unique ID">EnemyUnit.UID</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="7170930146050414" type="Unit">
+                            <param id="0" name="Object">FriendlyUnit</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="104769758004639" type="Unit">
+                            <param id="0" name="Instance variable">UnitStatus</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;passive&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="9102389206884102" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="5792412969455125">
+                            <conditions>
+                                <condition id="-16" name="Pick random instance" sid="3636452709465492" type="System">
+                                    <param id="0" name="Object">FriendlyUnit</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="5184208022807908" type="UnitTarget">
+                                    <param id="0" name="Instance variable">UnitID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Unit.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="8171363393582233" type="System">
+                                    <param id="0" name="Variable">ActiveEnemy</param>
+                                    <param id="1" name="Value">9999</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="8897559425633067" type="UnitTarget">
+                                    <param id="0" name="Width">FriendlyUnit.Width</param>
+                                    <param id="1" name="Height">FriendlyUnit.Height</param>
+                                </action>
+                                <action id="-4" name="Set position to another object" sid="9477886534016098" type="UnitTarget">
+                                    <param id="0" name="Object">FriendlyUnit</param>
+                                    <param id="1" name="Image point (optional)">2</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="6664770865960234" type="UnitTarget">
+                                    <param id="0" name="Angle">FriendlyUnit.Angle</param>
+                                </action>
+                                <action id="0" name="Call function" sid="7115139237538047" type="Function">
+                                    <param id="0" name="Name">&quot;PositionAllSoldiers&quot;</param>
+                                    <param id="1" name="Parameter {n}">UnitTarget.UID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="4569644294777747" type="Unit">
+                                    <param id="0" name="Instance variable">UnitStatus</param>
+                                    <param id="1" name="Value">&quot;preparesArranging&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

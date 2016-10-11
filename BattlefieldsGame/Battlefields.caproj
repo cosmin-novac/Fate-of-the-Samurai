@@ -1,0 +1,941 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Battlefields</name>
+    <description></description>
+    <version>0.9</version>
+    <author>Cos</author>
+    <author-email>fundation2000@gmail.com</author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>3k8y8jenijj4j</unique-id>
+    <saved-with-version>20600</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1920</width>
+        <height>1080</height>
+    </window-size>
+    <pixel-rounding>1</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>BattlefieldLayout</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Scale outer</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Physics engine">CocoonJS native</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use iOS retina display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="Battlefield">
+            <object-folder name="Unit">
+                <object-type name="BboxUnit" sid="7396939215217474">
+                    <plugin id="NinePatch" />
+                    <instance-variables>
+                        <instance-variable name="UnitID" sid="8659565984161136" type="number" />
+                    </instance-variables>
+                    <texture />
+                </object-type>
+                <object-type name="EnemyArchers" sid="7950018344746855">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8672063836758361" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <image-point name="LeftEck" x="0" y="0" />
+                                <image-point name="RightEck" x="1" y="0" />
+                                <image-point name="Center" x="0.5" y="0.5" />
+                                <collision-poly>
+                                    <point x="0" y="0.2" />
+                                    <point x="1" y="0.2" />
+                                    <point x="1" y="0.8" />
+                                    <point x="0" y="0.8" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="EnemyCavalry" sid="35456128029557">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7789125505702185" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <image-point name="LeftEck" x="-0.004" y="-0.004" />
+                                <image-point name="RightEck" x="1.004" y="-0.004" />
+                                <image-point name="Center" x="0.5" y="0.5" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="EnemySpearmen" sid="1461372046171537">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="892248973469371" speed="5">
+                            <frame duration="1" hotspotX="-0.004" hotspotY="0">
+                                <image-point name="LeftEck" x="-0.004" y="-0.004" />
+                                <image-point name="RightEck" x="1.004" y="-0.004" />
+                                <image-point name="Center" x="0.5" y="0.5" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="EnemySwordsmen" sid="2465281520707567">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2352689888594925" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <image-point name="LeftEck" x="-0.004" y="-0.004" />
+                                <image-point name="RightEck" x="1.004" y="-0.004" />
+                                <image-point name="Center" x="0.5" y="0.5" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="FriendlyArchers" sid="9394544958875423">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>FriendlyArchers</type>
+                        <type>ArcherTarget</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3336945548956827" speed="5">
+                            <frame duration="1" hotspotX="-0.004" hotspotY="0">
+                                <image-point name="LeftEck" x="-0.004" y="0" />
+                                <image-point name="RightEck" x="1" y="-0.004" />
+                                <image-point name="Center" x="0.5" y="0.5" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="FriendlyCavalry" sid="6485599423633598">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5630874230338309" speed="5">
+                            <frame duration="1" hotspotX="-0.004" hotspotY="0">
+                                <image-point name="LeftEck" x="-0.004" y="-0.004" />
+                                <image-point name="RightEck" x="1.004" y="-0.004" />
+                                <image-point name="Center" x="0.5" y="0.5" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="FriendlySpearmen" sid="5397991904362299">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7025793879924043" speed="5">
+                            <frame duration="1" hotspotX="-0.004" hotspotY="0">
+                                <image-point name="LeftEck" x="-0.004" y="-0.004" />
+                                <image-point name="RightEck" x="1.004" y="-0.004" />
+                                <image-point name="Center" x="0.5" y="0.5" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="UnitTarget" sid="67325862549941">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="UnitID" sid="3127391333240409" type="number" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1280505529345285" speed="5">
+                            <frame duration="1" hotspotX="1.004" hotspotY="-0.004">
+                                <image-point name="Center" x="0.5" y="0.5" />
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="EnemySpawnPosition" sid="4180325646751895">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8664377254589368" speed="5">
+                            <frame duration="1" hotspotX="0.483871" hotspotY="0.483871" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="FriendlySwordsmen" sid="1230603045821901">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9871345680262267" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0">
+                                <image-point name="LeftEck" x="-0.004" y="0" />
+                                <image-point name="RightEck" x="1" y="-0.008" />
+                                <image-point name="Center" x="0.5" y="0.5" />
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="FriendlySpawnPosition" sid="9824576450393678">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3271625851068066" speed="5">
+                            <frame duration="1" hotspotX="0.483871" hotspotY="0.483871" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Soldiers">
+                <object-type name="ArcherTarget" sid="1631483944457743">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>FriendlyArchers</type>
+                        <type>ArcherTarget</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1890878252164911" speed="5">
+                            <frame duration="1" hotspotX="1.08696" hotspotY="1.06838" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Arrow" sid="2461759099687519">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Bullet" sid="5651079066057426">
+                            <behavior id="Bullet" />
+                        </behavior-type>
+                        <behavior-type name="DestroyOutsideLayout" sid="8720349584042622">
+                            <behavior id="destroy" />
+                        </behavior-type>
+                        <behavior-type name="Pin" sid="4305482453146555">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9071226231763162" speed="5">
+                            <frame duration="1" hotspotX="0.980769" hotspotY="0.117647">
+                                <collision-poly>
+                                    <point x="0.972528" y="0.10478" />
+                                    <point x="1" y="0.117647" />
+                                    <point x="1" y="0.516544" />
+                                    <point x="0.972528" y="0.529412" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="1.12821" hotspotY="0.388889">
+                                <collision-poly>
+                                    <point x="1" y="0.360533" />
+                                    <point x="1" y="0.37037" />
+                                    <point x="1" y="0.675347" />
+                                    <point x="1" y="0.685185" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="DeadSoldier" sid="83366529044521">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6493588923970871" speed="5">
+                            <frame duration="1" hotspotX="0.377778" hotspotY="0.522293" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="EnemyArcherInfantry" sid="4719529917676534">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5319106210828633" speed="5">
+                            <frame duration="1" hotspotX="0.493333" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.364583" y="0.072194" />
+                                    <point x="0.684583" y="0.132194" />
+                                    <point x="0.684583" y="0.945307" />
+                                    <point x="0.377917" y="0.945307" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.512195" hotspotY="0.552288" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_bow_idle.png">
+                                <collision-poly>
+                                    <point x="0.829268" y="0.183007" />
+                                    <point x="0.658537" y="0.5" />
+                                    <point x="0.652439" y="0.627451" />
+                                    <point x="0.5" y="0.96732" />
+                                    <point x="0.320122" y="0.656863" />
+                                    <point x="0.298781" y="0.5" />
+                                    <point x="0.128049" y="0.137255" />
+                                    <point x="0.5" y="0.0228758" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.367273" hotspotY="0.429003" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_attack_bow.png">
+                                <collision-poly>
+                                    <point x="0.818182" y="0.151057" />
+                                    <point x="0.981818" y="0.498489" />
+                                    <point x="0.843636" y="0.870091" />
+                                    <point x="0.501818" y="0.685801" />
+                                    <point x="0.436364" y="0.637462" />
+                                    <point x="0.112727" y="0.498489" />
+                                    <point x="0.207273" y="0.172205" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.376344" hotspotY="0.512563" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_attack_bow2.png">
+                                <collision-poly>
+                                    <point x="0.792115" y="0.291457" />
+                                    <point x="0.960573" y="0.497487" />
+                                    <point x="0.784946" y="0.698492" />
+                                    <point x="0.501792" y="0.698492" />
+                                    <point x="0.0286738" y="0.959799" />
+                                    <point x="0.0896057" y="0.497487" />
+                                    <point x="0.16129" y="0.226131" />
+                                    <point x="0.501792" y="0.080402" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="EnemyMeleeCavalry" sid="8797429604551861">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="614214355191658" speed="5">
+                            <frame duration="1" hotspotX="0.36" hotspotY="0.516667">
+                                <collision-poly>
+                                    <point x="0.787806" y="0.347917" />
+                                    <point x="0.787806" y="0.597917" />
+                                    <point x="0.084693" y="0.747917" />
+                                    <point x="0.114693" y="0.264583" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.501272" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="EnemySpearInfantry" sid="6365574921006993">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6152414337203488" speed="5">
+                            <frame duration="1" hotspotX="0.228571" hotspotY="0.488889">
+                                <collision-poly>
+                                    <point x="0.277806" y="0.0979167" />
+                                    <point x="0.249234" y="0.909028" />
+                                    <point x="0.113264" y="0.886806" />
+                                    <point x="0.12755" y="0.0979167" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.35369" hotspotY="0.562092" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_spear_idle.png">
+                                <collision-poly>
+                                    <point x="0.959288" y="0.0522876" />
+                                    <point x="0.480916" y="0.5" />
+                                    <point x="0.330789" y="0.140523" />
+                                    <point x="0.501272" y="0.0849673" />
+                                    <point x="0.203562" y="0.738562" />
+                                    <point x="0.180662" y="0.5" />
+                                    <point x="0.0407125" y="0.0522876" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.440204" hotspotY="0.502907" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_prepare_spear.png">
+                                <collision-poly>
+                                    <point x="0.959288" y="0.0465116" />
+                                    <point x="0.582697" y="0.5" />
+                                    <point x="0.582697" y="0.523256" />
+                                    <point x="0.501272" y="0.686047" />
+                                    <point x="0.315522" y="0.639535" />
+                                    <point x="0.277354" y="0.5" />
+                                    <point x="0.0407125" y="0.0465116" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.175127" hotspotY="0.469649" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_attack_spear2.png">
+                                <collision-poly>
+                                    <point x="0.761421" y="0.300319" />
+                                    <point x="0.309645" y="0.498403" />
+                                    <point x="0.373096" y="0.210863" />
+                                    <point x="0.5" y="0.214058" />
+                                    <point x="0.0329949" y="0.958466" />
+                                    <point x="0.0101523" y="0.498403" />
+                                    <point x="0.0989848" y="0.124601" />
+                                    <point x="0.5" y="0.182109" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="EnemySwordInfantry" sid="1321546200681239">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4981804081862725" speed="5">
+                            <frame duration="1" hotspotX="0.36" hotspotY="0.46">
+                                <collision-poly>
+                                    <point x="0.17869" y="0.124998" />
+                                    <point x="0.575998" y="0.124998" />
+                                    <point x="0.515998" y="0.849408" />
+                                    <point x="0.15869" y="0.849408" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.243728" hotspotY="0.545752" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_sword_idle.png">
+                                <collision-poly>
+                                    <point x="0.928315" y="0.0653595" />
+                                    <point x="0.451613" y="0.5" />
+                                    <point x="0.451613" y="0.5" />
+                                    <point x="0.501792" y="0.0882353" />
+                                    <point x="0.0860215" y="0.921569" />
+                                    <point x="0.0286738" y="0.5" />
+                                    <point x="0.0501792" y="0.0457516" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.455128" hotspotY="0.679525" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_sword_prepare.png">
+                                <collision-poly>
+                                    <point x="0.564103" y="0.20178" />
+                                    <point x="0.942308" y="0.498516" />
+                                    <point x="0.833333" y="0.922849" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.224359" y="0.896142" />
+                                    <point x="0.160256" y="0.498516" />
+                                    <point x="0" y="0" />
+                                    <point x="0.5" y="0.175074" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.177835" hotspotY="0.497717" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_attack_sword2.png">
+                                <image-point name="Attack" x="0.912371" y="0.515982" />
+                                <collision-poly>
+                                    <point x="0.914948" y="0.497717" />
+                                    <point x="0.68299" y="0.438356" />
+                                    <point x="0.5" y="0.360731" />
+                                    <point x="0.0489691" y="0.913242" />
+                                    <point x="0" y="0.497717" />
+                                    <point x="0.0592784" y="0.105023" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="FriendlyArcherInfantry" sid="4028927157358535">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2028632694955443" speed="5">
+                            <frame duration="1" hotspotX="0.506667" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.316766" y="0.1" />
+                                    <point x="0.723234" y="0.106667" />
+                                    <point x="0.723234" y="0.848128" />
+                                    <point x="0.330099" y="0.84" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.506667" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.316766" y="0.1" />
+                                    <point x="0.723234" y="0.106667" />
+                                    <point x="0.723234" y="0.848128" />
+                                    <point x="0.330099" y="0.84" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="FriendlyMeleeCavalry" sid="7921841376292096">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7676570611834153" speed="5">
+                            <frame duration="1" hotspotX="0.35" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.152813" y="0.801042" />
+                                    <point x="0.169271" y="0.154427" />
+                                    <point x="0.841146" y="0.156771" />
+                                    <point x="0.848958" y="0.8" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.35" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.152813" y="0.801042" />
+                                    <point x="0.169271" y="0.154427" />
+                                    <point x="0.841146" y="0.156771" />
+                                    <point x="0.848958" y="0.8" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="FriendlySpearInfantry" sid="4725101167570076">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3020795984829568" speed="5">
+                            <frame duration="1" hotspotX="0.214286" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.111111" y="0.166667" />
+                                    <point x="0.320331" y="0.165104" />
+                                    <point x="0.322321" y="0.842708" />
+                                    <point x="0.111111" y="0.833333" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.214286" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.111111" y="0.166667" />
+                                    <point x="0.320331" y="0.165104" />
+                                    <point x="0.322321" y="0.842708" />
+                                    <point x="0.111111" y="0.833333" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="FriendlySwordInfantry" sid="2650452837426831">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2307601434846615" speed="5">
+                            <frame duration="1" hotspotX="0.4" hotspotY="0.44">
+                                <collision-poly>
+                                    <point x="0.166667" y="0.166667" />
+                                    <point x="0.52" y="0.141667" />
+                                    <point x="0.515625" y="0.842708" />
+                                    <point x="0.166667" y="0.833333" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.4" hotspotY="0.44">
+                                <collision-poly>
+                                    <point x="0.166667" y="0.166667" />
+                                    <point x="0.52" y="0.141667" />
+                                    <point x="0.515625" y="0.842708" />
+                                    <point x="0.166667" y="0.833333" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="General" sid="7615412745686918">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7561466844939795" speed="5">
+                            <frame duration="1" hotspotX="0.454545" hotspotY="0.518182">
+                                <collision-poly>
+                                    <point x="0.807977" y="0.18" />
+                                    <point x="0.935992" y="0.5" />
+                                    <point x="0.807977" y="0.82" />
+                                    <point x="0.487941" y="0.96" />
+                                    <point x="0.146567" y="0.82" />
+                                    <point x="0" y="0.5" />
+                                    <point x="0.146567" y="0.18" />
+                                    <point x="0.487941" y="0.06" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="SoldierCoordinates" sid="6969667652609426">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="UnitID" sid="4084226921218395" type="number" />
+                        <instance-variable name="SoldierNumber" sid="5315651858955102" type="number" />
+                        <instance-variable name="TargetX" sid="3515284299389345" type="number" />
+                        <instance-variable name="TargetY" sid="4362294719007932" type="number" />
+                        <instance-variable name="isActive" sid="5763156502656267" type="boolean" />
+                        <instance-variable comment="For the repositioning of the entire unit at its current location, before moving." name="CurrentX" sid="5539698405408114" type="number" />
+                        <instance-variable comment="For the repositioning of the entire unit at its current location, before moving." name="CurrentY" sid="6277322398034862" type="number" />
+                        <instance-variable name="SoldierID" sid="4266267316416243" type="number" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2669639526059584" speed="5">
+                            <frame duration="1" hotspotX="0.5625" hotspotY="0.5625">
+                                <image-point name="Imagepoint 1" x="1" y="0" />
+                                <image-point name="Imagepoint 2" x="1" y="0.5" />
+                                <collision-poly>
+                                    <point x="0.505181" y="0.484375" />
+                                    <point x="0.484454" y="0.527656" />
+                                    <point x="0.542968" y="0.531563" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HealthIndicator" sid="8243024091605109">
+                    <plugin id="Text" />
+                    <instance-variables>
+                        <instance-variable name="SoldierID" sid="4157393099581303" type="number" />
+                        <instance-variable name="UnitID" sid="5859454650508793" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="3724464598185593">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                </object-type>
+                <object-type name="Status" sid="7647640142532291">
+                    <plugin id="Text" />
+                    <instance-variables>
+                        <instance-variable name="SoldierID" sid="391386620403612" type="number" />
+                        <instance-variable name="UnitID" sid="2833418563835855" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="2706837020433661">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                </object-type>
+                <object-type name="Heads" sid="6294325773788695">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="bodyUID" sid="766847818038303" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="4062531805327858">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2693834088494233" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503497" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\head_armor_complex.png">
+                                <collision-poly>
+                                    <point x="0.836538" y="0.118881" />
+                                    <point x="0.942308" y="0.496504" />
+                                    <point x="0.836538" y="0.881119" />
+                                    <point x="0.5" y="0.916084" />
+                                    <point x="0.115385" y="0.916084" />
+                                    <point x="0.115385" y="0.0839161" />
+                                    <point x="0.5" y="0.0769231" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503937" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\head_armor_simple.png">
+                                <collision-poly>
+                                    <point x="0.755102" y="0.188976" />
+                                    <point x="1" y="0.496063" />
+                                    <point x="0.744898" y="0.80315" />
+                                    <point x="0.5" y="0.984252" />
+                                    <point x="0.0714286" y="0.944882" />
+                                    <point x="0.112245" y="0.496063" />
+                                    <point x="0.0714286" y="0.0551181" />
+                                    <point x="0.5" y="0.015748" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.495868" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\head_hair.png">
+                                <collision-poly>
+                                    <point x="0.892562" y="0.175676" />
+                                    <point x="1" y="0.5" />
+                                    <point x="0.900826" y="0.837838" />
+                                    <point x="0.504132" y="0.891892" />
+                                    <point x="0.198347" y="0.675676" />
+                                    <point x="0.0826446" y="0.5" />
+                                    <point x="0.206612" y="0.337838" />
+                                    <point x="0.504132" y="0.148649" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Legs" sid="9293188580384411">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="bodyUID" sid="8090198548257781" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="3040675725899614">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3559830227632632" speed="5">
+                            <frame duration="1" hotspotX="0.569536" hotspotY="0.495114" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\legs_standing.png">
+                                <collision-poly>
+                                    <point x="0.774834" y="0.110749" />
+                                    <point x="1" y="0.498371" />
+                                    <point x="0.748344" y="0.876221" />
+                                    <point x="0.503311" y="0.980456" />
+                                    <point x="0.13245" y="0.934853" />
+                                    <point x="0.18543" y="0.498371" />
+                                    <point x="0.145695" y="0.0716612" />
+                                    <point x="0.503311" y="0.00651466" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="2" loop="0" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="5582242998173497" speed="5">
+                            <frame duration="1" hotspotX="0.497717" hotspotY="0.501629" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\legs_walk1.png">
+                                <collision-poly>
+                                    <point x="0.739726" y="0.185668" />
+                                    <point x="0.840183" y="0.498371" />
+                                    <point x="0.730594" y="0.807818" />
+                                    <point x="0.502283" y="0.895765" />
+                                    <point x="0.13242" y="0.905537" />
+                                    <point x="0.0958904" y="0.498371" />
+                                    <point x="0.146119" y="0.104235" />
+                                    <point x="0.502283" y="0.0846906" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\legs_walk2.png">
+                                <collision-poly>
+                                    <point x="0.776786" y="0.181159" />
+                                    <point x="0.875" y="0.5" />
+                                    <point x="0.700893" y="0.757246" />
+                                    <point x="0.5" y="0.887681" />
+                                    <point x="0.160714" y="0.869565" />
+                                    <point x="0.0491071" y="0.5" />
+                                    <point x="0.120536" y="0.0978261" />
+                                    <point x="0.5" y="0.0978261" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Horse" sid="8806433749408005">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="bodyUID" sid="3062659122464054" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Pin" sid="6991349546633158">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8016400547765316" speed="5">
+                            <frame duration="1" hotspotX="0.326667" hotspotY="0.51">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="0.64" />
+                                    <point x="0" y="0.64" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="BG">
+                <object-type name="FieldBorder" sid="7855847525858512">
+                    <plugin id="TiledBg" />
+                    <texture />
+                </object-type>
+                <object-type name="Tilemap_BG_L1" sid="3484087343493292">
+                    <plugin id="Tilemap" />
+                    <texture original-source="C:\Users\Cosmin\Pictures\Samurai\Terrain\terrain_automap.png" />
+                    <tiles />
+                </object-type>
+                <object-type name="Tilemap_TallGrass_L2" sid="1756981780656689">
+                    <plugin id="Tilemap" />
+                    <texture original-source="C:\Users\Cosmin\Pictures\Samurai\Terrain\LPC_Terrain_0/terrain.png" />
+                    <tiles />
+                </object-type>
+                <object-type name="Tilemap_Dekorum_L3" sid="818976225863378">
+                    <plugin id="Tilemap" />
+                    <texture original-source="C:\Users\Cosmin\Pictures\Samurai\Terrain\terrain_automap.png" />
+                    <tiles />
+                </object-type>
+            </object-folder>
+            <object-folder name="System">
+                <object-type name="Function" sid="6593115685413765">
+                    <plugin id="Function" />
+                </object-type>
+                <object-type name="Keyboard" sid="5473185520023242">
+                    <plugin id="Keyboard" />
+                </object-type>
+                <object-type name="Mouse" sid="5167317016940926">
+                    <plugin id="Mouse" />
+                </object-type>
+                <object-type name="Touch" sid="6053242761005231">
+                    <plugin id="Touch" />
+                </object-type>
+            </object-folder>
+        </object-folder>
+        <object-type name="Browser" sid="2236708123690694">
+            <plugin id="Browser" />
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="FriendlyUnit" plugin-id="Sprite" sid="1822195778625688">
+            <members>
+                <member>FriendlyArchers</member>
+                <member>FriendlyCavalry</member>
+                <member>FriendlySpearmen</member>
+                <member>FriendlySwordsmen</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="Unit" sid="9440233651064918" type="number" />
+                <instance-variable name="IsSelected" sid="2115283960646551" type="boolean" />
+                <instance-variable name="ArrangeFirst" sid="1327438470591508" type="boolean" />
+            </instance-variables>
+        </family>
+        <family name="EnemyUnit" plugin-id="Sprite" sid="8366810916859743">
+            <members>
+                <member>EnemyArchers</member>
+                <member>EnemyCavalry</member>
+                <member>EnemySpearmen</member>
+                <member>EnemySwordsmen</member>
+            </members>
+        </family>
+        <family name="Soldier" plugin-id="Sprite" sid="5069963134107713">
+            <members>
+                <member>EnemyArcherInfantry</member>
+                <member>EnemyMeleeCavalry</member>
+                <member>EnemySpearInfantry</member>
+                <member>EnemySwordInfantry</member>
+                <member>FriendlyArcherInfantry</member>
+                <member>FriendlyMeleeCavalry</member>
+                <member>FriendlySpearInfantry</member>
+                <member>FriendlySwordInfantry</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="UnitID" sid="5755822198088049" type="number" />
+                <instance-variable name="SoldierCoordinatesID" sid="9204312995991458" type="number" />
+                <instance-variable name="SoldierNumber" sid="4276695248574783" type="number" />
+                <instance-variable name="Health" sid="3343635263941965" type="number" />
+                <instance-variable name="State" sid="814881212554966" type="string" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid_Soldier" sid="70451252893292">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="Pathfinding_Soldier" sid="1253212465413625">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+                <behavior-type name="Physics_Soldier" sid="5585648633511521">
+                    <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Pin_Soldier" sid="9644770460612094">
+                    <behavior id="Pin" />
+                </behavior-type>
+                <behavior-type name="LineOfSight2" sid="6754544414509605">
+                    <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="2280779930492182">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="EnemySoldiers" plugin-id="Sprite" sid="1356265695409432">
+            <members>
+                <member>EnemyArcherInfantry</member>
+                <member>EnemyMeleeCavalry</member>
+                <member>EnemySpearInfantry</member>
+                <member>EnemySwordInfantry</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="UnitIDEnemy" sid="5992498872215382" type="number" />
+            </instance-variables>
+        </family>
+        <family name="FriendlySoldiers" plugin-id="Sprite" sid="4130803717384246">
+            <members>
+                <member>EnemyArcherInfantry</member>
+                <member>EnemyMeleeCavalry</member>
+                <member>EnemySpearInfantry</member>
+                <member>EnemySwordInfantry</member>
+                <member>FriendlyArcherInfantry</member>
+                <member>FriendlyMeleeCavalry</member>
+                <member>FriendlySpearInfantry</member>
+                <member>FriendlySwordInfantry</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="UnitIDFriendly" sid="1899945772766413" type="number" />
+            </instance-variables>
+        </family>
+        <family name="Unit" plugin-id="Sprite" sid="5270120241546937">
+            <members>
+                <member>EnemyArchers</member>
+                <member>EnemyCavalry</member>
+                <member>EnemySpearmen</member>
+                <member>EnemySwordsmen</member>
+                <member>FriendlyArchers</member>
+                <member>FriendlyCavalry</member>
+                <member>FriendlySpearmen</member>
+                <member>FriendlySwordsmen</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="ActualSoldierCount_Unit" sid="6990057929135334" type="number" />
+                <instance-variable name="MaxSoldierCount_Unit" sid="4041307392702219" type="number" />
+                <instance-variable comment="passive, arranging, moving, fighting, hasOrders" name="UnitStatus" sid="4289156313580406" type="string" />
+                <instance-variable comment="archers,cavalry,swordsmen,spearmen" name="UnitType" sid="965975048525312" type="string" />
+                <instance-variable comment="friendly, enemy" name="UnitSide" sid="3458136800324225" type="string" />
+                <instance-variable name="attack_vs_sword" sid="2606318433465467" type="number" />
+                <instance-variable name="attack_vs_arrow" sid="6358227455953238" type="number" />
+                <instance-variable name="attack_vs_cavalry" sid="4818417556932982" type="number" />
+                <instance-variable name="attack_vs_spear" sid="5569387191976089" type="number" />
+                <instance-variable name="defense_vs_sword" sid="7634238362749091" type="number" />
+                <instance-variable name="defense_vs_archer" sid="1926722218438493" type="number" />
+                <instance-variable name="defense_vs_cavalry" sid="8923340118760638" type="number" />
+                <instance-variable name="defense_vs_spear" sid="6590307123755529" type="number" />
+                <instance-variable comment="Gathered by killing enemy soldiers. Increases attack and defense." name="experience" sid="8888056504920014" type="number" />
+                <instance-variable name="Morale" sid="5973254251774372" type="number" />
+                <instance-variable name="Fatigue" sid="3330713632493456" type="number" />
+                <instance-variable name="minX" sid="1251958420265306" type="number" />
+                <instance-variable name="maxX" sid="9556231749883271" type="number" />
+                <instance-variable name="minY" sid="6257335468333137" type="number" />
+                <instance-variable name="maxY" sid="7141111287088948" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pathfinding_Unit" sid="7071651863607267">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="Archers" plugin-id="Sprite" sid="4018490747885365">
+            <members>
+                <member>EnemyArcherInfantry</member>
+                <member>FriendlyArcherInfantry</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="ShootAtX" sid="4647185701319197" type="number" />
+                <instance-variable name="ShootAtY" sid="7030618567989028" type="number" />
+                <instance-variable name="isShooting" sid="2770206678123237" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="LineOfSight" sid="6978542208366958">
+                    <behavior id="LOS" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="Cavalry" plugin-id="Sprite" sid="93499981055534">
+            <members>
+                <member>EnemyMeleeCavalry</member>
+                <member>FriendlyMeleeCavalry</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>BattlefieldLayout.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>BattlefieldEngine.xml</event-sheet>
+        <event-sheet>BattleScenario_1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="16" />
+        <global-instance type="Keyboard" uid="17" />
+        <global-instance type="Touch" uid="5">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Function" uid="12" />
+        <global-instance type="Browser" uid="45" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

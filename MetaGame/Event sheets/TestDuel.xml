@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>TestDuel</name>
+    <events>
+        <event-block sid="4399633710939102">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="4780019260072065" type="Keyboard">
+                    <param id="0" name="Key">13 (Return)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2836775599791897">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4229573202983961" type="System">
+                            <param id="0" name="First value">random(1,100)</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">70</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Push" sid="2807570222092922" type="EventsList">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;Win&quot;&amp;CurrentlyEngagedIn</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="6746710905477089" type="System">
+                            <param id="0" name="Layout">Decision</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7694834735164418">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="277735785709959" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Push" sid="1494358063296151" type="EventsList">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">&quot;Lose&quot;&amp;CurrentlyEngagedIn</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="9486362140724886" type="System">
+                            <param id="0" name="Layout">Decision</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

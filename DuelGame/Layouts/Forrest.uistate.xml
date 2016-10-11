@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the layout was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <camera>
+        <position-x>947.001</position-x>
+        <position-y>503.423</position-y>
+        <position-z>285.312</position-z>
+        <lookat-x>947.001</lookat-x>
+        <lookat-y>503.423</lookat-y>
+        <lookat-z>0</lookat-z>
+    </camera>
+    <snap-to-grid>0</snap-to-grid>
+    <show-grid>0</show-grid>
+    <snap-width>32</snap-width>
+    <snap-height>32</snap-height>
+    <show-collision-polys>0</show-collision-polys>
+    <translucent-inactive-layers>0</translucent-inactive-layers>
+    <properties>
+        <property expanded="1" name="Layout properties" />
+        <property expanded="1" name="Layout Size" />
+        <property expanded="1" name="Margins" />
+        <property expanded="1" name="Effects" />
+    </properties>
+    <active-layer name="HUD" />
+    <layers>
+        <layer locked="0" name="BG" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="MID2" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="MID" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="Level" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="HUD" parallax-in-editor="0" visible="1" />
+        <layer locked="0" name="Foreground" parallax-in-editor="0" visible="0" />
+    </layers>
+</c2uistate>

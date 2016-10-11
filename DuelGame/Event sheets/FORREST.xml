@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>FORREST</name>
+    <events>
+        <include>DUEL</include>
+        <event-block sid="4642165365552523">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="3429865667467054" type="System" />
+            </conditions>
+            <actions>
+                <action id="-23" name="Move at angle" sid="3087698202108639" type="leaf">
+                    <param id="0" name="Angle">90</param>
+                    <param id="1" name="Distance">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1683164124860975">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="1575394632809602" type="leaf" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4926303079911929" type="leaf" />
+            </actions>
+        </event-block>
+        <event-block sid="2716246126565266">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="2371519944175556" type="System">
+                    <param id="0" name="Interval (seconds)">random(4)+1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="6488996577113293" type="System">
+                    <param id="0" name="Object to create">leaf</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="X">random(500)+100</param>
+                    <param id="3" name="Y">random(40)+80</param>
+                </action>
+                <action behavior="Sine" id="2" name="Set magnitude" sid="2599301201870003" type="leaf">
+                    <param id="0" name="Magnitude">random(40)+40</param>
+                </action>
+                <action behavior="Sine" id="1" name="Set period" sid="5328847183161377" type="leaf">
+                    <param id="0" name="Period">random(3)+2</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

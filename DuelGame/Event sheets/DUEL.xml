@@ -1,0 +1,2111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>DUEL</name>
+    <events>
+        <include>ANIMATIONS</include>
+        <variable constant="0" name="EndGame" sid="1016586130174713" static="0" type="number">0</variable>
+        <variable constant="0" name="StartGame" sid="3928370673806527" static="0" type="number">0</variable>
+        <event-block sid="5490119896814675">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2296070598427189" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="6191898010094533" type="Stage_Select">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="7445483205651553" type="System">
+                    <param id="0" name="Layer">&quot;Select Screen&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="2661097749168461" type="System">
+                    <param id="0" name="Layer">&quot;HUD&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="1845417178116762" type="System">
+                    <param id="0" name="Layer">&quot;Level&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="2898711252861413" type="System">
+                    <param id="0" name="Variable">StartGame</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-10" name="Set value" sid="6337969909435329" type="P2">
+                    <param id="0" name="Instance variable">ACTION</param>
+                    <param id="1" name="Value">&quot;A&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="157817737144712">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="2607816383232434" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="5151045793368585" type="PL1">
+                    <param id="0" name="Object">P1</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="7802594245217925" type="PL2">
+                    <param id="0" name="Object">P2</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="0" name="Set text" sid="4668779331254956" type="Text_Status">
+                    <param id="0" name="Text">P1.State&amp;&quot; at &quot;&amp;round(P2.DISTANCE)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8691719556673597">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="490734093721267" type="System">
+                    <param id="0" name="Variable">StartGame</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="2276270950522536" type="System">
+                    <param id="0" name="Layer">&quot;Select Screen&quot;</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="7737079654842377" type="System">
+                    <param id="0" name="Layer">&quot;Level&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="4179324453604568" type="System">
+                    <param id="0" name="Layer">&quot;HUD&quot;</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="Dependent on the States" sid="6328738852328557" title="STATES P1">
+            <sub-events>
+                <comment>0 = Idle, 1 = Walk R, 2 = Walk L, 11= Prepare Attack Up, 12 = Attack, 13= AttackUp, 14=SwipeUp, 15=StrikeDown, 21=Defend Low, 22=Defend High</comment>
+                <variable constant="0" name="P1maxSpeed" sid="3429977308473387" static="0" type="number">130</variable>
+                <event-block sid="2303202098578412">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2992041032936254" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set playback speed ratio" sid="1911512063969319" type="PL1">
+                            <param id="0" name="Speed Ratio">0.5</param>
+                        </action>
+                        <action id="0" name="Set animation" sid="2060772417592972" type="PL1">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">250</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="4300672658183305" type="PL1">
+                            <param id="0" name="Loop animation?">1</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="1518138749456257" type="P1">
+                            <param id="0" name="Max Speed">P1maxSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="496760422695336">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1410319720387215" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="4242873112423983" type="P1">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="0" name="Set animation" sid="297725101240091" type="PL1">
+                            <param id="0" name="Animation">&quot;Walk_Forward&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">20</param>
+                        </action>
+                        <action id="1" name="Set playback speed ratio" sid="4135217876742407" type="PL1">
+                            <param id="0" name="Speed Ratio">abs(P1.Platform.VectorX/P1.Platform.MaxSpeed)-0.3</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="9078402805685542" type="P1">
+                            <param id="0" name="Max Speed">P1maxSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5680828682565447">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="547201438536837" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="5896754884186348" type="P1">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="0" name="Set animation" sid="9907633543201445" type="PL1">
+                            <param id="0" name="Animation">&quot;Run_Forward&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">20</param>
+                        </action>
+                        <action id="1" name="Set playback speed ratio" sid="3259008003186951" type="PL1">
+                            <param id="0" name="Speed Ratio">abs(P1.Platform.VectorX/P1.Platform.MaxSpeed)</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="6165857543908256" type="P1">
+                            <param id="0" name="Max Speed">P1maxSpeed*2.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1034174650507271">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9403452173822316" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="5063186162321786" type="P1">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="0" name="Set animation" sid="2238254499036825" type="PL1">
+                            <param id="0" name="Animation">&quot;Walk_Backward&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">20</param>
+                        </action>
+                        <action id="1" name="Set playback speed ratio" sid="1496245582972498" type="PL1">
+                            <param id="0" name="Speed Ratio">abs(P1.Platform.VectorX/P1.Platform.MaxSpeed)-0.3</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="3294390397573826" type="P1">
+                            <param id="0" name="Max Speed">P1maxSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6395818447765855">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2980284681895926" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">11</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set animation" sid="6307824546612813" type="PL1">
+                            <param id="0" name="Animation">&quot;PrepareAttackUp&quot;</param>
+                            <param id="1" name="Where to start playing this animation">4</param>
+                            <param id="2" name="Blend Duration">20</param>
+                        </action>
+                        <action id="1" name="Set playback speed ratio" sid="4164443740193226" type="PL1">
+                            <param id="0" name="Speed Ratio">1</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="9815120779878421" type="PL1">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3267410831673834">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="496383180226287" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">12</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set animation" sid="5808398057151337" type="PL1">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">20</param>
+                        </action>
+                        <action id="1" name="Set playback speed ratio" sid="2365372644979505" type="PL1">
+                            <param id="0" name="Speed Ratio">1</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="6401980872269577" type="PL1">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3876304493799394">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4695988970440575" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">13</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set playback speed ratio" sid="8874675950050945" type="PL1">
+                            <param id="0" name="Speed Ratio">1.5</param>
+                        </action>
+                        <action id="0" name="Set animation" sid="2415211284315118" type="PL1">
+                            <param id="0" name="Animation">&quot;AttackUp&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">20</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="8860611323265619" type="PL1">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3414911200600277">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3604163499242242" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">22</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set animation" sid="3389705889676362" type="PL1">
+                            <param id="0" name="Animation">&quot;DefendUp&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">50</param>
+                        </action>
+                        <action id="-23" name="Move at angle" sid="7191726709037452" type="P1">
+                            <param id="0" name="Angle">180</param>
+                            <param id="1" name="Distance">1</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="7014884588219335" type="PL1">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9990270640923457">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="537410949790459" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">21</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set animation" sid="2269704582472618" type="PL1">
+                            <param id="0" name="Animation">&quot;DefendDown&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">50</param>
+                        </action>
+                        <action id="-23" name="Move at angle" sid="3080615630074434" type="P1">
+                            <param id="0" name="Angle">180</param>
+                            <param id="1" name="Distance">1</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="7064796812721627" type="PL1">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Get Hit Up</comment>
+                <event-block sid="2741010825779156">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6504157157422842" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="2667533058038856" type="System">
+                            <param id="0" name="Time scale">0.5</param>
+                        </action>
+                        <action id="0" name="Set animation" sid="2755734937729857" type="PL1">
+                            <param id="0" name="Animation">&quot;GetHitUp&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">100</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="4701244365584401" type="P1">
+                            <param id="0" name="Vector X">-600</param>
+                        </action>
+                        <action id="1" name="Set playback speed ratio" sid="2010645598328718" type="PL1">
+                            <param id="0" name="Speed Ratio">1</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="3939266984837011" type="PL1">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Defines which key combinations set the player states." sid="4380436284914255" title="TRIGGERS P1">
+            <sub-events>
+                <comment>0 = Idle, 1 = Walk R, 2 = Walk L, 11= Prepare Attack Up, 12 = Attack, 13= AttackUp, 14=SwipeUp, 15=StrikeDown, 21=Defend Low, 22=Defend High,100 = Run R, 200 = Run L</comment>
+                <event-block sid="5394928312377217">
+                    <conditions>
+                        <condition id="1" name="On any finished" sid="1590292312069558" type="PL1" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1020770174066427">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6545788532153606" type="System">
+                                    <param id="0" name="First value">P1.Platform.VectorX</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="8074256448789632">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2897741796864218" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">15</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="9850875347721526" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">14</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="7150225789024453" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">13</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="6257770156019087" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">21</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="9930702762622065" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">22</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="4175332164061488" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">12</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="4021454289129672" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">30</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="2537055842367699" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">100</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="3022304469825969" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">200</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="6363961701181821" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="6863320965609734">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6454380896831273" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">30</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="4460428495074974" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="1876852805906356" type="P1">
+                                    <param id="0" name="Vector X">0</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="2970679951499787" type="System">
+                                    <param id="0" name="Time scale">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2380876689304783">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="7616598281423589" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="5305622131652454">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4664202833843151" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="4628227370956115" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">22</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="2400820876154196">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="356520614600841" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="269963047252838" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">11</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1218715400124001">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="5225669435225923" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                        <condition id="5" name="Is Paused" sid="5322007529733575" type="PL1" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7439167571554707">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3099093273485892" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">11</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="4471252552975279" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">13</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6338341147655865">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6983435747268811" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">14</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="9930691479714742" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6969518861091046">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5533494747180252" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">22</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="1340927199367913" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7749333393338703">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="5702446608930068" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="8432745310251434">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2382371004919793" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="9932473215661812" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">12</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="8396149370288711">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="482618856222918" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="3195497802341374" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">21</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4300345548938462">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="637469391492793" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                        <condition id="5" name="Is Paused" sid="4181199653005182" type="PL1" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="6531960852733456">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9813917932704142" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">15</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="3515635235532853" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" sid="3934082362796138">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="8037526826658394" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">21</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="7657629124923408" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3548630743836032">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="3947347867939483" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2856089030640686">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7026537744103476" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="8518839319151782" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7461941322098145">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="8754581048975686" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">11</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="3638513512780375" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4881470355335119">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="8886465316891474" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2935691174095464">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9155691694150191" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="4252610921138721" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <variable constant="0" name="doubleTap" sid="4718686417660768" static="0" type="number">0</variable>
+                <event-block sid="4564692358027277">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="3909123712055285" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="1279642757100811" type="System">
+                            <param id="0" name="First value">doubleTap</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1395646749745399" type="System">
+                            <param id="0" name="Variable">doubleTap</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3633045168453161">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6966848115324385" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="6739486071520655" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2115476685511843">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="1635841576707258" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">11</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="8852225275883064" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">13</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1026919183412314">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="4576179555622722" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="1757660652511137" type="System">
+                            <param id="0" name="Variable">doubleTap</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7950319166151983">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="5902122035691658" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="5051455183513262" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="8947206173464673" type="System">
+                            <param id="0" name="First value">doubleTap</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="7713355201858137">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="683580985359022" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="1690989412385329" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="6947209448404804" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8506974500899873" type="System">
+                                    <param id="0" name="Variable">doubleTap</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2923546225394597">
+                    <conditions>
+                        <condition id="3" name="On key released" sid="5422273068739705" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="4914022260069019">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3979710480383051" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="7626709029036483" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="5486102549906295" type="P1">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5143896098561796">
+                            <conditions>
+                                <condition id="5" name="Is Paused" sid="2676107903070391" type="PL1" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3292816403730795">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5276566674485975" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">15</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="301632728504756" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Value">12</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5566593934267058">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="873032006587455" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">13</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="2075734115957174" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4834509104525249">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="8695259522032438" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">11</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="6704858248728123" type="P1">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Value">13</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7361343897578745">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="7932136795380681" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="7215439230349813" type="System">
+                            <param id="0" name="Time scale">1.0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Dependent on the States" sid="3424197507089895" title="STATES P2">
+            <sub-events>
+                <comment>0 = Idle, 1 = Walk R, 2 = Walk L, 11= Prepare Attack Up, 12 = Attack, 13= AttackUp, 14=SwipeUp, 15=StrikeDown, 21=Defend Low, 22=Defend High</comment>
+                <event-block sid="2303202098578412">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2992041032936254" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set playback speed ratio" sid="1911512063969319" type="PL2">
+                            <param id="0" name="Speed Ratio">0.5</param>
+                        </action>
+                        <action id="0" name="Set animation" sid="2060772417592972" type="PL2">
+                            <param id="0" name="Animation">&quot;Idle&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">250</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="4300672658183305" type="PL2">
+                            <param id="0" name="Loop animation?">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="496760422695336">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1410319720387215" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="5063186162321786" type="P2">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="0" name="Set animation" sid="297725101240091" type="PL2">
+                            <param id="0" name="Animation">&quot;Walk_Forward&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">20</param>
+                        </action>
+                        <action id="1" name="Set playback speed ratio" sid="4135217876742407" type="PL2">
+                            <param id="0" name="Speed Ratio">abs(P2.Platform.VectorX/P2.Platform.MaxSpeed)-0.3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1034174650507271">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9403452173822316" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="4242873112423983" type="P2">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="0" name="Set animation" sid="2238254499036825" type="PL2">
+                            <param id="0" name="Animation">&quot;Walk_Forward&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">20</param>
+                        </action>
+                        <action id="1" name="Set playback speed ratio" sid="1496245582972498" type="PL2">
+                            <param id="0" name="Speed Ratio">abs(P2.Platform.VectorX/P2.Platform.MaxSpeed)-0.3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6395818447765855">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2980284681895926" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">11</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set animation" sid="6307824546612813" type="PL2">
+                            <param id="0" name="Animation">&quot;PrepareAttackUp&quot;</param>
+                            <param id="1" name="Where to start playing this animation">4</param>
+                            <param id="2" name="Blend Duration">50</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="9815120779878421" type="PL2">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3267410831673834">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="496383180226287" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">12</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set animation" sid="5808398057151337" type="PL2">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">20</param>
+                        </action>
+                        <action id="1" name="Set playback speed ratio" sid="2365372644979505" type="PL2">
+                            <param id="0" name="Speed Ratio">1</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="6401980872269577" type="PL2">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3876304493799394">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4695988970440575" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">13</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set animation" sid="2415211284315118" type="PL2">
+                            <param id="0" name="Animation">&quot;AttackUp&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">20</param>
+                        </action>
+                        <action id="1" name="Set playback speed ratio" sid="8874675950050945" type="PL2">
+                            <param id="0" name="Speed Ratio">1.5</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="8860611323265619" type="PL2">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3414911200600277">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3604163499242242" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">21</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set animation" sid="3389705889676362" type="PL2">
+                            <param id="0" name="Animation">&quot;DefendDown&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">50</param>
+                        </action>
+                        <action id="-23" name="Move at angle" sid="4677018796904189" type="P2">
+                            <param id="0" name="Angle">0</param>
+                            <param id="1" name="Distance">1</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="7014884588219335" type="PL2">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6520334055211057">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6361462962814072" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">22</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set animation" sid="1417572155904044" type="PL2">
+                            <param id="0" name="Animation">&quot;DefendUp&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">50</param>
+                        </action>
+                        <action id="-23" name="Move at angle" sid="8181835063529383" type="P2">
+                            <param id="0" name="Angle">0</param>
+                            <param id="1" name="Distance">1</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="4848066754037358" type="PL2">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Get Hit Up</comment>
+                <event-block sid="838027271193339">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4832568209021596" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-13" name="Set time scale" sid="2482703045591665" type="System">
+                            <param id="0" name="Time scale">0.5</param>
+                        </action>
+                        <action id="0" name="Set animation" sid="3813517619913961" type="PL2">
+                            <param id="0" name="Animation">&quot;GetHitUp&quot;</param>
+                            <param id="1" name="Where to start playing this animation">3</param>
+                            <param id="2" name="Blend Duration">100</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="7257852360292816" type="P2">
+                            <param id="0" name="Vector X">800</param>
+                        </action>
+                        <action id="1" name="Set playback speed ratio" sid="8232940195804565" type="PL2">
+                            <param id="0" name="Speed Ratio">0.5</param>
+                        </action>
+                        <action id="3" name="Set animation looping" sid="2210948669955961" type="PL2">
+                            <param id="0" name="Loop animation?">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <variable constant="1" name="SHORT_DISTANCE" sid="2160414131378803" static="0" type="number">100</variable>
+        <variable constant="1" name="MEDIUM_DISTANCE" sid="7929225331346956" static="0" type="number">170</variable>
+        <variable constant="1" name="LONG_DISTANCE" sid="4550513551520187" static="0" type="number">240</variable>
+        <event-group description="Defines which key combinations set the player states." sid="720799353064618" title="TRIGGERS P2">
+            <sub-events>
+                <event-block sid="1471334562829041">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="7467199460385665" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="4562191569202132" type="P2">
+                            <param id="0" name="Instance variable">Fatigue</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2481465164704193" type="P2">
+                            <param id="0" name="Instance variable">AggressivityCoefficient</param>
+                            <param id="1" name="Value">P2.COURAGE / (P2.Health+P2.Fatigue)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block disabled="1" sid="8288900336662227">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7287861423861692" type="P2">
+                                    <param id="0" name="Instance variable">AggressivityCoefficient</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="8819187813591326" type="P2">
+                                    <param id="0" name="Instance variable">ACTION</param>
+                                    <param id="1" name="Value">&quot;A&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="5955817953733789">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="481925946415729" type="P2">
+                                    <param id="0" name="Instance variable">AggressivityCoefficient</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="4877171553935113" type="P2">
+                                    <param id="0" name="Instance variable">ACTION</param>
+                                    <param id="1" name="Value">&quot;D&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8436215771223941">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="2535037547249337" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="8774074004039595" type="P2">
+                            <param id="0" name="Instance variable">DISTANCE</param>
+                            <param id="1" name="Value">abs(P2.X - P1.X)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5394928312377217">
+                    <conditions>
+                        <condition id="1" name="On any finished" sid="1590292312069558" type="PL2" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1020770174066427">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6545788532153606" type="System">
+                                    <param id="0" name="First value">P2.Platform.VectorX</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="8074256448789632">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2897741796864218" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">15</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="9850875347721526" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">14</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="7150225789024453" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">13</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="6257770156019087" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">21</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="9930702762622065" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">22</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="6363961701181821" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="8930187236409778">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5347130321612331" type="P2">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">30</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="2433900557922646" type="P2">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="2646819195645106" type="P2">
+                                    <param id="0" name="Vector X">0</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="5159096827770045" type="System">
+                                    <param id="0" name="Time scale">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="5284411486433575" type="P2">
+                                    <param id="0" name="Instance variable">ACTION</param>
+                                    <param id="1" name="Value">&quot;D&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>0 = Idle, 1 = Walk R, 2 = Walk L, 11= Prepare Attack Up, 12 = Attack, 13= AttackUp, 14=SwipeUp, 15=StrikeDown, 21=Defend Low, 22=Defend High</comment>
+                <comment>Setting State to 14 is missing</comment>
+                <event-block sid="9938277151821147">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="1006666980086978" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4564692358027277">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3909123712055285" type="P2">
+                                    <param id="0" name="Instance variable">ACTION</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;A&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="956291816725942">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="528835791028836" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="2706661765344919" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">21</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="329526587373342" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">22</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="9912551890336672" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1933467768004152">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="7437567237618164" type="P2">
+                                            <param id="0" name="Instance variable">DISTANCE</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">MEDIUM_DISTANCE</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="3468200318885322">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="9375446951874812" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">14</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="6643851223583286" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">13</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="6202617552573036" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block any="1" sid="5915380009136458">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="9212884570616697" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">11</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="5487972443501145" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="5363622044341357" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="713954939966077">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="4373478903331351" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="2843983414584611" type="P2">
+                                            <param id="0" name="Instance variable">DISTANCE</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">SHORT_DISTANCE</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="3614231544779323" type="P2">
+                                            <param id="0" name="Instance variable">DISTANCE</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">MEDIUM_DISTANCE</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="9212156954101464">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="9792319669717784" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">15</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="26093236073706" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="7324843798553598">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="9672609849925815" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="2733658046729555" type="P2">
+                                            <param id="0" name="Instance variable">DISTANCE</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">SHORT_DISTANCE</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="6661610728466699">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="9691782043093921" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">12</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="1198199060132319" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Value">15</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block any="1" sid="2298411244278568">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="9229799006230532" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="2309206857730656">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="242411265679239" type="System">
+                                                            <param id="0" name="First value">random(100)</param>
+                                                            <param id="1" name="Comparison">3</param>
+                                                            <param id="2" name="Second value">50</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="390253195091873" type="P2">
+                                                            <param id="0" name="Instance variable">State</param>
+                                                            <param id="1" name="Value">12</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="1312763826575683" type="System">
+                                                            <param id="0" name="Seconds">1.0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="8181295303183353" type="P2">
+                                                            <param id="0" name="Instance variable">State</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="4852684213745118" type="P2">
+                                                            <param id="0" name="Instance variable">ACTION</param>
+                                                            <param id="1" name="Value">&quot;D&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="5497552604947548">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="2727304960010895" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="255246939966612" type="P2">
+                                                            <param id="0" name="Instance variable">State</param>
+                                                            <param id="1" name="Value">11</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="1299897608677368" type="System">
+                                                            <param id="0" name="Seconds">1</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="2975682612349187" type="P2">
+                                                            <param id="0" name="Instance variable">State</param>
+                                                            <param id="1" name="Value">13</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="3232622829618797" type="System">
+                                                            <param id="0" name="Seconds">1</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="4590136992284704" type="P2">
+                                                            <param id="0" name="Instance variable">State</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="3153786077961956" type="P2">
+                                                            <param id="0" name="Instance variable">ACTION</param>
+                                                            <param id="1" name="Value">&quot;D&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="4279218480307652">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="6110784949880183" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <comment>Retreat after an attack</comment>
+                                        <event-block any="1" sid="8254251506517719">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="9420990293789976" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">11</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="444768717820447" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">13</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="7452847790616844" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">14</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="8967626107497492" type="P2">
+                                                    <param id="0" name="Instance variable">State</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">15</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="3509437301506004" type="P2">
+                                                    <param id="0" name="Instance variable">ACTION</param>
+                                                    <param id="1" name="Value">&quot;D&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="9453022286418447">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5582937331399732" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="8744611769285849" type="P2">
+                                    <param id="0" name="Instance variable">ACTION</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;D&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="7255557606122273">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="6397029904964065" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="2106273741582589" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">11</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="3985193102278209" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">12</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="8061440627663064" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">13</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="3164315484295288" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">14</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="9243022309583382" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">15</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="3873911991202418" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="721855618345872">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="1039257591293617" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="1859299527762252" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="8041165748715703" type="P2">
+                                            <param id="0" name="Instance variable">ACTION</param>
+                                            <param id="1" name="Value">&quot;A&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="8303065082059788">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="9532115880486524" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="305502431571554" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">21</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="3305432211947853" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">22</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="2243544564573204" type="P2">
+                                            <param id="0" name="Instance variable">State</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Retreat after attack</comment>
+                        <event-block disabled="1" sid="2780419981361493">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4068002718992018" type="P2">
+                                    <param id="0" name="Instance variable">ACTION</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;R&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="414043026765194">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5945963362836508" type="P2">
+                                            <param id="0" name="Instance variable">DISTANCE</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">LONG_DISTANCE</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                </event-block>
+                                <event-block sid="6412683367477889">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="7137975310515227" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="9637566570253626" type="P2">
+                                            <param id="0" name="Instance variable">ACTION</param>
+                                            <param id="1" name="Value">&quot;A&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="4481053239269474" title="ATTACKS">
+            <sub-events>
+                <event-block sid="4033719262032225">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5211400215015869" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">13</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9194025807543355" type="P2">
+                            <param id="0" name="Instance variable">DISTANCE</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">SHORT_DISTANCE</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6723382093278856" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">21</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2271267067299163" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">22</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="8437715850920975" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6884623712219306">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="1234922764329563" type="System">
+                                    <param id="0" name="First value">random(100)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="4763885166254472" type="P2">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">22</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="932607248616263">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="5310222684645331" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="2440676482429434" type="P2">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">30</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="3815018771477362" type="P2">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="7489426090294098" type="P2">
+                                    <param id="0" name="Instance variable">COURAGE</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>P1 attacks down</comment>
+                <event-block sid="4837268945262752">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3421497002152483" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">12</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="8080296490901997" type="P2">
+                            <param id="0" name="Instance variable">DISTANCE</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">MEDIUM_DISTANCE</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9540428856320145" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">21</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="18500117470322" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">22</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="5194608029599065" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4805749825575759">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="8049511199762269" type="System">
+                                    <param id="0" name="First value">random(100)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="1818498918389588" type="P2">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">21</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1039677568573321">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4761919098977011" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="2416699305174527" type="P2">
+                                    <param id="0" name="Instance variable">State</param>
+                                    <param id="1" name="Value">30</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="364786399739093" type="P2">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">0.4</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="4317356142088356" type="P2">
+                                    <param id="0" name="Instance variable">COURAGE</param>
+                                    <param id="1" name="Value">0.4</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6360418263712582">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3446279080663306" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">12</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="3773731447855737" type="P2">
+                            <param id="0" name="Instance variable">DISTANCE</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">SHORT_DISTANCE</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1233914976332414" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">21</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9644491991566168" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">22</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="386335100829055" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Value">30</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="7388787541685093" type="P1">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">0.4</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="9162613010653392" type="P2">
+                            <param id="0" name="Instance variable">COURAGE</param>
+                            <param id="1" name="Value">0.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9855126385566344">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3377919147730678" type="P2">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">13</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2085985290747215" type="P2">
+                            <param id="0" name="Instance variable">DISTANCE</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">SHORT_DISTANCE</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="5966245045706536" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">21</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="2573465369974598" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">22</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="6282569251042103" type="P1">
+                            <param id="0" name="Instance variable">State</param>
+                            <param id="1" name="Value">30</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="9172856485087751" type="P1">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">0.5</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="8794252078628786" type="P2">
+                            <param id="0" name="Instance variable">COURAGE</param>
+                            <param id="1" name="Value">0.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="301010582107707" title="WIN/LOSE ">
+            <sub-events>
+                <event-block sid="8550917304383148">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="4137886196098357" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Set height" sid="9622227586269735" type="Defeat1">
+                            <param id="0" name="Height">0</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="6812156887722053" type="Defeat2">
+                            <param id="0" name="Height">0</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="3223269684148911" type="Defeat3">
+                            <param id="0" name="Width">0</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="4437219963095542" type="Defeat4">
+                            <param id="0" name="Height">0</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="7710239614880653" type="Defeat5">
+                            <param id="0" name="Height">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4690465367175942">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7744825457069951" type="P2">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">90</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="8081959619629026" type="Defeat1">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3121686320107061">
+                            <conditions>
+                                <condition id="-6" name="Compare height" sid="970500920634032" type="Defeat1">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Height">400</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9028129439786522">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="7889553156605262" type="System">
+                                            <param id="0" name="Interval (seconds)">0.01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-6" name="Set height" sid="9392288271983909" type="Defeat1">
+                                            <param id="0" name="Height">Defeat1.Height+50</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8312944865987812">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4168211394237018" type="P2">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">80</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="3542961390364111" type="Defeat2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8814070906656997">
+                            <conditions>
+                                <condition id="-6" name="Compare height" sid="5071914821523863" type="Defeat2">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Height">400</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3995853146272627">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="6875340886371185" type="System">
+                                            <param id="0" name="Interval (seconds)">0.01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-6" name="Set height" sid="9311760180157169" type="Defeat2">
+                                            <param id="0" name="Height">Defeat2.Height+50</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2446114459215765">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3919892586532693" type="P2">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">70</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="7214239057852796" type="Defeat3">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3111639176513911">
+                            <conditions>
+                                <condition id="-5" name="Compare width" sid="5261861259230949" type="Defeat3">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Width">400</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="4981216631263098">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="9815309484862671" type="System">
+                                            <param id="0" name="Interval (seconds)">0.01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-5" name="Set width" sid="7196520016488274" type="Defeat3">
+                                            <param id="0" name="Width">Defeat3.Width+50</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3361884336323959">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7013945330399448" type="P2">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">60</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="2066283518599978" type="Defeat4">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="1727529088181249">
+                            <conditions>
+                                <condition id="-6" name="Compare height" sid="1416033045351428" type="Defeat4">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Height">400</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="792186743103421">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="1400495597716654" type="System">
+                                            <param id="0" name="Interval (seconds)">0.01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-6" name="Set height" sid="6742186418827647" type="Defeat4">
+                                            <param id="0" name="Height">Defeat4.Height+50</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7902922881548206">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6140817062177429" type="P2">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="6724220960111478" type="Defeat5">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8609080231099734">
+                            <conditions>
+                                <condition id="-6" name="Compare height" sid="7202010037507203" type="Defeat5">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Height">400</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="8859763449957245">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="3378552868126365" type="System">
+                                            <param id="0" name="Interval (seconds)">0.01</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-6" name="Set height" sid="8147568784215413" type="Defeat5">
+                                            <param id="0" name="Height">Defeat5.Height+50</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6727886233034112">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8367524642534387" type="P1">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="8450735982927918" type="System">
+                            <param id="0" name="Time scale">0.1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="1797918932135267" type="System">
+                            <param id="0" name="Seconds">0.3</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="1650106027178499" type="System">
+                            <param id="0" name="Variable">EndGame</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9161123616427561">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7617631785182785" type="P2">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set time scale" sid="5497130682480282" type="System">
+                            <param id="0" name="Time scale">0.1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="4286492461966642" type="System">
+                            <param id="0" name="Seconds">0.3</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3773701588528713" type="System">
+                            <param id="0" name="Variable">EndGame</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="7845918385313207">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="505568131652932" type="System">
+                            <param id="0" name="Variable">EndGame</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="9936587399260633" type="System" />
+                        <action id="-9" name="Set value" sid="8986625562497541" type="System">
+                            <param id="0" name="Variable">EndGame</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

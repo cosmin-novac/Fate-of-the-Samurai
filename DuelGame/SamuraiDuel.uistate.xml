@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="3">Cliffs</layout>
+        <event-sheet order="0">CLIFFS</event-sheet>
+        <event-sheet active="1" order="1">DUEL</event-sheet>
+        <event-sheet order="2">SUN-RAYS</event-sheet>
+        <event-sheet order="4">ANIMATIONS</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="1" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="1" name="samurai_duelFamily" />
+        <family expanded="1" name="PL1" />
+        <family expanded="1" name="PL2" />
+        <family expanded="1" name="real_samurai_black_duelFamily" />
+        <family expanded="1" name="PlayerByVariables" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/SunRays/" />
+        <folder expanded="1" path="object-folder/Duel/" />
+        <folder expanded="0" path="object-folder/Duel/Battlefield/" />
+        <folder expanded="0" path="object-folder/Duel/Buttons/" />
+        <folder expanded="0" path="object-folder/Duel/Characters/" />
+        <folder expanded="1" path="object-folder/Duel/Controls and Functions/" />
+        <folder expanded="0" path="object-folder/Duel/Forrest/" />
+        <folder expanded="0" path="object-folder/Duel/Player Bar/" />
+        <folder expanded="0" path="object-folder/Duel/real_samurai_black_duel sprites/" />
+        <folder expanded="0" path="object-folder/Duel/samurai_duel sprites/" />
+        <folder expanded="0" path="object-folder/Duel/Stages/" />
+        <folder expanded="0" path="object-folder/Duel/Rocks/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="0" path="file-folder/Spriter animations/" />
+        <folder expanded="1" path="animation-folder/Cloud/" />
+        <folder expanded="1" path="animation-folder/LightRay/" />
+        <folder expanded="1" path="animation-folder/ShadowObject/" />
+        <folder expanded="1" path="animation-folder/SUN/" />
+        <folder expanded="1" path="animation-folder/ShadowObject2/" />
+        <folder expanded="1" path="animation-folder/Sprite10/" />
+        <folder expanded="1" path="animation-folder/Sprite11/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
+        <folder expanded="1" path="animation-folder/Sprite7/" />
+        <folder expanded="1" path="animation-folder/Sprite8/" />
+        <folder expanded="1" path="animation-folder/Sprite9/" />
+        <folder expanded="1" path="animation-folder/Stage_Select/" />
+        <folder expanded="1" path="animation-folder/TreeTrunk/" />
+        <folder expanded="1" path="animation-folder/lightbeams/" />
+        <folder expanded="1" path="animation-folder/HillMD2/" />
+        <folder expanded="1" path="animation-folder/HillMD1/" />
+        <folder expanded="1" path="animation-folder/HillForeground/" />
+        <folder expanded="1" path="animation-folder/leaf/" />
+        <folder expanded="1" path="animation-folder/lightParticles/" />
+        <folder expanded="1" path="animation-folder/sky/" />
+        <folder expanded="1" path="animation-folder/BackgroundBarP1/" />
+        <folder expanded="1" path="animation-folder/BackgroundBarP2/" />
+        <folder expanded="1" path="animation-folder/HealthBarYellowP1/" />
+        <folder expanded="1" path="animation-folder/HealthRedBarP1/" />
+        <folder expanded="1" path="animation-folder/HealthRedBarP2/" />
+        <folder expanded="1" path="animation-folder/HealthYellowBarP2/" />
+        <folder expanded="1" path="animation-folder/P1/" />
+        <folder expanded="1" path="animation-folder/P2/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_foot_front/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_leg_top_000/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_leg_bottom_000/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_foot_side_000/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_leg_bottom/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_leg_top/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_pelvis/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_torso/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_arm_rightside/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_upperarm_leftside/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_head/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_sword/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_upperarm_rightside/" />
+        <folder expanded="1" path="animation-folder/real_samurai_black_duel_Samurai_arm_leftside/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_foot_front/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_leg_top_000/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_leg_bottom_000/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_foot_side_000/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_leg_bottom/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_leg_top/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_pelvis/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_torso/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_arm_rightside/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_upperarm_leftside/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_head/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_sword/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_upperarm_rightside/" />
+        <folder expanded="1" path="animation-folder/samurai_duel_Samurai_arm_leftside/" />
+        <folder expanded="1" path="animation-folder/Wall/" />
+        <folder expanded="1" path="animation-folder/Wall2/" />
+        <folder expanded="1" path="animation-folder/Defeat1/" />
+        <folder expanded="1" path="animation-folder/Defeat2/" />
+        <folder expanded="1" path="animation-folder/Defeat3/" />
+        <folder expanded="1" path="animation-folder/Defeat4/" />
+        <folder expanded="1" path="animation-folder/Defeat5/" />
+        <folder expanded="1" path="animation-folder/background/" />
+        <folder expanded="1" path="animation-folder/background2/" />
+        <folder expanded="1" path="animation-folder/background3/" />
+        <folder expanded="1" path="animation-folder/background4/" />
+        <folder expanded="1" path="animation-folder/background5/" />
+        <folder expanded="1" path="animation-folder/background6/" />
+        <folder expanded="1" path="animation-folder/background6_2/" />
+        <folder expanded="1" path="animation-folder/Glow/" />
+    </folders-expanded>
+</c2uistate>

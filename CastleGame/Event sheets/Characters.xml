@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Characters</name>
+    <events>
+        <comment>Params: UID to attach to, Hue Value, Entity Index</comment>
+        <event-block sid="3676475945089599">
+            <conditions>
+                <condition id="0" name="On function" sid="849095489266598" type="Function">
+                    <param id="0" name="Name">&quot;createSoldier&quot;</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="1111096377371557" type="bodyUsers">
+                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="2528952780708754" type="System">
+                    <param id="0" name="Object to create">Legs</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action id="-3" name="Create object" sid="907163592545816" type="System">
+                    <param id="0" name="Object to create">Body</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+                <action id="-3" name="Create object" sid="848639536574203" type="System">
+                    <param id="0" name="Object to create">Head</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="X">0</param>
+                    <param id="3" name="Y">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6743580685668941">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="1837428720408935" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="2196168260345964" type="Body" />
+                        <action id="2" name="Stop" sid="9867540198434912" type="Head" />
+                        <action id="-10" name="Set value" sid="601690940569156" type="bodyUsers">
+                            <param id="0" name="Instance variable">entityIndex</param>
+                            <param id="1" name="Value">Function.Param(2)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5156782555400479" type="Legs">
+                            <param id="0" name="Instance variable">attachedToUID</param>
+                            <param id="1" name="Value">bodyUsers.UID</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2689238813885278" type="Body">
+                            <param id="0" name="Instance variable">attachedToUID</param>
+                            <param id="1" name="Value">bodyUsers.UID</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2436003599014097" type="Head">
+                            <param id="0" name="Instance variable">attachedToUID</param>
+                            <param id="1" name="Value">bodyUsers.UID</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="2178299013926196" type="Body">
+                            <param id="0" name="Scale">0.2</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="2083637935983006" type="Head">
+                            <param id="0" name="Scale">0.2</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="8749596872809232" type="Legs">
+                            <param id="0" name="Scale">0.2</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="8236828445304802" type="Body">
+                            <param id="0" name="Object">bodyUsers</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="8614874541319501" type="Head">
+                            <param id="0" name="Object">Body</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="706801837226031" type="Legs">
+                            <param id="0" name="Object">Body</param>
+                            <param id="1" name="Image point (optional)">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="1065644740728203" type="Body">
+                            <param id="0" name="Pin to">bodyUsers</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="472269866941897" type="Head">
+                            <param id="0" name="Pin to">Body</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="557787166269664" type="Legs">
+                            <param id="0" name="Pin to">Body</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-18" name="Rotate clockwise" sid="6658162154394888" type="Body">
+                            <param id="0" name="Degrees">90</param>
+                        </action>
+                        <action id="-28" name="Set effect parameter" sid="9140378742340748" type="Body">
+                            <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                            <param id="1" name="Parameter index">0</param>
+                            <param id="2" name="Value">Function.Param(1)</param>
+                        </action>
+                        <action id="-27" name="Set effect enabled" sid="9378099928094689" type="Body">
+                            <param id="0" name="Mode">1</param>
+                            <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block disabled="1" sid="8374662742286171">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="7370268378707882" type="System">
+                                    <param id="0" name="First value">Function.Param(0)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">player.UID</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="1238596212930052" type="bodyUsers">
+                                    <param id="0" name="Instance variable">head</param>
+                                    <param id="1" name="Value">&quot;complex&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1094244056837577">
+                    <conditions />
+                    <actions />
+                    <sub-events>
+                        <comment>HEAD SETTINGS</comment>
+                        <event-block sid="8730556781696933">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="3470992393804072" type="bodyUsers">
+                                    <param id="0" name="Instance variable">head</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;complex&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="3644030052468819" type="Head">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7221096342593881">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9816632564479595" type="bodyUsers">
+                                    <param id="0" name="Instance variable">head</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;simple&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="5466865985570081" type="Head">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1195778462156821">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5328441985284878" type="bodyUsers">
+                                    <param id="0" name="Instance variable">head</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;hair&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="589806982835739" type="Head">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3238402598989146">
+            <conditions>
+                <condition id="-11" name="For Each" sid="9966425347840785" type="System">
+                    <param id="0" name="Object">bodyUsers</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="9936474050285929" type="Legs">
+                    <param id="0" name="Instance variable">attachedToUID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">bodyUsers.UID</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="2493714599631385" type="Body">
+                    <param id="0" name="Instance variable">attachedToUID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">bodyUsers.UID</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="1835858833171073" type="Head">
+                    <param id="0" name="Instance variable">attachedToUID</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">bodyUsers.UID</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>SET VISIBILITY</comment>
+                <event-block sid="7912182157363272">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Is visible" sid="2064507453882623" type="bodyUsers" />
+                        <condition id="-7" name="Compare instance variable" sid="6552457133870376" type="EntityBody">
+                            <param id="0" name="Instance variable">attachedToUID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">bodyUsers.UID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="9412089949453899" type="Body">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="7981772633947033" type="Head">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="6349316242520903" type="Legs">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5913707626863285">
+                    <conditions>
+                        <condition id="-9" name="Is visible" sid="8857964041712376" type="bodyUsers" />
+                        <condition id="-7" name="Compare instance variable" sid="4075350558060407" type="EntityBody">
+                            <param id="0" name="Instance variable">attachedToUID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">bodyUsers.UID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="9104139040229868" type="Body">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="5891983896086112" type="Head">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="117054994468497" type="Legs">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>TRIGGER WALKING RIVAL</comment>
+                <event-block sid="737281711887808">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="5955202564554763" type="System">
+                            <param id="0" name="First value">bodyUsers.UID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">rival1.UID</param>
+                        </condition>
+                        <condition behavior="Pathfinding" id="4" name="Is moving along path" sid="1613257479851365" type="rival1" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="6438585904351228" type="Legs">
+                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="7783634409855426" type="Legs">
+                            <param id="0" name="Speed">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>TRIGGER WALKING PLAYER</comment>
+                <event-block sid="1443783654814372">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3625916565004228" type="System">
+                            <param id="0" name="First value">bodyUsers.UID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">player.UID</param>
+                        </condition>
+                        <condition behavior="8Direction" id="0" name="Is moving" sid="5128910512063758" type="player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="6502527861600788" type="Legs">
+                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="9850842204157904" type="Legs">
+                            <param id="0" name="Speed">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>TRIGGER IDLE PLAYER</comment>
+                <event-block sid="6243958775115429">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1787629981564927" type="System">
+                            <param id="0" name="First value">bodyUsers.UID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">player.UID</param>
+                        </condition>
+                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="4276266061115626" type="player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="8245170622000678" type="Legs">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>TRIGGER IDLE RIVAL</comment>
+                <event-block sid="2418465963261053">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3019979260429675" type="System">
+                            <param id="0" name="First value">bodyUsers.UID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">rival1.UID</param>
+                        </condition>
+                        <condition behavior="Pathfinding" id="4" inverted="1" name="Is moving along path" sid="426986697573563" type="rival1" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="2736403473152658" type="Legs">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>WALKING STATE</comment>
+                <event-block sid="5218695388500822">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3810711599682903" type="bodyUsers">
+                            <param id="0" name="Instance variable">animationState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;walking&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="7199633168447001" type="Body" />
+                        <action id="4" name="Set animation" sid="1068776952647562" type="Legs">
+                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="3419171906235408" type="Legs">
+                            <param id="0" name="Speed">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>TRIGGER KIDNAP</comment>
+                <event-block sid="7439674173846379">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="9330779096201216" type="bodyUsers">
+                            <param id="0" name="Unique ID">player.UID</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="874360428112547" type="System">
+                            <param id="0" name="First value">capturedGoal</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="9195854916255143" type="Body" />
+                        <action id="5" name="Set frame" sid="9705917027602419" type="Body">
+                            <param id="0" name="Frame number">10</param>
+                        </action>
+                        <action id="14" name="Log" sid="254593535222133" type="Browser">
+                            <param id="0" name="Type">0</param>
+                            <param id="1" name="Message">&quot;HAS GOAL&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>PREPARING STATE</comment>
+                <event-block sid="4953539428153057">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="6049844433303221" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="3534592533678965" type="bodyUsers">
+                            <param id="0" name="Instance variable">animationState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;preparing&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="4569494969533234" type="Body" />
+                        <action id="4" name="Set animation" sid="1079449889607518" type="Legs">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="1280987345487306">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7832000559877912" type="bodyUsers">
+                                    <param id="0" name="Instance variable">weapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;sword&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="3820312549547896" type="Body">
+                                    <param id="0" name="Frame number">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7230383263534949">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="161365668782143" type="bodyUsers">
+                                    <param id="0" name="Instance variable">weapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;spear&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="8441986169660466" type="Body">
+                                    <param id="0" name="Frame number">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8294435567062666">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2786565732448872" type="bodyUsers">
+                                    <param id="0" name="Instance variable">weapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;bow&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="8044878173202338" type="Body">
+                                    <param id="0" name="Frame number">8</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>ATTACKING STATE</comment>
+                <event-block sid="7899472528057973">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="1946592170921342" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="3562949268412555" type="bodyUsers">
+                            <param id="0" name="Instance variable">animationState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;attacking&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="9878244482390966" type="Body" />
+                        <action id="4" name="Set animation" sid="4263039711934647" type="Legs">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7654412114149242">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="8266606326295732" type="player">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">3</param>
+                                </condition>
+                                <condition behavior="8Direction" id="0" name="Is moving" sid="8329185126011545" type="player" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="5989597138300757" type="Body">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="38307898067657">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="165987733198349" type="rival1">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">3</param>
+                                </condition>
+                                <condition behavior="Pathfinding" id="4" name="Is moving along path" sid="5148233409704241" type="rival1" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="6446268376168674" type="Body">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5805339654633732">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9859377456719549" type="bodyUsers">
+                                    <param id="0" name="Instance variable">weapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;sword&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="9767734371127768" type="Body">
+                                    <param id="0" name="Frame number">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2244314810454362">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="2583128788248914" type="bodyUsers">
+                                    <param id="0" name="Instance variable">weapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;spear&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="8955041295554891" type="Body">
+                                    <param id="0" name="Frame number">6</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7306647624397058">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6703273331794998" type="bodyUsers">
+                                    <param id="0" name="Instance variable">weapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;bow&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="321786410795825" type="Body">
+                                    <param id="0" name="Frame number">9</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>IDLE STATE</comment>
+                <event-block sid="3957027366563039">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="4927429849891326" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="5043517545438825" type="bodyUsers">
+                            <param id="0" name="Instance variable">animationState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;idle&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="8710287185309333" type="Body" />
+                    </actions>
+                    <sub-events>
+                        <comment>BODY SETTINGS (depending on WEAPON)</comment>
+                        <event-block sid="2139311277948675">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9883009715631371" type="bodyUsers">
+                                    <param id="0" name="Instance variable">weapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;sword&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="6827961461393963" type="Body">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5554753775121548">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7459699642245891" type="bodyUsers">
+                                    <param id="0" name="Instance variable">weapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;spear&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="6898427065446439" type="Body">
+                                    <param id="0" name="Frame number">4</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8581980758536795">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4254810900154571" type="bodyUsers">
+                                    <param id="0" name="Instance variable">weapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;bow&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="8999491276554873" type="Body">
+                                    <param id="0" name="Frame number">7</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

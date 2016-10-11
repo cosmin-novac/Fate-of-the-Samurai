@@ -1,0 +1,2193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>SamuraiDuel</name>
+    <description>2D Fighting Game </description>
+    <version>1.0.0.0</version>
+    <author>Cosmin Novac</author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>i77l15woz4xt</unique-id>
+    <saved-with-version>20600</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="BrashMonkey" id="Spriter" version="1">Scml</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="shadowlight" version="1">Shadow Light</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="lunarray" id="lunarray_LiteTween" version="1.399999976">LiteTween</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="shadowcaster" version="1">Shadow Caster</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="blurhorizontal">Blur Horizontal</effect>
+        <effect author="Scirra" id="blurvertical">Blur Vertical</effect>
+        <effect author="Scirra" id="glowhorizontal">Glow Horizontal</effect>
+        <effect author="Scirra" id="inverse">Inverse</effect>
+        <effect author="Scirra" id="lighten">Lighten</effect>
+        <effect author="Scirra" id="overlay">Overlay</effect>
+        <effect author="Scirra" id="screen">Screen</effect>
+        <effect author="Viktor Korsun" id="water">Water</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1720</width>
+        <height>920</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Menu</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox integer scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">Yes</prop>
+        <prop name="Physics engine">Box2D web</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="SunRays">
+            <object-type name="Cloud" sid="8489970694802773">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Cthru" sid="2421804091366355" type="boolean" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2927712605266904" speed="5">
+                        <frame duration="1" hotspotX="0.504" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.504" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.512" y="0.0675676" />
+                            <image-point name="Imagepoint 2" x="0.632" y="0.202703" />
+                            <image-point name="Imagepoint 3" x="0.712" y="0.310811" />
+                            <image-point name="Imagepoint 4" x="0.752" y="0.418919" />
+                            <image-point name="Imagepoint 5" x="0.832" y="0.554054" />
+                            <image-point name="Imagepoint 6" x="0.896" y="0.635135" />
+                            <image-point name="Imagepoint 7" x="0.968" y="0.77027" />
+                            <image-point name="Imagepoint 8" x="0.936" y="0.891892" />
+                            <image-point name="Imagepoint 9" x="0.792" y="0.945946" />
+                            <image-point name="Imagepoint 10" x="0.696" y="0.864865" />
+                            <image-point name="Imagepoint 11" x="0.576" y="0.878378" />
+                            <image-point name="Imagepoint 12" x="0.52" y="0.851351" />
+                            <image-point name="Imagepoint 13" x="0.448" y="0.905405" />
+                            <image-point name="Imagepoint 14" x="0.368" y="0.878378" />
+                            <image-point name="Imagepoint 15" x="0.256" y="0.891892" />
+                            <image-point name="Imagepoint 16" x="0.168" y="0.851351" />
+                            <image-point name="Imagepoint 17" x="0.088" y="0.837838" />
+                            <image-point name="Imagepoint 18" x="0.04" y="0.756757" />
+                            <image-point name="Imagepoint 19" x="0.136" y="0.527027" />
+                            <image-point name="Imagepoint 20" x="0.224" y="0.418919" />
+                            <image-point name="Imagepoint 21" x="0.368" y="0.283784" />
+                            <image-point name="Imagepoint 22" x="0.352" y="0.405405" />
+                            <image-point name="Imagepoint 23" x="0.392" y="0.189189" />
+                            <image-point name="Imagepoint 24" x="0.448" y="0.135135" />
+                            <collision-poly>
+                                <point x="0.208" y="0.351351" />
+                                <point x="0.496" y="0.0135135" />
+                                <point x="0.776" y="0.378378" />
+                                <point x="0.84" y="0.5" />
+                                <point x="0.96" y="0.932432" />
+                                <point x="0.072" y="0.878378" />
+                                <point x="0.096" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="LightRay" sid="3111225639234156">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Fade" sid="5216569455304755">
+                        <behavior id="Fade" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6638101205955437" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0.533333" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ShadowLight" sid="5865295499734638">
+                <plugin id="shadowlight" />
+            </object-type>
+            <object-type name="ShadowObject" sid="9533416587719016">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="1389594480818216">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                    <behavior-type name="ShadowCaster" sid="8340131824793797">
+                        <behavior id="shadowcaster" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="32941517908145" speed="5">
+                        <frame duration="1" hotspotX="12.25" hotspotY="11.25" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="SUN" sid="747221133693721">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2280797935276689" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="ShadowLight2" sid="5799033837453357">
+                <plugin id="shadowlight" />
+            </object-type>
+            <object-type name="ShadowObject2" sid="3200582777386127">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="8152233900454121">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                    <behavior-type name="ShadowCaster" sid="435734670246007">
+                        <behavior id="shadowcaster" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5937179947575634" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.125" y="0.125" />
+                                <point x="0.5" y="0" />
+                                <point x="0.875" y="0.125" />
+                                <point x="1" y="0.5" />
+                                <point x="0.875" y="0.875" />
+                                <point x="0.5" y="1" />
+                                <point x="0.125" y="0.875" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="Duel">
+            <object-folder name="Battlefield">
+                <object-type name="Sprite10" sid="1661156994011502">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="9327862569357863">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4226491862335811" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.504762">
+                                <collision-poly>
+                                    <point x="0.10625" y="0.161905" />
+                                    <point x="0.5" y="0.0380952" />
+                                    <point x="0.86875" y="0.2" />
+                                    <point x="0.9375" y="0.495238" />
+                                    <point x="0.85625" y="0.780952" />
+                                    <point x="0.5" y="0.752381" />
+                                    <point x="0.05625" y="0.914286" />
+                                    <point x="0.16875" y="0.495238" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Sprite11" sid="3707238553214511">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="9412568334761364">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7775130455698624" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.506024">
+                                <collision-poly>
+                                    <point x="0.128571" y="0.216867" />
+                                    <point x="0.5" y="0.46988" />
+                                    <point x="0.821429" y="0.301205" />
+                                    <point x="0.928571" y="0.493976" />
+                                    <point x="0.878571" y="0.795181" />
+                                    <point x="0.5" y="0.963855" />
+                                    <point x="0.114286" y="0.807229" />
+                                    <point x="0.05" y="0.493976" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Sprite2" sid="4729532869992392">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6027107393688187" speed="5">
+                            <frame duration="1" hotspotX="0.507576" hotspotY="0.974843">
+                                <collision-poly>
+                                    <point x="0.424242" y="0.176101" />
+                                    <point x="0.5" y="0.0849057" />
+                                    <point x="0.659091" y="0.141509" />
+                                    <point x="0.651515" y="0.5" />
+                                    <point x="0.833333" y="0.930818" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.166667" y="0.930818" />
+                                    <point x="0.439394" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Sprite3" sid="6897652876254552">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1065051514426396" speed="5">
+                            <frame duration="1" hotspotX="0.48125" hotspotY="0.941176">
+                                <collision-poly>
+                                    <point x="0.1" y="0.156863" />
+                                    <point x="0.5" y="0.0490196" />
+                                    <point x="0.8375" y="0.254902" />
+                                    <point x="0.95625" y="0.5" />
+                                    <point x="0.925" y="0.882353" />
+                                    <point x="0.5" y="0.95098" />
+                                    <point x="0.06875" y="0.892157" />
+                                    <point x="0.00625" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Sprite4" sid="7759762917820942">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8968624301025294" speed="5">
+                            <frame duration="1" hotspotX="0.516667" hotspotY="0.86">
+                                <collision-poly>
+                                    <point x="0.108333" y="0.132653" />
+                                    <point x="0.5" y="0.0102041" />
+                                    <point x="0.841667" y="0.193878" />
+                                    <point x="0.966667" y="0.5" />
+                                    <point x="0.816667" y="0.77551" />
+                                    <point x="0.5" y="0.857143" />
+                                    <point x="0.233333" y="0.714286" />
+                                    <point x="0.116667" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Sprite7" sid="6050119623284619">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="ShadowCaster" sid="1653553553448054">
+                            <behavior id="shadowcaster" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2325415044952912" speed="5">
+                            <frame duration="1" hotspotX="0.320574" hotspotY="0.984479">
+                                <collision-poly>
+                                    <point x="0.23445" y="0.108647" />
+                                    <point x="0.497608" y="0.580931" />
+                                    <point x="0.287081" y="0.330377" />
+                                    <point x="0.789474" y="0.498891" />
+                                    <point x="0.430622" y="0.736142" />
+                                    <point x="0.497608" y="0.991131" />
+                                    <point x="0.215311" y="0.900222" />
+                                    <point x="0.186603" y="0.498891" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Sprite8" sid="8626989616263499">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="6316801661941773">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5973938986193859" speed="5">
+                            <frame duration="1" hotspotX="0.502283" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.127854" y="0.177215" />
+                                    <point x="0.497717" y="0.101266" />
+                                    <point x="0.821918" y="0.246835" />
+                                    <point x="0.908676" y="0.5" />
+                                    <point x="0.881279" y="0.835443" />
+                                    <point x="0.497717" y="0.936709" />
+                                    <point x="0.200913" y="0.721519" />
+                                    <point x="0.0639269" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Sprite9" sid="3661474776552649">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="3959157542548684">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6465047804849355" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                                <collision-poly>
+                                    <point x="0.5" y="0.0555556" />
+                                    <point x="0.779221" y="0.314815" />
+                                    <point x="0.954545" y="0.5" />
+                                    <point x="0.779221" y="0.685185" />
+                                    <point x="0.5" y="0.907407" />
+                                    <point x="0.194805" y="0.722222" />
+                                    <point x="0.025974" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Hills1" sid="2307526439421921">
+                    <plugin id="TiledBg" />
+                    <texture />
+                </object-type>
+                <object-type name="Hills2" sid="8871685839102088">
+                    <plugin id="TiledBg" />
+                    <texture />
+                </object-type>
+                <object-type name="Grass" sid="4230224287160327">
+                    <plugin id="TiledBg" />
+                    <texture />
+                </object-type>
+                <object-type name="Stage_Select" sid="5812373811019459">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5401524875999649" speed="0">
+                            <frame duration="1" hotspotX="0.446667" hotspotY="0.643333" original-source="C:\Documents and Settings\DELL\My Documents\Downloads\OSW Building.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Buttons">
+                <object-type name="BackButton" sid="3598445336166034">
+                    <plugin id="Button" />
+                </object-type>
+                <object-type name="CreditsButton" sid="8693444843208029">
+                    <plugin id="Button" />
+                </object-type>
+                <object-type name="StartGameButton" sid="4105045809192167">
+                    <plugin id="Button" />
+                </object-type>
+            </object-folder>
+            <object-folder name="Characters">
+                <object-type name="samurai_duel" sid="3690463725856018">
+                    <plugin id="Spriter" />
+                    <behaviors>
+                        <behavior-type name="ScrollTo" sid="875732000582121">
+                            <behavior id="scrollto" />
+                        </behavior-type>
+                    </behaviors>
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                </object-type>
+                <object-type name="real_samurai_black_duel" sid="715893254275271">
+                    <plugin id="Spriter" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                </object-type>
+            </object-folder>
+            <object-folder name="Controls and Functions">
+                <object-type name="Keyboard" sid="3909081008757317">
+                    <plugin id="Keyboard" />
+                </object-type>
+                <object-type name="Function" sid="2299023541075107">
+                    <plugin id="Function" />
+                </object-type>
+                <object-type name="Mouse" sid="8919235614332589">
+                    <plugin id="Mouse" />
+                </object-type>
+                <object-type name="Touch" sid="1180890694464274">
+                    <plugin id="Touch" />
+                </object-type>
+            </object-folder>
+            <object-folder name="Forrest">
+                <object-type name="TreeTrunk" sid="4907730217597933">
+                    <plugin id="Sprite" />
+                    <effects>
+                        <effect-type name="GlowHorizontal">
+                            <effect id="glowhorizontal" />
+                        </effect-type>
+                    </effects>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8944171524179483" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\PDN to PNG\light-L5Normal255VLayer 6.png">
+                                <collision-poly>
+                                    <point x="0" y="0.132653" />
+                                    <point x="0.5" y="0.132653" />
+                                    <point x="0.4425" y="0.678775" />
+                                    <point x="0.57375" y="0.449796" />
+                                    <point x="0.5" y="0.569796" />
+                                    <point x="0.46625" y="0.410612" />
+                                    <point x="0.50875" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="lightbeams" sid="4496576330325485">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8946539547836932" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\PDN to PNG\light-L6Normal223VBackground.png">
+                                <collision-poly>
+                                    <point x="0.1775" y="0.236667" />
+                                    <point x="0.3825" y="0.823333" />
+                                    <point x="0.27" y="0.5" />
+                                    <point x="0.1875" y="0.75" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HillMD2" sid="462445949440214">
+                    <plugin id="Sprite" />
+                    <effects>
+                        <effect-type name="GlowHorizontal">
+                            <effect id="glowhorizontal" />
+                        </effect-type>
+                    </effects>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6960693678443368" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\PDN to PNG\light-L3Normal255VLayer 3.png">
+                                <collision-poly>
+                                    <point x="0.113333" y="0.453333" />
+                                    <point x="0.83875" y="0.645" />
+                                    <point x="0.436667" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HillMD1" sid="2809439428592996">
+                    <plugin id="Sprite" />
+                    <effects>
+                        <effect-type name="GlowHorizontal">
+                            <effect id="glowhorizontal" />
+                        </effect-type>
+                    </effects>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8788804413762618" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\PDN to PNG\light-L4Normal255V.png">
+                                <collision-poly>
+                                    <point x="0.16125" y="0.645" />
+                                    <point x="0.886667" y="0.453333" />
+                                    <point x="1" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.563333" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HillForeground" sid="7541542792958804">
+                    <plugin id="Sprite" />
+                    <effects>
+                        <effect-type name="GlowHorizontal">
+                            <effect id="glowhorizontal" />
+                        </effect-type>
+                    </effects>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3820649401944089" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\PDN to PNG\light-L7Normal255V.png">
+                                <collision-poly>
+                                    <point x="0.0866667" y="0.693333" />
+                                    <point x="0.5" y="0.676667" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0.999583" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="leaf" sid="4592834481934946">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Sine" sid="5328513967644673">
+                            <behavior id="Sin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4181862704441696" speed="5">
+                            <frame duration="1" hotspotX="10" hotspotY="-12.2222">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="lightParticles" sid="8319936223721187">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1253866273973879" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\PDN to PNG\light-L8Normal255Vlight.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Particles" sid="1225888821227021">
+                    <plugin id="Particles" />
+                    <texture />
+                </object-type>
+                <object-type name="sky" sid="9383526301550727">
+                    <plugin id="Sprite" />
+                    <effects>
+                        <effect-type name="Lighten">
+                            <effect id="lighten" />
+                        </effect-type>
+                        <effect-type name="Water">
+                            <effect id="water" />
+                        </effect-type>
+                    </effects>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1085360971196456" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\PDN to PNG\light-L1Normal255VLayer 5.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Player Bar">
+                <object-type name="BackgroundBarP1" sid="2105449581711537">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="295924468484866" speed="5">
+                            <frame duration="1" hotspotX="0.500975" hotspotY="0.514286" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="BackgroundBarP2" sid="8119835768471988">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5604528992497968" speed="5">
+                            <frame duration="1" hotspotX="0.500975" hotspotY="0.514286" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HealthBarYellowP1" sid="4646802206807375">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="528903239059434" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HealthRedBarP1" sid="8089190980300818">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4288296826337833" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HealthRedBarP2" sid="542996000884892">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="198816151915808" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="HealthYellowBarP2" sid="3024586251825788">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3689424938910888" speed="5">
+                            <frame duration="1" hotspotX="1" hotspotY="0" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P1" sid="1440225861216086">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="ONAIR" sid="1708250311058227" type="boolean" />
+                        <instance-variable name="CROUCH" sid="286801679885091" type="boolean" />
+                        <instance-variable name="DIAGONAL" sid="6372020174418719" type="number" />
+                        <instance-variable name="ONACTION" sid="2049363974410404" type="boolean" />
+                        <instance-variable name="ONTECH" sid="7309872114611789" type="boolean" />
+                        <instance-variable name="DIRECTION" sid="8570590614565211" type="number" />
+                        <instance-variable name="HITSTRENGTH" sid="8199279340630556" type="number" />
+                        <instance-variable name="ONHIT" sid="345657914470701" type="boolean" />
+                        <instance-variable name="ONBLOCK" sid="5045411950868957" type="number" />
+                        <instance-variable name="ONBLOCKWAIT" sid="5895596324545647" type="boolean" />
+                        <instance-variable name="ATTACKTYPE" sid="7378154070137925" type="string" />
+                        <instance-variable name="KO" sid="4803122823673631" type="boolean" />
+                        <instance-variable name="ONCOMBO" sid="5774293825792767" type="boolean" />
+                        <instance-variable name="TECHBEHAVIOR" sid="4146227920568463" type="string" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Platform" sid="777475790754285">
+                            <behavior id="Platform" />
+                        </behavior-type>
+                        <behavior-type name="Solid" sid="9485313097784264">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1760336292528264" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="-1.5625" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="P2" sid="857103367635763">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="HITSTRENGTH" sid="6824456566573907" type="number" />
+                        <instance-variable name="COURAGE" sid="4513822281398441" type="number" />
+                        <instance-variable name="ACTION" sid="6571571518436361" type="string" />
+                        <instance-variable comment="to P1" name="DISTANCE" sid="2621903355111962" type="number" />
+                        <instance-variable comment="(2*Courage) / (Health+Fatigue)" name="AggressivityCoefficient" sid="184350539969928" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="Platform" sid="7066403481066316">
+                            <behavior id="Platform" />
+                        </behavior-type>
+                        <behavior-type name="Solid" sid="1587916766993292">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5822242316869407" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="-1.5625" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Text_Status" sid="7074602864589278">
+                    <plugin id="Text" />
+                </object-type>
+            </object-folder>
+            <object-folder name="real_samurai_black_duel sprites">
+                <object-type name="real_samurai_black_duel_Samurai_foot_front" sid="9011226986006379">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9869546986624544" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\foot_front.png">
+                                <collision-poly>
+                                    <point x="0.222222" y="0.285714" />
+                                    <point x="0.5" y="0" />
+                                    <point x="0.87037" y="0.166667" />
+                                    <point x="0.87037" y="0.5" />
+                                    <point x="0.814815" y="0.761905" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.037037" y="0.952381" />
+                                    <point x="0.0925926" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_leg_top_000" sid="7108672119249133">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7186505153622004" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\leg_top.png">
+                                <collision-poly>
+                                    <point x="0.0865385" y="0.0989011" />
+                                    <point x="0.5" y="0.032967" />
+                                    <point x="0.75" y="0.285714" />
+                                    <point x="0.884615" y="0.494505" />
+                                    <point x="0.932692" y="0.923077" />
+                                    <point x="0.5" y="0.967033" />
+                                    <point x="0.221154" y="0.747253" />
+                                    <point x="0.0192308" y="0.494505" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_leg_bottom_000" sid="7952858401638443">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4685529028849262" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\leg_bottom.png">
+                                <collision-poly>
+                                    <point x="0.179487" y="0.142857" />
+                                    <point x="0.5" y="0.0306122" />
+                                    <point x="0.846154" y="0.122449" />
+                                    <point x="0.910256" y="0.5" />
+                                    <point x="0.858974" y="0.887755" />
+                                    <point x="0.5" y="0.979592" />
+                                    <point x="0.269231" y="0.785714" />
+                                    <point x="0.166667" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_foot_side_000" sid="7553239423195093">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8582642189577736" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\foot_side.png">
+                                <collision-poly>
+                                    <point x="0.0972222" y="0.184211" />
+                                    <point x="0.5" y="0.0263158" />
+                                    <point x="0.75" y="0.473684" />
+                                    <point x="0.819444" y="0.5" />
+                                    <point x="0.930556" y="0.868421" />
+                                    <point x="0.5" y="0.973684" />
+                                    <point x="0.138889" y="0.736842" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_leg_bottom" sid="3105999539545077">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6921478634381539" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\leg_bottom.png">
+                                <collision-poly>
+                                    <point x="0.179487" y="0.142857" />
+                                    <point x="0.5" y="0.0306122" />
+                                    <point x="0.846154" y="0.122449" />
+                                    <point x="0.910256" y="0.5" />
+                                    <point x="0.858974" y="0.887755" />
+                                    <point x="0.5" y="0.979592" />
+                                    <point x="0.269231" y="0.785714" />
+                                    <point x="0.166667" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_leg_top" sid="9670138836630599">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6829706509136936" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\leg_top.png">
+                                <collision-poly>
+                                    <point x="0.0865385" y="0.0989011" />
+                                    <point x="0.5" y="0.032967" />
+                                    <point x="0.75" y="0.285714" />
+                                    <point x="0.884615" y="0.494505" />
+                                    <point x="0.932692" y="0.923077" />
+                                    <point x="0.5" y="0.967033" />
+                                    <point x="0.221154" y="0.747253" />
+                                    <point x="0.0192308" y="0.494505" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_pelvis" sid="4809508347534343">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4484880831259888" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\pelvis.png">
+                                <collision-poly>
+                                    <point x="0.101449" y="0.208955" />
+                                    <point x="0.5" y="0.0149254" />
+                                    <point x="0.913043" y="0.179104" />
+                                    <point x="0.985507" y="0.492537" />
+                                    <point x="0.905797" y="0.80597" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.101449" y="0.791045" />
+                                    <point x="0.0652174" y="0.492537" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_torso" sid="1110972749395336">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="243560352408976" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\torso.png">
+                                <collision-poly>
+                                    <point x="0.0825688" y="0.072" />
+                                    <point x="0.495413" y="0.016" />
+                                    <point x="0.880734" y="0.104" />
+                                    <point x="0.972477" y="0.496" />
+                                    <point x="0.917431" y="0.928" />
+                                    <point x="0.495413" y="0.936" />
+                                    <point x="0.119266" y="0.896" />
+                                    <point x="0.0366972" y="0.496" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_arm_rightside" sid="3240828118475218">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1076500380299852" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\arm_rightside.png">
+                                <collision-poly>
+                                    <point x="0.172727" y="0.358491" />
+                                    <point x="0.5" y="0.301887" />
+                                    <point x="0.936364" y="0.132075" />
+                                    <point x="0.981818" y="0.490566" />
+                                    <point x="0.927273" y="0.849057" />
+                                    <point x="0.5" y="0.773585" />
+                                    <point x="0.0727273" y="0.849057" />
+                                    <point x="0.0181818" y="0.490566" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_upperarm_leftside" sid="3937332084585524">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5715028864095108" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\upperarm_leftside.png">
+                                <collision-poly>
+                                    <point x="0.218182" y="0.12766" />
+                                    <point x="0.490909" y="0.0106383" />
+                                    <point x="0.781818" y="0.12766" />
+                                    <point x="1" y="0.5" />
+                                    <point x="0.8" y="0.882979" />
+                                    <point x="0.490909" y="0.978723" />
+                                    <point x="0.0909091" y="0.946809" />
+                                    <point x="0.0181818" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_head" sid="7578589607033978">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1879191217292024" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\head.png">
+                                <collision-poly>
+                                    <point x="0.271605" y="0.244444" />
+                                    <point x="0.493827" y="0.288889" />
+                                    <point x="0.753086" y="0.222222" />
+                                    <point x="0.876543" y="0.5" />
+                                    <point x="0.876543" y="0.888889" />
+                                    <point x="0.493827" y="0.988889" />
+                                    <point x="0.123457" y="0.888889" />
+                                    <point x="0.148148" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_sword" sid="2163379493143101">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2707770605153033" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\sword_mirrored.png">
+                                <collision-poly>
+                                    <point x="0.588235" y="0.229358" />
+                                    <point x="0.494118" y="0.321101" />
+                                    <point x="0.964706" y="0.0137615" />
+                                    <point x="0.470588" y="0.5" />
+                                    <point x="0.305882" y="0.729358" />
+                                    <point x="0.494118" y="0.481651" />
+                                    <point x="0.0235294" y="0.990826" />
+                                    <point x="0.329412" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\sword.png">
+                                <collision-poly>
+                                    <point x="0.0352941" y="0.0137615" />
+                                    <point x="0.494118" y="0.321101" />
+                                    <point x="0.411765" y="0.229358" />
+                                    <point x="0.670588" y="0.5" />
+                                    <point x="0.976471" y="0.990826" />
+                                    <point x="0.494118" y="0.481651" />
+                                    <point x="0.694118" y="0.729358" />
+                                    <point x="0.529412" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_upperarm_rightside" sid="9927267612777871">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5179923928053485" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\upperarm_rightside.png">
+                                <collision-poly>
+                                    <point x="0.203125" y="0.138298" />
+                                    <point x="0.5" y="0" />
+                                    <point x="0.75" y="0.170213" />
+                                    <point x="0.890625" y="0.5" />
+                                    <point x="0.8125" y="0.87234" />
+                                    <point x="0.5" y="0.946809" />
+                                    <point x="0.203125" y="0.861702" />
+                                    <point x="0.03125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="real_samurai_black_duel_Samurai_arm_leftside" sid="5946666682692882">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>real_samurai_black_duel</type>
+                        <type>real_samurai_black_duel_Samurai_foot_front</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom_000</type>
+                        <type>real_samurai_black_duel_Samurai_foot_side_000</type>
+                        <type>real_samurai_black_duel_Samurai_leg_bottom</type>
+                        <type>real_samurai_black_duel_Samurai_leg_top</type>
+                        <type>real_samurai_black_duel_Samurai_pelvis</type>
+                        <type>real_samurai_black_duel_Samurai_torso</type>
+                        <type>real_samurai_black_duel_Samurai_arm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_leftside</type>
+                        <type>real_samurai_black_duel_Samurai_head</type>
+                        <type>real_samurai_black_duel_Samurai_sword</type>
+                        <type>real_samurai_black_duel_Samurai_upperarm_rightside</type>
+                        <type>real_samurai_black_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6140919869904692" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\enemy\arm_leftside.png">
+                                <collision-poly>
+                                    <point x="0.0833333" y="0.12069" />
+                                    <point x="0.5" y="0.310345" />
+                                    <point x="0.857143" y="0.206897" />
+                                    <point x="0.988095" y="0.5" />
+                                    <point x="0.821429" y="0.741379" />
+                                    <point x="0.0833333" y="0.87931" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="samurai_duel sprites">
+                <object-type name="samurai_duel_Samurai_foot_front" sid="3160014534195698">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6212040285042846" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\foot_front.png">
+                                <collision-poly>
+                                    <point x="0.222222" y="0.285714" />
+                                    <point x="0.5" y="0" />
+                                    <point x="0.87037" y="0.166667" />
+                                    <point x="0.87037" y="0.5" />
+                                    <point x="0.814815" y="0.761905" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.037037" y="0.952381" />
+                                    <point x="0.0925926" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_leg_top_000" sid="1780996496047856">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3225263774442688" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\leg_top.png">
+                                <collision-poly>
+                                    <point x="0.0865385" y="0.0989011" />
+                                    <point x="0.5" y="0.032967" />
+                                    <point x="0.75" y="0.285714" />
+                                    <point x="0.884615" y="0.494505" />
+                                    <point x="0.932692" y="0.923077" />
+                                    <point x="0.5" y="0.967033" />
+                                    <point x="0.221154" y="0.747253" />
+                                    <point x="0.0192308" y="0.494505" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_leg_bottom_000" sid="5487512575607438">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9797046707467726" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\leg_bottom.png">
+                                <collision-poly>
+                                    <point x="0.179487" y="0.142857" />
+                                    <point x="0.5" y="0.0306122" />
+                                    <point x="0.846154" y="0.122449" />
+                                    <point x="0.910256" y="0.5" />
+                                    <point x="0.858974" y="0.887755" />
+                                    <point x="0.5" y="0.979592" />
+                                    <point x="0.269231" y="0.785714" />
+                                    <point x="0.166667" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_foot_side_000" sid="7119985918143422">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7715322189175692" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\foot_side.png">
+                                <collision-poly>
+                                    <point x="0.0972222" y="0.184211" />
+                                    <point x="0.5" y="0.0263158" />
+                                    <point x="0.75" y="0.473684" />
+                                    <point x="0.819444" y="0.5" />
+                                    <point x="0.930556" y="0.868421" />
+                                    <point x="0.5" y="0.973684" />
+                                    <point x="0.138889" y="0.736842" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_leg_bottom" sid="1010002354287759">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1319387996498043" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\leg_bottom.png">
+                                <collision-poly>
+                                    <point x="0.179487" y="0.142857" />
+                                    <point x="0.5" y="0.0306122" />
+                                    <point x="0.846154" y="0.122449" />
+                                    <point x="0.910256" y="0.5" />
+                                    <point x="0.858974" y="0.887755" />
+                                    <point x="0.5" y="0.979592" />
+                                    <point x="0.269231" y="0.785714" />
+                                    <point x="0.166667" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_leg_top" sid="8358739925655859">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7368207487977441" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\leg_top.png">
+                                <collision-poly>
+                                    <point x="0.0865385" y="0.0989011" />
+                                    <point x="0.5" y="0.032967" />
+                                    <point x="0.75" y="0.285714" />
+                                    <point x="0.884615" y="0.494505" />
+                                    <point x="0.932692" y="0.923077" />
+                                    <point x="0.5" y="0.967033" />
+                                    <point x="0.221154" y="0.747253" />
+                                    <point x="0.0192308" y="0.494505" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_pelvis" sid="936598170142432">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1408833687667511" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\pelvis.png">
+                                <collision-poly>
+                                    <point x="0.101449" y="0.208955" />
+                                    <point x="0.5" y="0.0149254" />
+                                    <point x="0.913043" y="0.179104" />
+                                    <point x="0.985507" y="0.492537" />
+                                    <point x="0.905797" y="0.80597" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.101449" y="0.791045" />
+                                    <point x="0.0652174" y="0.492537" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_torso" sid="1779359562179139">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9212044647326619" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\torso.png">
+                                <collision-poly>
+                                    <point x="0.0825688" y="0.072" />
+                                    <point x="0.495413" y="0.016" />
+                                    <point x="0.880734" y="0.104" />
+                                    <point x="0.972477" y="0.496" />
+                                    <point x="0.917431" y="0.928" />
+                                    <point x="0.495413" y="0.936" />
+                                    <point x="0.119266" y="0.896" />
+                                    <point x="0.0366972" y="0.496" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_arm_rightside" sid="8868974147574253">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4335986927796391" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\arm_rightside.png">
+                                <collision-poly>
+                                    <point x="0.172727" y="0.358491" />
+                                    <point x="0.5" y="0.301887" />
+                                    <point x="0.936364" y="0.132075" />
+                                    <point x="0.981818" y="0.490566" />
+                                    <point x="0.927273" y="0.849057" />
+                                    <point x="0.5" y="0.773585" />
+                                    <point x="0.0727273" y="0.849057" />
+                                    <point x="0.0181818" y="0.490566" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_upperarm_leftside" sid="1767150593065482">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2420774835245694" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\upperarm_leftside.png">
+                                <collision-poly>
+                                    <point x="0.218182" y="0.12766" />
+                                    <point x="0.490909" y="0.0106383" />
+                                    <point x="0.781818" y="0.12766" />
+                                    <point x="1" y="0.5" />
+                                    <point x="0.8" y="0.882979" />
+                                    <point x="0.490909" y="0.978723" />
+                                    <point x="0.0909091" y="0.946809" />
+                                    <point x="0.0181818" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_head" sid="4379760442266808">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5901964337567969" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\head.png">
+                                <collision-poly>
+                                    <point x="0.0694444" y="0.0632911" />
+                                    <point x="0.5" y="0.0886076" />
+                                    <point x="0.819444" y="0.164557" />
+                                    <point x="0.986111" y="0.493671" />
+                                    <point x="0.902778" y="0.911392" />
+                                    <point x="0.5" y="1" />
+                                    <point x="0.152778" y="0.860759" />
+                                    <point x="0.0972222" y="0.493671" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_sword" sid="2426250995643377">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5012599156937091" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\sword_mirrored.png">
+                                <collision-poly>
+                                    <point x="0.588235" y="0.229358" />
+                                    <point x="0.494118" y="0.321101" />
+                                    <point x="0.964706" y="0.0137615" />
+                                    <point x="0.470588" y="0.5" />
+                                    <point x="0.305882" y="0.729358" />
+                                    <point x="0.494118" y="0.481651" />
+                                    <point x="0.0235294" y="0.990826" />
+                                    <point x="0.329412" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\sword.png">
+                                <collision-poly>
+                                    <point x="0.0352941" y="0.0137615" />
+                                    <point x="0.494118" y="0.321101" />
+                                    <point x="0.411765" y="0.229358" />
+                                    <point x="0.670588" y="0.5" />
+                                    <point x="0.976471" y="0.990826" />
+                                    <point x="0.494118" y="0.481651" />
+                                    <point x="0.694118" y="0.729358" />
+                                    <point x="0.529412" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_upperarm_rightside" sid="4755122726419263">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2990150420665277" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\upperarm_rightside.png">
+                                <collision-poly>
+                                    <point x="0.203125" y="0.138298" />
+                                    <point x="0.5" y="0" />
+                                    <point x="0.75" y="0.170213" />
+                                    <point x="0.890625" y="0.5" />
+                                    <point x="0.8125" y="0.87234" />
+                                    <point x="0.5" y="0.946809" />
+                                    <point x="0.203125" y="0.861702" />
+                                    <point x="0.03125" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="samurai_duel_Samurai_arm_leftside" sid="9896892431059588">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>samurai_duel</type>
+                        <type>samurai_duel_Samurai_foot_front</type>
+                        <type>samurai_duel_Samurai_leg_top_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom_000</type>
+                        <type>samurai_duel_Samurai_foot_side_000</type>
+                        <type>samurai_duel_Samurai_leg_bottom</type>
+                        <type>samurai_duel_Samurai_leg_top</type>
+                        <type>samurai_duel_Samurai_pelvis</type>
+                        <type>samurai_duel_Samurai_torso</type>
+                        <type>samurai_duel_Samurai_arm_rightside</type>
+                        <type>samurai_duel_Samurai_upperarm_leftside</type>
+                        <type>samurai_duel_Samurai_head</type>
+                        <type>samurai_duel_Samurai_sword</type>
+                        <type>samurai_duel_Samurai_upperarm_rightside</type>
+                        <type>samurai_duel_Samurai_arm_leftside</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3743719438128574" speed="0">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\black_simple\arm_leftside.png">
+                                <collision-poly>
+                                    <point x="0.0833333" y="0.12069" />
+                                    <point x="0.5" y="0.310345" />
+                                    <point x="0.857143" y="0.206897" />
+                                    <point x="0.988095" y="0.5" />
+                                    <point x="0.821429" y="0.741379" />
+                                    <point x="0.0833333" y="0.87931" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Stages">
+                <object-type name="Wall" sid="8415156270769286">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="7223694194933721">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8034491262840633" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Wall2" sid="2588250058626691">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="4551447872485952">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5979955183440593" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="TiledBackground5" sid="9514191358568834">
+                    <plugin id="TiledBg" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="1030879833469152">
+                            <behavior id="solid" />
+                        </behavior-type>
+                    </behaviors>
+                    <texture />
+                </object-type>
+                <object-type name="Defeat1" sid="6910078995420796">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="LiteTween" sid="9965951134760841">
+                            <behavior id="lunarray_LiteTween" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3886253046861798" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Defeat2" sid="5200656558176502">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4299910400614849" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\PDN to PNG\defeat-L6Normal255V.png">
+                                <collision-poly>
+                                    <point x="0.3125" y="0.3125" />
+                                    <point x="0.34" y="0.66" />
+                                    <point x="0.365" y="0.5" />
+                                    <point x="0.3725" y="0.3725" />
+                                    <point x="0.315" y="0.685" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Defeat3" sid="5493949883480279">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9973422233555238" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\PDN to PNG\defeat-L5Normal255V.png">
+                                <collision-poly>
+                                    <point x="0.2025" y="0.2025" />
+                                    <point x="0.3075" y="0.5" />
+                                    <point x="0.3225" y="0.3225" />
+                                    <point x="0.2775" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Defeat4" sid="3409141824631535">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2404746227426581" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\PDN to PNG\defeat-L4Normal255V.png">
+                                <collision-poly>
+                                    <point x="0.555" y="0.555" />
+                                    <point x="0.5" y="0.2575" />
+                                    <point x="0.755" y="0.245" />
+                                    <point x="0.6075" y="0.5" />
+                                    <point x="0.59" y="0.59" />
+                                    <point x="0.5" y="0.685" />
+                                    <point x="0.56" y="0.44" />
+                                    <point x="0.56" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Defeat5" sid="8782466221929376">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9269724670776519" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\PDN to PNG\defeat-L3Normal255V.png">
+                                <collision-poly>
+                                    <point x="0.4375" y="0.4375" />
+                                    <point x="0.5" y="0.1375" />
+                                    <point x="0.52" y="0.48" />
+                                    <point x="0.5325" y="0.5" />
+                                    <point x="0.8325" y="0.8325" />
+                                    <point x="0.5" y="0.555" />
+                                    <point x="0.48" y="0.52" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Rocks">
+                <object-type name="background" sid="1043266765090722">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="619622690937134" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\bg_1\background.png">
+                                <collision-poly>
+                                    <point x="0.125" y="0.288462" />
+                                    <point x="0.891333" y="0.250769" />
+                                    <point x="1" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\bg_1\background2.png">
+                                <collision-poly>
+                                    <point x="0.0863333" y="0.199231" />
+                                    <point x="0.882667" y="0.270769" />
+                                    <point x="1" y="0.5" />
+                                    <point x="0.998" y="0.995385" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\bg_1\background3.png">
+                                <collision-poly>
+                                    <point x="0.0933333" y="0.215385" />
+                                    <point x="0.5" y="0.367692" />
+                                    <point x="0.896333" y="0.239231" />
+                                    <point x="1" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="0.508462" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\bg_1\background4.png">
+                                <collision-poly>
+                                    <point x="0.101333" y="0.233846" />
+                                    <point x="0.888" y="0.258462" />
+                                    <point x="1" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\bg_1\background5.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="background2" sid="8534241908590908">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4128429510129682" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\bg_1\background5.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="background3" sid="8499567340118205">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6972192184064508" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\bg_1\background4.png">
+                                <image-point name="Imagepoint 1" x="0.432" y="0.28" />
+                                <image-point name="Imagepoint 2" x="0.417333" y="0.406154" />
+                                <image-point name="Imagepoint 3" x="0.422667" y="0.501538" />
+                                <image-point name="Imagepoint 4" x="0.436" y="0.569231" />
+                                <image-point name="Imagepoint 5" x="0.414667" y="0.676923" />
+                                <image-point name="Imagepoint 6" x="0.605333" y="0.301538" />
+                                <image-point name="Imagepoint 7" x="0.618667" y="0.28" />
+                                <image-point name="Imagepoint 8" x="0.566667" y="0.409231" />
+                                <image-point name="Imagepoint 9" x="0.558667" y="0.569231" />
+                                <image-point name="Imagepoint 10" x="0.548" y="0.630769" />
+                                <image-point name="Imagepoint 11" x="0.556" y="0.753846" />
+                                <image-point name="Imagepoint 12" x="0.565333" y="0.898462" />
+                                <image-point name="Imagepoint 13" x="0.574667" y="0.993846" />
+                                <collision-poly>
+                                    <point x="0.101333" y="0.233846" />
+                                    <point x="0.888" y="0.258462" />
+                                    <point x="1" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="background4" sid="7845556646893458">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6032334805192163" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\bg_1\background3.png">
+                                <image-point name="Imagepoint 5" x="0.317333" y="0.250769" />
+                                <image-point name="Imagepoint 6" x="0.388" y="0.273846" />
+                                <image-point name="Imagepoint 7" x="0.392" y="0.367692" />
+                                <image-point name="Imagepoint 8" x="0.402667" y="0.448462" />
+                                <image-point name="Imagepoint 9" x="0.464" y="0.447692" />
+                                <image-point name="Imagepoint 10" x="0.44" y="0.496923" />
+                                <image-point name="Imagepoint 11" x="0.557333" y="0.484615" />
+                                <image-point name="Imagepoint 12" x="0.570667" y="0.429231" />
+                                <image-point name="Imagepoint 13" x="0.621333" y="0.330769" />
+                                <image-point name="Imagepoint 14" x="0.586667" y="0.558462" />
+                                <image-point name="Imagepoint 15" x="0.592" y="0.656923" />
+                                <image-point name="Imagepoint 16" x="0.586667" y="0.724615" />
+                                <image-point name="Imagepoint 17" x="0.594667" y="0.804615" />
+                                <image-point name="Imagepoint 18" x="0.597333" y="0.884615" />
+                                <image-point name="Imagepoint 19" x="0.602667" y="0.946154" />
+                                <image-point name="Imagepoint 24" x="0.666667" y="0.256923" />
+                                <image-point name="Imagepoint 25" x="0.762667" y="0.232308" />
+                                <image-point name="Imagepoint 26" x="0.872" y="0.250769" />
+                                <image-point name="Imagepoint 27" x="0.957333" y="0.269231" />
+                                <image-point name="Imagepoint 28" x="0.989333" y="0.250769" />
+                                <image-point name="Imagepoint 21" x="0.110667" y="0.224615" />
+                                <image-point name="Imagepoint 22" x="0.154667" y="0.227692" />
+                                <image-point name="Imagepoint 23" x="0.237333" y="0.249231" />
+                                <collision-poly>
+                                    <point x="0.0933333" y="0.215385" />
+                                    <point x="0.5" y="0.367692" />
+                                    <point x="0.896333" y="0.239231" />
+                                    <point x="1" y="0.5" />
+                                    <point x="1" y="1" />
+                                    <point x="0.5" y="0.508462" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="background5" sid="7552757586666938">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9423964478471922" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\bg_1\background2.png">
+                                <collision-poly>
+                                    <point x="0.0863333" y="0.199231" />
+                                    <point x="0.882667" y="0.270769" />
+                                    <point x="1" y="0.5" />
+                                    <point x="0.998" y="0.995385" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="background6" sid="3918877068963243">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="ShadowCaster" sid="9544691750498459">
+                            <behavior id="shadowcaster" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7565561690976584" speed="5">
+                            <frame duration="1" hotspotX="0.500507" hotspotY="0.500528" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\bg_1\background.png">
+                                <image-point name="Imagepoint 1" x="0.953394" y="0.103485" />
+                                <image-point name="Imagepoint 2" x="0.941236" y="0.221753" />
+                                <image-point name="Imagepoint 3" x="0.9615" y="0.344245" />
+                                <image-point name="Imagepoint 4" x="0.827761" y="0.821542" />
+                                <image-point name="Imagepoint 5" x="2.0233" y="0.0823654" />
+                                <image-point name="Imagepoint 6" x="1.9382" y="0.209081" />
+                                <image-point name="Imagepoint 7" x="1.91793" y="0.411827" />
+                                <image-point name="Imagepoint 8" x="1.90578" y="0.508976" />
+                                <image-point name="Imagepoint 9" x="1.95846" y="0.80887" />
+                                <image-point name="Imagepoint 10" x="0.925025" y="0.534319" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="background6_2" sid="9067617684060893">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="ShadowCaster" sid="3597871554371688">
+                            <behavior id="shadowcaster" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1085561548153077" speed="5">
+                            <frame duration="1" hotspotX="0.500437" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\duel_game\bg_1\background.png">
+                                <image-point name="Imagepoint 1" x="-0.8" y="0.142424" />
+                                <image-point name="Imagepoint 2" x="-0.81048" y="0.255556" />
+                                <image-point name="Imagepoint 3" x="-0.793013" y="0.372727" />
+                                <image-point name="Imagepoint 4" x="-0.908297" y="0.829293" />
+                                <image-point name="Imagepoint 5" x="0.122271" y="0.122222" />
+                                <image-point name="Imagepoint 6" x="0.0489083" y="0.243434" />
+                                <image-point name="Imagepoint 7" x="0.031441" y="0.437374" />
+                                <image-point name="Imagepoint 8" x="0.0209607" y="0.530303" />
+                                <image-point name="Imagepoint 9" x="0.0663755" y="0.817172" />
+                                <image-point name="Imagepoint 10" x="-0.824454" y="0.554545" />
+                                <collision-poly>
+                                    <point x="0.146725" y="0.0242424" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0.0838428" y="1" />
+                                    <point x="0.0139738" y="0.257576" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+        </object-folder>
+        <object-type name="Glow" sid="626050043081154">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Covered" sid="4350145945755978" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2139126444949338" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families>
+        <family name="samurai_duelFamily" plugin-id="Sprite" sid="4760035457815083">
+            <members>
+                <member>samurai_duel_Samurai_arm_leftside</member>
+                <member>samurai_duel_Samurai_arm_rightside</member>
+                <member>samurai_duel_Samurai_foot_front</member>
+                <member>samurai_duel_Samurai_foot_side_000</member>
+                <member>samurai_duel_Samurai_head</member>
+                <member>samurai_duel_Samurai_leg_bottom</member>
+                <member>samurai_duel_Samurai_leg_bottom_000</member>
+                <member>samurai_duel_Samurai_leg_top</member>
+                <member>samurai_duel_Samurai_leg_top_000</member>
+                <member>samurai_duel_Samurai_pelvis</member>
+                <member>samurai_duel_Samurai_sword</member>
+                <member>samurai_duel_Samurai_torso</member>
+                <member>samurai_duel_Samurai_upperarm_leftside</member>
+                <member>samurai_duel_Samurai_upperarm_rightside</member>
+            </members>
+        </family>
+        <family name="PL1" plugin-id="Spriter" sid="422519610015376">
+            <members>
+                <member>samurai_duel</member>
+            </members>
+        </family>
+        <family name="PL2" plugin-id="Spriter" sid="7369954443076349">
+            <members>
+                <member>real_samurai_black_duel</member>
+            </members>
+        </family>
+        <family name="real_samurai_black_duelFamily" plugin-id="Sprite" sid="5690462037063086">
+            <members>
+                <member>real_samurai_black_duel_Samurai_arm_leftside</member>
+                <member>real_samurai_black_duel_Samurai_arm_rightside</member>
+                <member>real_samurai_black_duel_Samurai_foot_front</member>
+                <member>real_samurai_black_duel_Samurai_foot_side_000</member>
+                <member>real_samurai_black_duel_Samurai_head</member>
+                <member>real_samurai_black_duel_Samurai_leg_bottom</member>
+                <member>real_samurai_black_duel_Samurai_leg_bottom_000</member>
+                <member>real_samurai_black_duel_Samurai_leg_top</member>
+                <member>real_samurai_black_duel_Samurai_leg_top_000</member>
+                <member>real_samurai_black_duel_Samurai_pelvis</member>
+                <member>real_samurai_black_duel_Samurai_sword</member>
+                <member>real_samurai_black_duel_Samurai_torso</member>
+                <member>real_samurai_black_duel_Samurai_upperarm_leftside</member>
+                <member>real_samurai_black_duel_Samurai_upperarm_rightside</member>
+            </members>
+        </family>
+        <family name="PlayerByVariables" plugin-id="Sprite" sid="8742885838532353">
+            <members>
+                <member>P1</member>
+                <member>P2</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="State" sid="7749939285117538" type="number" />
+                <instance-variable name="Health" sid="3664748172241079" type="number" />
+                <instance-variable name="Fatigue" sid="1439922305569979" type="number" />
+            </instance-variables>
+        </family>
+    </families>
+    <layout-folder>
+        <layout>Menu.xml</layout>
+        <layout>Battlefield.xml</layout>
+        <layout>Forrest.xml</layout>
+        <layout>Cliffs.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>DUEL.xml</event-sheet>
+        <event-sheet>MENU.xml</event-sheet>
+        <event-sheet>ANIMATIONS.xml</event-sheet>
+        <event-sheet>FORREST.xml</event-sheet>
+        <event-sheet>BATTLEFIELD.xml</event-sheet>
+        <event-sheet>CLIFFS.xml</event-sheet>
+        <event-sheet>SUN-RAYS.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="6" />
+        <global-instance type="Function" uid="7" />
+        <global-instance type="Mouse" uid="11" />
+        <global-instance type="Touch" uid="155">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="Spriter animations">
+            <file name="samurai_duel.scml" />
+            <file name="samurai_duel.scon" />
+            <file name="real_samurai_black_duel.scml" />
+            <file name="real_samurai_black_duel.scon" />
+            <file name="samurai_duel_enemy.scon" />
+        </file-folder>
+    </files-folder>
+</c2project>

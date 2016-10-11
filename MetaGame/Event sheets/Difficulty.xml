@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Difficulty</name>
+    <events>
+        <variable constant="0" name="difficulty" sid="644789288820052" static="0" type="number">0</variable>
+        <event-block sid="1256689196922935">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2151959309481505" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="7091909980026421" type="TextDifficulty">
+                    <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                    <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="9658964295451944" type="NameInput">
+                    <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                    <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7836384429880124">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="344933169853995" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">DifficultySelection</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="9321416811119597" type="System">
+                    <param id="0" name="Variable">difficulty</param>
+                    <param id="1" name="Value">DifficultySelection.difficulty</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="9740790683435485" type="System">
+                    <param id="0" name="Layout">PlayerName</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5201716019233828">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="5424167798047733" type="Mouse">
+                    <param id="0" name="Object">Katana</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="9708658181916577" type="Katana">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="4194936885548053" type="Wakizashi">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="8895424597965306" type="Tanto">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="2965606490582659" type="NameInput">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="4920207959035077" type="TextDifficulty">
+                    <param id="0" name="Text">&quot;Katana&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="7923725537804265" type="NameInput">
+                    <param id="0" name="Text">&quot;For true samurai.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9507395000005328">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="9910882848394423" type="Mouse">
+                    <param id="0" name="Object">Wakizashi</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="10121138403579" type="Wakizashi">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6721623610681472" type="Katana">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3990447837008321" type="Tanto">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5198325436238005" type="NameInput">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="2336393374932252" type="TextDifficulty">
+                    <param id="0" name="Text">&quot;Wakizashi&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="6820475300304399" type="NameInput">
+                    <param id="0" name="Text">&quot;For masterless ronin.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2059686772130733">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="7143990489381759" type="Mouse">
+                    <param id="0" name="Object">Tanto</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="4772721490548821" type="Tanto">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="7731470318981414" type="Wakizashi">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6483380363159975" type="Katana">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="3627314824193651" type="NameInput">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="3293967811018151" type="TextDifficulty">
+                    <param id="0" name="Text">&quot;Tanto&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="7851226344775122" type="NameInput">
+                    <param id="0" name="Text">&quot;For peaceful peasants.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3681179620835934">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="4800068429906921" type="Mouse">
+                    <param id="0" name="Object">Katana</param>
+                </condition>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="1223258292202138" type="Mouse">
+                    <param id="0" name="Object">Wakizashi</param>
+                </condition>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="8275633007110371" type="Mouse">
+                    <param id="0" name="Object">Tanto</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="2607933668592642" type="Tanto">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="93598705257266" type="Wakizashi">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="6803853735302619" type="Katana">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="0" name="Set text" sid="3251134700854693" type="TextDifficulty">
+                    <param id="0" name="Text">&quot;Select the difficulty&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="9879268233381392" type="NameInput">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

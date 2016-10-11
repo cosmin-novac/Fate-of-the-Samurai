@@ -1,0 +1,888 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>OpponentCastle</name>
+    <events>
+        <include>Functions</include>
+        <include>Random</include>
+        <event-group description="" sid="1405675190016084" title="DrawMenu">
+            <sub-events>
+                <variable constant="0" name="LordName" sid="2876091440266281" static="0" type="text"></variable>
+                <event-block sid="2067005298516549">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="9453605326786569" type="System" />
+                        <condition id="0" name="Compare value" sid="4520856616809864" type="Data">
+                            <param id="0" name="Key">&quot;index&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">playerIsAtCastle</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8359638815068578" type="System">
+                            <param id="0" name="Variable">LordName</param>
+                            <param id="1" name="Value">Data.Get(&quot;name&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7142520654815468" type="System">
+                            <param id="0" name="Variable">MenuX</param>
+                            <param id="1" name="Value">330</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2996671822085514" type="System">
+                            <param id="0" name="Variable">MenuY</param>
+                            <param id="1" name="Value">370</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9299187343457573" type="OpponentName">
+                            <param id="0" name="Text">Data.Get(&quot;name&quot;)</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="7535900122372381" type="OpponentName">
+                            <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                            <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="6177055389858713" type="OpponentName">
+                            <param id="0" name="X">MenuX</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7584264163602918">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="9287213255716793" type="System">
+                                    <param id="0" name="Variable">playerIsTraveling</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Alone&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="2288986523545122" type="Function">
+                                    <param id="0" name="Name">&quot;CreateStoryForDecision&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;You are welcomed into the estate of Lord &quot;&amp;LordName&amp;&quot;. The head retainer is polite and correct in his manner, but obviously curious as to why you&apos;ve come. You tell him you&apos;d like to &quot;{###}MenuX{###}MenuY-200</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="5918078493261906" type="System">
+                                    <param id="0" name="Variable">MenuY</param>
+                                    <param id="1" name="Value">MenuY+120</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="5292941001570029">
+                                    <conditions>
+                                        <condition id="0" name="Compare value" sid="7462861914035037" type="Data">
+                                            <param id="0" name="Key">&quot;isTraveling&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;No&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="2210336290511129" type="Function">
+                                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Visit&quot;{###}&quot;Visit someone.&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>At rivals</comment>
+                                <event-block sid="6751265442609912">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="7446751523137215" type="System">
+                                            <param id="0" name="Variable">playerIsAtCastle</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="6970494577038488">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="3753800915761912" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;HelpMissionIkedaSamurai&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="3615494399241562" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;HelpMissionIkedaSamurai&quot;{###}&quot;Offer your support against the Ikeda Samurai.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>At leader</comment>
+                                <event-block sid="7249462003539984">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="8660931168482779" type="System">
+                                            <param id="0" name="Variable">playerIsAtCastle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="4268839401584272">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="4503757927932277" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;DuelLegendaryWarrior&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="1775852152081662" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;DuelLegendaryWarrior&quot;{###}&quot;Duel the legendary Warrior.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="211030044457948">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="8834395132353706" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;DuelCriminal&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="7057967088425282" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;DuelCriminal&quot;{###}&quot;Confront the cornered Criminal.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="4569247892960617">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="1565906271035558" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;MissionSavePriest&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="1268674901279227" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;MissionSavePriest&quot;{###}&quot;Announce your plan to save the priest.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="6952130053479746">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="1367809527545433" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;MissionLiberatePass&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="8135237958647948" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;MissionLiberatePass&quot;{###}&quot;Go on a mission to liberate the pass.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="2156003689297907">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="4400394623931974" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;MissionDefeatRonin&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="9865769093508938" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;MissionDefeatRonin&quot;{###}&quot;Announce your readiness to defeat the ronin.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="9393232037371751">
+                                            <conditions>
+                                                <condition id="0" name="Compare value" sid="669182739005689" type="Data">
+                                                    <param id="0" name="Key">&quot;brideAwaits&quot;</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="7550120793433609">
+                                                    <conditions>
+                                                        <condition id="-19" name="Pick all" sid="9167327635914834" type="System">
+                                                            <param id="0" name="Object">Data</param>
+                                                        </condition>
+                                                        <condition id="0" name="Compare value" sid="1872506476419334" type="Data">
+                                                            <param id="0" name="Key">&quot;index&quot;</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                        <condition id="0" name="Compare value" sid="2618768448902715" type="Data">
+                                                            <param id="0" name="Key">&quot;hasWife&quot;</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">0</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Call function" sid="2084138349321131" type="Function">
+                                                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                            <param id="1" name="Parameter {n}">&quot;CourtBride&quot;{###}&quot;Court a Bride&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="5795424078004314">
+                                            <conditions />
+                                            <actions>
+                                                <action disabled="1" id="-9" name="Set value" sid="1432828726167095" type="System">
+                                                    <param id="0" name="Variable">MenuY</param>
+                                                    <param id="1" name="Value">MenuY+50</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="2822387997589726">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2479726847917084" type="System" />
+                                <condition id="-14" name="Compare variable" sid="9571841736960132" type="System">
+                                    <param id="0" name="Variable">playerIsTraveling</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Disguised&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="2188074415517326" type="Function">
+                                    <param id="0" name="Name">&quot;CreateStoryForDecision&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;You arrive at the estate of &quot;&amp;LordName&amp;&quot; and observe the daily routine of the household from a distance. &quot;{###}MenuX{###}MenuY-200</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8534810045547919" type="System">
+                                    <param id="0" name="Variable">MenuY</param>
+                                    <param id="1" name="Value">MenuY+50</param>
+                                </action>
+                                <action id="0" name="Call function" sid="1369185484289933" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;AwaitNightfall&quot;{###}&quot;Wait until nightfall, then sneak past the guards.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="8456177334280083" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;InciteRevolt&quot;{###}&quot;Incite the local peasants to rebellion.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1681576056663457">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8750334717423609" type="System" />
+                                <condition id="-14" name="Compare variable" sid="2565058627053988" type="System">
+                                    <param id="0" name="Variable">playerIsTraveling</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;WithArmy&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="9661893936042277" type="Function">
+                                    <param id="0" name="Name">&quot;CreateStoryForDecision&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;You are welcomed into the estate of Lord &quot;&amp;LordName&amp;&quot;. The head retainer is polite and correct in his manner, but obviously curious as to why you&apos;ve come. You tell him you&apos;d like to &quot;{###}MenuX{###}MenuY-100</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="5183907940484048" type="System">
+                                    <param id="0" name="Variable">MenuY</param>
+                                    <param id="1" name="Value">MenuY+120</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>At rivals</comment>
+                                <event-block sid="9380212739782509">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="4603692369200598" type="System">
+                                            <param id="0" name="Variable">playerIsAtCastle</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="5741420198332661">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="2105325100096586" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;HelpBattleIkkoIkki&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="3694952958038222" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;HelpBattleIkkoIkki&quot;{###}&quot;Offer your support in the battle against the Ikko Ikki.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="9881565160694006">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="5773756435006214" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;HelpBattleBandits&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="1077201743795734" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;HelpBattleBandits&quot;{###}&quot;Announce your readiness to help defeat the bandits.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="1096213451820748">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="3679796728108598" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;HelpBattleRoninRebels&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="5879857970432195" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;HelpBattleRoninRebels&quot;{###}&quot;Offer your support in the revolt.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="4074204625720255">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="689264407231289" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;BattleConquerProvince&quot;{###}&quot;You order you troops to attack.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>At leader</comment>
+                                <event-block sid="6003180673185815">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="9162278128491919" type="System">
+                                            <param id="0" name="Variable">playerIsAtCastle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="6078573438696517">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="5529510167299007" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;BattleAttackClanEnemy&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="1255924140977872" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;BattleAttackClanEnemy&quot;{###}&quot;Announce you readiness to defeat the clan&apos;s enemy.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="3863527808674668">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="2104768351792958" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;BattleConquerFortress&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="1992155812471472" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;BattleConquerFortress&quot;{###}&quot;Announce you readiness to conquer the fortress.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="27926060023238">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="3391465656428795" type="System">
+                                                    <param id="0" name="First value">EventsListCSV.At(playerIsAtCastle,&quot;BattleLiberateFortress&quot;)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="3946577873542577" type="Function">
+                                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;BattleLiberateFortress&quot;{###}&quot;March to liberate the fortress.&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="9653886483258401">
+                                            <conditions />
+                                            <actions>
+                                                <action disabled="1" id="-9" name="Set value" sid="7662810696453812" type="System">
+                                                    <param id="0" name="Variable">MenuY</param>
+                                                    <param id="1" name="Value">MenuY+50</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block any="1" sid="9939641140648802">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7547874486951972" type="System">
+                                    <param id="0" name="Variable">playerIsTraveling</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Disguised&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="2455874137250043" type="System">
+                                    <param id="0" name="Variable">playerIsTraveling</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Alone&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="4469078756665554" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;TravelFromOpponent&quot;{###}&quot;Travel to somewhere else.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4727914454422708">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="6124133872552503" type="System" />
+                                <condition id="-14" name="Compare variable" sid="8814247156571566" type="System">
+                                    <param id="0" name="Variable">playerIsTraveling</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;WithArmy&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="1036512847540725" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;TravelWithTroops&quot;{###}&quot;Travel to somewhere else.&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-group description="" sid="2940275996430212" title="Actions">
+                    <sub-events>
+                        <event-block sid="7062084596536425">
+                            <conditions>
+                                <condition id="0" name="On function" sid="5376892114901646" type="Function">
+                                    <param id="0" name="Name">&quot;BattleAttackClanEnemy&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="5549511226878292" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="2412329423488459" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="2483227765958285" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6143468659600375">
+                            <conditions>
+                                <condition id="0" name="On function" sid="1602707319205059" type="Function">
+                                    <param id="0" name="Name">&quot;BattleConquerProvince&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="8766861423771965" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="1176831788147577" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="4178938733974985" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7893609728235209">
+                            <conditions>
+                                <condition id="0" name="On function" sid="9642183799851446" type="Function">
+                                    <param id="0" name="Name">&quot;BattleConquerFortress&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="887877684494306" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="3321708876150736" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="9119101135628339" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="770941371126413">
+                            <conditions>
+                                <condition id="0" name="On function" sid="4726744116991355" type="Function">
+                                    <param id="0" name="Name">&quot;BattleLiberateFortress&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="4896795648599947" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="6956988114199973" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="3408817548429864" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7639574341657373">
+                            <conditions>
+                                <condition id="0" name="On function" sid="2505446931553646" type="Function">
+                                    <param id="0" name="Name">&quot;MissionLiberatePass&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="6407051261404056" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="6119875647801532" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="4266167583031367" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6240434512775812">
+                            <conditions>
+                                <condition id="0" name="On function" sid="6931335720291614" type="Function">
+                                    <param id="0" name="Name">&quot;MissionSavePriest&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="7872753770988166" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="9884286678330678" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="3085359012994126" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9312294319499761">
+                            <conditions>
+                                <condition id="0" name="On function" sid="2122960573294203" type="Function">
+                                    <param id="0" name="Name">&quot;MissionDefeatRonin&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="7968292529502128" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="1479222596601803" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="8438173728822745" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3051780669323835">
+                            <conditions>
+                                <condition id="0" name="On function" sid="7882826327534235" type="Function">
+                                    <param id="0" name="Name">&quot;DuelCriminal&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="1210971211956097" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="9707662051350435" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="9560644615206384" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9501975101020968">
+                            <conditions>
+                                <condition id="0" name="On function" sid="6831921309920484" type="Function">
+                                    <param id="0" name="Name">&quot;DuelLegendaryWarrior&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="866192631429355" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="2096200016392979" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="6462570063875426" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4434339392076727">
+                            <conditions>
+                                <condition id="0" name="On function" sid="9749828651721968" type="Function">
+                                    <param id="0" name="Name">&quot;HelpMissionIkedaSamurai&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="6396295796136965" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="3910131039647348" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="1096932405001149" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="5627526752570393">
+                            <conditions>
+                                <condition id="0" name="On function" sid="3486531723961236" type="Function">
+                                    <param id="0" name="Name">&quot;HelpBattleRoninRebels&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="1675693922356656" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="9097156928819169" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="2411117312805215" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9849227880155332">
+                            <conditions>
+                                <condition id="0" name="On function" sid="9022597795454186" type="Function">
+                                    <param id="0" name="Name">&quot;HelpBattleBandits&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="9786449341677495" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="4331143667806834" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="7969318568442901" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6000873777313262">
+                            <conditions>
+                                <condition id="0" name="On function" sid="4374475419998393" type="Function">
+                                    <param id="0" name="Name">&quot;HelpBattleIkkoIkki&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="6091684947537145" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="342982351146496" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="7899930044901048" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7977898332054607">
+                            <conditions>
+                                <condition id="0" name="On function" sid="1521397330778972" type="Function">
+                                    <param id="0" name="Name">&quot;TravelFromOpponent&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="4243122814743411" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="4818480189343995" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="7130377126688495" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3720050002139459">
+                            <conditions>
+                                <condition id="0" name="On function" sid="9815652463921151" type="Function">
+                                    <param id="0" name="Name">&quot;TravelWithTroops&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="4360986573446818" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="6338779165291578" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="6260886737206083" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="84342926316509">
+                            <conditions>
+                                <condition id="0" name="On function" sid="3866714090118753" type="Function">
+                                    <param id="0" name="Name">&quot;CourtBride&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="3093722912594196" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="2673192201506081" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="111431400563821" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="470935740793432">
+                            <conditions>
+                                <condition id="0" name="On function" sid="2235593969107662" type="Function">
+                                    <param id="0" name="Name">&quot;AwaitNightfall&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="8587591505215385" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="9404851860634234" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="6041165096812166" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="8786349367817406">
+                            <conditions>
+                                <condition id="0" name="On function" sid="9070855390764938" type="Function">
+                                    <param id="0" name="Name">&quot;InciteRevolt&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="6327988199089033" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="5531927173309716" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="4752478801082407" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7947743763033017">
+                            <conditions>
+                                <condition id="0" name="On function" sid="7470539962829482" type="Function">
+                                    <param id="0" name="Name">&quot;Visit&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Push" sid="4093144557740284" type="EventsList">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="3" name="Set at XY" sid="9317026152032396" type="EventsList">
+                                    <param id="0" name="X">Self.Width-1</param>
+                                    <param id="1" name="Y">1</param>
+                                    <param id="2" name="Value">LordName</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="6040310164938677" type="System">
+                                    <param id="0" name="Layout">Decision</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

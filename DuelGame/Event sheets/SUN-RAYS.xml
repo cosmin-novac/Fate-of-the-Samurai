@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>SUN-RAYS</name>
+    <events>
+        <event-block sid="1969455257404946">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5488812358011186" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="9923468596506162" type="ShadowObject" />
+                <action disabled="1" id="-9" name="Destroy" sid="781715227623587" type="Cloud" />
+                <action id="2" name="Stop" sid="6719342157740307" type="Cloud" />
+            </actions>
+            <sub-events>
+                <variable constant="0" name="ImagePointValue2" sid="6586935886740641" static="0" type="number">0</variable>
+                <event-block sid="8481473830030731">
+                    <conditions>
+                        <condition id="-12" name="Repeat" sid="6509072722343641" type="System">
+                            <param id="0" name="Count">40</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="-3" name="Create object" sid="9089078882816562" type="System">
+                            <param id="0" name="Object to create">ShadowObject</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">background6.ImagePointX(ImagePointValue2)</param>
+                            <param id="3" name="Y">background6.ImagePointY(ImagePointValue2)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2579939641750091" type="System">
+                            <param id="0" name="Object to create">ShadowObject2</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">background3.ImagePointX(ImagePointValue2)</param>
+                            <param id="3" name="Y">background3.ImagePointY(ImagePointValue2)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8765318300887928" type="System">
+                            <param id="0" name="Object to create">ShadowObject</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">background4.ImagePointX(ImagePointValue2)</param>
+                            <param id="3" name="Y">background4.ImagePointY(ImagePointValue2)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="5663765048413156" type="System">
+                            <param id="0" name="Variable">ImagePointValue2</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="7769955852408534" title="CloudCreation" />
+        <event-block sid="2386815273068926">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="6936915769017471" type="System">
+                    <param id="0" name="Interval (seconds)">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="3725175710845454" type="System">
+                    <param id="0" name="Object to create">Cloud</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(2000, 2200)</param>
+                    <param id="3" name="Y">random(30,460)</param>
+                </action>
+                <action id="2" name="Stop" sid="3873434711131414" type="Cloud" />
+            </actions>
+            <sub-events>
+                <variable constant="0" name="ImagePointValue" sid="6177904070778067" static="0" type="number">1</variable>
+                <event-block sid="38019595389331">
+                    <conditions>
+                        <condition id="-12" name="Repeat" sid="1450580617276295" type="System">
+                            <param id="0" name="Count">24</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="1864339276677915" type="System">
+                            <param id="0" name="Object to create">ShadowObject</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">Cloud.ImagePointX(ImagePointValue)</param>
+                            <param id="3" name="Y">Cloud.ImagePointY(ImagePointValue)</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="20984908577162" type="ShadowObject">
+                            <param id="0" name="Pin to">Cloud</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="1135659540366045" type="System">
+                            <param id="0" name="Variable">ImagePointValue</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="4588585111237266">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="2851534137091052" type="System" />
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="743764783488562" type="Cloud">
+                    <param id="0" name="X">self.X - 30 *dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8220875658304847">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="4576567522470141" type="Cloud">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">-160</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7611094805241689" type="Cloud" />
+            </actions>
+        </event-block>
+        <event-block sid="4573420241648369">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="6886798315376797" type="ShadowObject">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="X co-ordinate">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3891178427612389" type="ShadowObject" />
+            </actions>
+        </event-block>
+        <event-block sid="8906929383604944">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="5109973378438544" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="7376418753927381" type="ShadowLight">
+                    <param id="0" name="X">SUN.X</param>
+                    <param id="1" name="Y">SUN.Y</param>
+                </action>
+                <action id="-3" name="Set position" sid="979565089242151" type="SUN">
+                    <param id="0" name="X">PL1.X</param>
+                    <param id="1" name="Y">SUN.Y</param>
+                </action>
+                <action id="-3" name="Set position" sid="2746038132321089" type="Glow">
+                    <param id="0" name="X">SUN.X</param>
+                    <param id="1" name="Y">SUN.Y</param>
+                </action>
+                <action id="-3" name="Set position" sid="1359414393722058" type="LightRay">
+                    <param id="0" name="X">SUN.X</param>
+                    <param id="1" name="Y">SUN.Y</param>
+                </action>
+                <action id="-3" name="Set position" sid="7027990437616185" type="ShadowLight2">
+                    <param id="0" name="X">SUN.X</param>
+                    <param id="1" name="Y">SUN.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8537449896348874">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="1769149449280381" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="1907274259419897" type="System">
+                    <param id="0" name="Object to create">LightRay</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">SUN.X</param>
+                    <param id="3" name="Y">SUN.Y</param>
+                </action>
+                <action id="-8" name="Set angle" sid="9832212061002522" type="LightRay">
+                    <param id="0" name="Angle">random(360)</param>
+                </action>
+                <action id="-5" name="Set width" sid="4637143734086424" type="LightRay">
+                    <param id="0" name="Width">random(1024,2048)</param>
+                </action>
+                <action id="-6" name="Set height" sid="990091163780694" type="LightRay">
+                    <param id="0" name="Height">random(32,64)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6434486793995103">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="1053335415659611" type="Mouse">
+                    <param id="0" name="Object">Cloud</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="7549985826728802" type="Glow">
+                    <param id="0" name="Instance variable">Covered</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8019542829630502">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="1129051794521709" type="Mouse">
+                    <param id="0" name="Object">Cloud</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="5797742906168725" type="Glow">
+                    <param id="0" name="Instance variable">Covered</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8528306989111717">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="1068501340421914" type="Glow">
+                    <param id="0" name="Instance variable">Covered</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="4075390880593431" type="Glow">
+                    <param id="0" name="Opacity">self.Opacity -100 *dt</param>
+                </action>
+                <action id="-7" name="Set size" sid="9323277280015892" type="Glow">
+                    <param id="0" name="Width">lerp(self.Width, 256, 0.1) </param>
+                    <param id="1" name="Height">lerp(self.Height, 256, 0.1) </param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4945025947895804">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="9016637103412601" type="Glow">
+                    <param id="0" name="Instance variable">Covered</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="2958454515035122" type="Glow">
+                    <param id="0" name="Opacity">self.Opacity + 300 *dt</param>
+                </action>
+                <action id="-7" name="Set size" sid="7775458003963588" type="Glow">
+                    <param id="0" name="Width">lerp(self.Width, 1024, 0.1) </param>
+                    <param id="1" name="Height">lerp(self.Height, 1024, 0.1) </param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1670010252724704">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="4856451144745506" type="Mouse">
+                    <param id="0" name="Object">Cloud</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="6303224141169969" type="Cloud">
+                    <param id="0" name="Instance variable">Cthru</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4797723537952112">
+            <conditions>
+                <condition id="-11" name="For Each" sid="3807607485005837" type="System">
+                    <param id="0" name="Object">Cloud</param>
+                </condition>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="6773594037402318" type="Mouse">
+                    <param id="0" name="Object">Cloud</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="2328809840696768" type="Cloud">
+                    <param id="0" name="Instance variable">Cthru</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6389349740310722">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="5518067422423023" type="Cloud">
+                    <param id="0" name="Instance variable">Cthru</param>
+                </condition>
+                <condition id="-10" name="Compare opacity" sid="4791148320477475" type="Cloud">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Opacity">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="9220314074040639" type="Cloud">
+                    <param id="0" name="Opacity">self.Opacity -100 *dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4899776435351402">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="8576213756960008" type="Cloud">
+                    <param id="0" name="Instance variable">Cthru</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="8262568674870595" type="Cloud">
+                    <param id="0" name="Opacity">self.Opacity +300 *dt</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

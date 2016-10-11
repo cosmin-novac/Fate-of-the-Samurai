@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="2">CastleLevel0</layout>
+        <layout order="4">CastleLevel1</layout>
+        <event-sheet order="0">CastleLogic</event-sheet>
+        <event-sheet order="1">CastleLevel0</event-sheet>
+        <event-sheet active="1" order="3">CastleLevel1</event-sheet>
+        <event-sheet order="5">Characters</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="1" name="Tilemap" />
+        <family expanded="1" name="Coin" />
+        <family expanded="1" name="HiddenObjects" />
+        <family expanded="1" name="Enemy" />
+        <family expanded="1" name="EntityBody" />
+        <family expanded="1" name="bodyUsers" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/MissionGame/" />
+        <folder expanded="1" path="object-folder/System/" />
+        <folder expanded="0" path="object-folder/Obsolete/" />
+        <folder expanded="1" path="object-folder/PlayerBody/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="layout-folder/Mission/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="event-folder/Mission/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/Blood/" />
+        <folder expanded="1" path="animation-folder/deadRival/" />
+        <folder expanded="1" path="animation-folder/Door/" />
+        <folder expanded="1" path="animation-folder/Goal1Duel/" />
+        <folder expanded="1" path="animation-folder/player/" />
+        <folder expanded="1" path="animation-folder/playerHit/" />
+        <folder expanded="1" path="animation-folder/rival1/" />
+        <folder expanded="1" path="animation-folder/rivalHit/" />
+        <folder expanded="1" path="animation-folder/Silver/" />
+        <folder expanded="1" path="animation-folder/Steps/" />
+        <folder expanded="1" path="animation-folder/Goal2Kidnap/" />
+        <folder expanded="1" path="animation-folder/Goal3Treachery/" />
+        <folder expanded="1" path="animation-folder/Exit/" />
+        <folder expanded="1" path="animation-folder/Legs/" />
+        <folder expanded="1" path="animation-folder/Body/" />
+        <folder expanded="1" path="animation-folder/Head/" />
+    </folders-expanded>
+</c2uistate>

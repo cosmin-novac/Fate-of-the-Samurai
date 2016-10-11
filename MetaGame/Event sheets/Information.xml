@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Information</name>
+    <events>
+        <include>Functions</include>
+        <include>Random</include>
+        <event-block sid="6484785453857953">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5583534286035558" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="140040097701505" type="System">
+                    <param id="0" name="Variable">MenuX</param>
+                    <param id="1" name="Value">350</param>
+                </action>
+                <action id="-9" name="Set value" sid="5009559276282325" type="System">
+                    <param id="0" name="Variable">MenuY</param>
+                    <param id="1" name="Value">370</param>
+                </action>
+                <action id="0" name="Call function" sid="285424350950899" type="Function">
+                    <param id="0" name="Name">&quot;calculateStanding&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-9" name="Destroy" sid="707381312564553" type="Frames" />
+                <action id="-9" name="Destroy" sid="1405343800064469" type="Standing" />
+                <action id="5" name="Set web font" sid="7197001929197903" type="InfoText">
+                    <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                    <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="2904019200965497">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="318649402360439" type="System">
+                            <param id="0" name="Seconds">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7797190236743079">
+                            <conditions>
+                                <condition id="-10" name="For" sid="7253905016471587" type="System">
+                                    <param id="0" name="Name">&quot;counter&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="5472019298685103" type="System">
+                                    <param id="0" name="Object to create">Standing</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">loopindex*400-50</param>
+                                    <param id="3" name="Y">100</param>
+                                </action>
+                                <action id="2" name="Stop" sid="5866937855813535" type="Standing" />
+                                <action id="5" name="Set frame" sid="2786728150809499" type="Standing">
+                                    <param id="0" name="Frame number">loopindex</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="6165276173228297" type="Standing">
+                                    <param id="0" name="Instance variable">index</param>
+                                    <param id="1" name="Value">loopindex-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <variable constant="0" name="currentSamuraiIndex" sid="7649098257432011" static="0" type="number">0</variable>
+                        <event-block sid="2162755696576637">
+                            <conditions>
+                                <condition id="-10" name="For" sid="4415399132654673" type="System">
+                                    <param id="0" name="Name">&quot;counter&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9059466879784516" type="System">
+                                    <param id="0" name="Variable">currentSamuraiIndex</param>
+                                    <param id="1" name="Value">RenownList.At(loopindex,1)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="5414490734614794" type="Function">
+                                    <param id="0" name="Name">&quot;createImage&quot;</param>
+                                    <param id="1" name="Parameter {n}">currentSamuraiIndex{###}MenuX{###}MenuY</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <variable constant="0" name="infoTextY" sid="7914548843958349" static="0" type="number">0</variable>
+                                <variable constant="0" name="infoTextX" sid="3446831362278326" static="0" type="number">0</variable>
+                                <variable constant="0" name="spacing" sid="1432188926731605" static="0" type="number">50</variable>
+                                <event-block sid="7627095556304283">
+                                    <conditions>
+                                        <condition id="0" name="Compare value" sid="4027825742667592" type="Data">
+                                            <param id="0" name="Key">&quot;index&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">RenownList.At(loopindex,1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="7460139667951166" type="System">
+                                            <param id="0" name="Variable">infoTextX</param>
+                                            <param id="1" name="Value">MenuX-100</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="9672063669359711" type="System">
+                                            <param id="0" name="Variable">infoTextY</param>
+                                            <param id="1" name="Value">MenuY + 150</param>
+                                        </action>
+                                        <action id="14" name="Log" sid="8663982824753626" type="Browser">
+                                            <param id="0" name="Type">0</param>
+                                            <param id="1" name="Message">&quot;STANDING: &quot;&amp;RenownList.At(loopindex,1)&amp;&quot;, loop:&quot;&amp;currentSamuraiIndex</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="4021759671367535">
+                                            <conditions>
+                                                <condition id="0" name="Compare value" sid="4193200684877848" type="Data">
+                                                    <param id="0" name="Key">&quot;hasDaughter&quot;</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition id="-10" name="For" sid="4454439047892301" type="System">
+                                                    <param id="0" name="Name">&quot;daughter&quot;</param>
+                                                    <param id="1" name="Start index">1</param>
+                                                    <param id="2" name="End index">Data.Get(&quot;hasDaughter&quot;)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="3550874664403117" type="System">
+                                                    <param id="0" name="Variable">infoTextY</param>
+                                                    <param id="1" name="Value">spacing</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="631685258956224" type="System">
+                                                    <param id="0" name="Object to create">InfoText</param>
+                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="2" name="X">infoTextX</param>
+                                                    <param id="3" name="Y">infoTextY</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="3538954509403861" type="InfoText">
+                                                    <param id="0" name="Text">&quot;Daughter &quot;&amp;Data.Get(&quot;daughter&quot;&amp;loopindex&amp;&quot;name&quot;)</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="3168370905469306" type="System">
+                                                    <param id="0" name="Variable">infoTextY</param>
+                                                    <param id="1" name="Value">30</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="4068220795781276" type="System">
+                                                    <param id="0" name="Object to create">InfoText</param>
+                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="2" name="X">infoTextX</param>
+                                                    <param id="3" name="Y">infoTextY</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="4397507504516152" type="InfoText">
+                                                    <param id="0" name="Text">Function.Call(&quot;calculateAge&quot;,Data.Get(&quot;daughter&quot;&amp;loopindex&amp;&quot;age&quot;))</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="9291988874188604">
+                                            <conditions>
+                                                <condition id="0" name="Compare value" sid="4929587224161712" type="Data">
+                                                    <param id="0" name="Key">&quot;hasSon&quot;</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                                <condition id="-10" name="For" sid="6435614119192241" type="System">
+                                                    <param id="0" name="Name">&quot;son&quot;</param>
+                                                    <param id="1" name="Start index">1</param>
+                                                    <param id="2" name="End index">Data.Get(&quot;hasSon&quot;)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="1560272936116358" type="System">
+                                                    <param id="0" name="Variable">infoTextY</param>
+                                                    <param id="1" name="Value">spacing</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="163848768112351" type="System">
+                                                    <param id="0" name="Object to create">InfoText</param>
+                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="2" name="X">infoTextX</param>
+                                                    <param id="3" name="Y">infoTextY</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="5926082807063202">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="5193761536208082" type="System">
+                                                            <param id="0" name="First value">loopindex</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Set text" sid="562070965545718" type="InfoText">
+                                                            <param id="0" name="Text">&quot;Son &quot;&amp;Data.Get(&quot;son&quot;&amp;loopindex&amp;&quot;name&quot;)&amp;&quot; (heir)&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="8815230599386839">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="103135262735002" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Set text" sid="2865082589305649" type="InfoText">
+                                                            <param id="0" name="Text">&quot;Son &quot;&amp;Data.Get(&quot;son&quot;&amp;loopindex&amp;&quot;name&quot;)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="5047389780742376">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="-10" name="Add to" sid="512236017498675" type="System">
+                                                            <param id="0" name="Variable">infoTextY</param>
+                                                            <param id="1" name="Value">30</param>
+                                                        </action>
+                                                        <action id="-3" name="Create object" sid="4365408287805118" type="System">
+                                                            <param id="0" name="Object to create">InfoText</param>
+                                                            <param id="1" name="Layer">2</param>
+                                                            <param id="2" name="X">infoTextX</param>
+                                                            <param id="3" name="Y">infoTextY</param>
+                                                        </action>
+                                                        <action id="0" name="Set text" sid="270231436101931" type="InfoText">
+                                                            <param id="0" name="Text">Function.Call(&quot;calculateAge&quot;,Data.Get(&quot;son&quot;&amp;loopindex&amp;&quot;age&quot;))</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="567282624654816">
+                                            <conditions>
+                                                <condition id="0" name="Compare value" sid="6218592442787723" type="Data">
+                                                    <param id="0" name="Key">&quot;hasWife&quot;</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="9696016914996484" type="System">
+                                                    <param id="0" name="Variable">infoTextY</param>
+                                                    <param id="1" name="Value">spacing</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="7149718697204796" type="System">
+                                                    <param id="0" name="Object to create">InfoText</param>
+                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="2" name="X">infoTextX</param>
+                                                    <param id="3" name="Y">infoTextY</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="5296760936845926" type="InfoText">
+                                                    <param id="0" name="Text">&quot;Wife: &quot;&amp;Data.Get(&quot;wifeName&quot;)</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="5669605889738667" type="System">
+                                                    <param id="0" name="Variable">infoTextY</param>
+                                                    <param id="1" name="Value">30</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="4673076606313851" type="System">
+                                                    <param id="0" name="Object to create">InfoText</param>
+                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="2" name="X">infoTextX</param>
+                                                    <param id="3" name="Y">infoTextY</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="9027091341739259" type="InfoText">
+                                                    <param id="0" name="Text">&quot;    (&quot;&amp;Function.Call(&quot;calculateAge&quot;,Data.Get(&quot;wifeAge&quot;))&amp;&quot;)&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="919264993163901">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="9838230101071652" type="System">
+                                                    <param id="0" name="Variable">infoTextY</param>
+                                                    <param id="1" name="Value">spacing</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="3665600116837681" type="System">
+                                                    <param id="0" name="Object to create">InfoText</param>
+                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="2" name="X">infoTextX</param>
+                                                    <param id="3" name="Y">infoTextY</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="3856306948270603" type="InfoText">
+                                                    <param id="0" name="Text">&quot;Swordsmanship: &quot;&amp;Data.Get(&quot;swordsmanship&quot;)</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="5223408420276393" type="System">
+                                                    <param id="0" name="Variable">infoTextY</param>
+                                                    <param id="1" name="Value">spacing</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="6380344727634674" type="System">
+                                                    <param id="0" name="Object to create">InfoText</param>
+                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="2" name="X">infoTextX</param>
+                                                    <param id="3" name="Y">infoTextY</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="5447889126014707" type="InfoText">
+                                                    <param id="0" name="Text">&quot;Generalship: &quot;&amp;Data.Get(&quot;generalship&quot;)</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="8453200716103927" type="System">
+                                                    <param id="0" name="Variable">infoTextY</param>
+                                                    <param id="1" name="Value">spacing</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="2356758327691996" type="System">
+                                                    <param id="0" name="Object to create">InfoText</param>
+                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="2" name="X">infoTextX</param>
+                                                    <param id="3" name="Y">infoTextY</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="7753857556255359" type="InfoText">
+                                                    <param id="0" name="Text">&quot;Honor: &quot;&amp;Data.Get(&quot;honor&quot;)&amp;&quot; (&quot;&amp;Function.Call(&quot;calculateHonor&quot;,Data.Get(&quot;honor&quot;))&amp;&quot;)&quot;</param>
+                                                </action>
+                                                <action id="-10" name="Add to" sid="9322614478740099" type="System">
+                                                    <param id="0" name="Variable">infoTextY</param>
+                                                    <param id="1" name="Value">spacing</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="1571350203214987" type="System">
+                                                    <param id="0" name="Object to create">InfoText</param>
+                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="2" name="X">infoTextX</param>
+                                                    <param id="3" name="Y">infoTextY</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="547542218135866" type="InfoText">
+                                                    <param id="0" name="Text">&quot;Land: &quot;&amp;Data.Get(&quot;land&quot;)&amp;&quot; (&quot;&amp;Function.Call(&quot;calculateLand&quot;,Data.Get(&quot;land&quot;))&amp;&quot;)&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8410174228535129">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="1802147027206006" type="System">
+                                                    <param id="0" name="First value">currentSamuraiIndex</param>
+                                                    <param id="1" name="Comparison">1</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Add to" sid="8224567751974962" type="System">
+                                                    <param id="0" name="Variable">infoTextY</param>
+                                                    <param id="1" name="Value">spacing</param>
+                                                </action>
+                                                <action id="-3" name="Create object" sid="9534845054588936" type="System">
+                                                    <param id="0" name="Object to create">InfoText</param>
+                                                    <param id="1" name="Layer">2</param>
+                                                    <param id="2" name="X">infoTextX</param>
+                                                    <param id="3" name="Y">infoTextY</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="7781806331963167" type="InfoText">
+                                                    <param id="0" name="Text">&quot;Likes you: &quot;&amp;Data.Get(&quot;likesPlayer&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="2849192310151479">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="8424183665200815" type="System">
+                                            <param id="0" name="Variable">MenuX</param>
+                                            <param id="1" name="Value">MenuX+400</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3713772261710114">
+            <conditions>
+                <condition id="0" name="On click" sid="2026003395699471" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="8705695981609128" type="System">
+                    <param id="0" name="Layout">HomeCastle</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8357881129953296">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="1709880671471402" type="Mouse">
+                    <param id="0" name="Object">SamuraiImage</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4687601868570883">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="449008623554195" type="Standing">
+                            <param id="0" name="Instance variable">index</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">SamuraiImage.IID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="2480261902965786" type="Standing">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6202703448664139">
+            <conditions>
+                <condition id="-22" name="Else" sid="6567918742196919" type="System" />
+                <condition id="7" inverted="1" name="Cursor is over object" sid="5421902533651508" type="Mouse">
+                    <param id="0" name="Object">SamuraiImage</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="9540869246440029" type="Standing">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

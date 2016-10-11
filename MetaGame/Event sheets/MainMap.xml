@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MainMap</name>
+    <events>
+        <event-block sid="7528711394203163">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6617925484088131" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set web font" sid="5517557750646373" type="TextDifficulty">
+                    <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                    <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="4277322845173005" type="ClanInformation">
+                    <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                    <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                </action>
+                <action id="1" name="Load table" sid="9682409281369472" type="ClanData">
+                    <param id="0" name="CSV string">&quot;,Name&#x0D;&#x0A;0,Akamatsu&#x0D;&#x0A;1,Amago&#x0D;&#x0A;2,Asakura&#x0D;&#x0A;3,Ashikaga&#x0D;&#x0A;4,Ashina&#x0D;&#x0A;5,Date&#x0D;&#x0A;6,Hatakeyama&#x0D;&#x0A;7,Hosokawa&#x0D;&#x0A;8,Imagawa&#x0D;&#x0A;9,Kono&#x0D;&#x0A;10,Mogami&#x0D;&#x0A;11,Mori&#x0D;&#x0A;12,Otomo&#x0D;&#x0A;13,Ouchi&#x0D;&#x0A;14,Satake&#x0D;&#x0A;15,Shimazu&#x0D;&#x0A;16,Shoni&#x0D;&#x0A;17,Takeda&#x0D;&#x0A;18,Toki&#x0D;&#x0A;19,Uesugi&#x0D;&#x0A;20,Yamana&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="9366927875284336" title="InputMainMap">
+            <sub-events>
+                <event-block sid="5127996798667411">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="1504895708645741" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">MainMapSelection</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="6238245739683051" type="System">
+                            <param id="0" name="Variable">clanName</param>
+                            <param id="1" name="Value">ClanData.At(&quot;Name&quot;,str(MainMapSelection.ClanID))</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="3618455178830494" type="System">
+                            <param id="0" name="Layout">Difficulty</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4320727168869497">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="5655265749317123" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="3858502251912903" type="MainMapSelection">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8564705595630084">
+                            <conditions>
+                                <condition id="7" name="Cursor is over object" sid="5419248679264939" type="Mouse">
+                                    <param id="0" name="Object">MainMapSelection</param>
+                                </condition>
+                                <condition id="-19" name="Pick all" sid="4966572443589322" type="System">
+                                    <param id="0" name="Object">ClanInformation</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="4017016554942597" type="MainMapSelection">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="6087866214099178" type="Mons">
+                                    <param id="0" name="Frame number">MainMapSelection.ClanID</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="3733694762807383" type="Mons">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="5762474881901883" type="ClanInformation">
+                                    <param id="0" name="Text">ClanData.At(&quot;Name&quot;,str(MainMapSelection.ClanID))</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="2140425399183802" type="ClanInformation">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6146311013864373">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="5525725185009467" type="Mouse">
+                                    <param id="0" name="Object">MainMapSelection</param>
+                                </condition>
+                                <condition id="-19" name="Pick all" sid="9770380813964321" type="System">
+                                    <param id="0" name="Object">ClanInformation</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="4508566311703117" type="MainMapSelection">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="4248998508582925" type="Mons">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="3795362595167133" type="ClanInformation">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

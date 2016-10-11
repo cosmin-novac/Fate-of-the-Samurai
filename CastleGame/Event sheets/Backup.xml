@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Backup</name>
+    <events>
+        <variable constant="0" name="Counter2" sid="4910056680554016" static="0" type="number">0</variable>
+        <variable constant="0" name="MAP_HEIGHT2" sid="753888348377724" static="0" type="number">48</variable>
+        <variable constant="0" name="MAP_WIDTH2" sid="9065068358778141" static="0" type="number">64</variable>
+        <variable constant="0" name="TILE_SIZE2" sid="5255483408287688" static="0" type="number">32</variable>
+        <comment>&quot;Generate map&quot; action generates the map data and stores in the internal dictionary: the key is of the format &quot;x,y&quot; (e.g. &quot;12,34&quot;); the value is text character - &quot;.&quot; for floors/passable tiles and &quot;#&quot; for walls/solid tiles.</comment>
+        <comment>Uncomment cellular or maze map generateor lines and comment other map generator lines to see them in action.</comment>
+        <comment>Use the Set RNG seed action to always generate the same map.</comment>
+        <event-block sid="665243086518386">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="1335762115606792" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Set seed" sid="3923097520983091" type="Roguelike">
+                    <param id="0" name="Seed">1234</param>
+                </action>
+                <action disabled="1" id="0" name="Generate Dungeon Map" sid="2667369412949454" type="Roguelike">
+                    <param id="0" name="Width">MAP_WIDTH</param>
+                    <param id="1" name="Height">MAP_HEIGHT</param>
+                    <param id="2" name="Dungeon type">0</param>
+                    <param id="3" name="Room width min (Digger/Uniform)">4</param>
+                    <param id="4" name="Room width max (Digger/Uniform)">8</param>
+                    <param id="5" name="Room height min (Digger/Uniform)">4</param>
+                    <param id="6" name="Room height max (Digger/Uniform)">8</param>
+                    <param id="7" name="Corridor length min (Digger/Uniform)">0</param>
+                    <param id="8" name="Corridor length max (Digger/Uniform)">1</param>
+                    <param id="9" name="Room dug percentage (Digger/Uniform)">0.7</param>
+                </action>
+                <action disabled="1" id="4" name="Generate Cellular Map" sid="8876102112472653" type="Roguelike">
+                    <param id="0" name="Width">MAP_WIDTH</param>
+                    <param id="1" name="Height">MAP_HEIGHT</param>
+                    <param id="2" name="Probability ">1</param>
+                    <param id="3" name="Number of generations">49</param>
+                    <param id="4" name="born">&quot;2 3 4 5 6 7 8&quot;</param>
+                    <param id="5" name="survive">&quot;1 2 3 4 5 6 7&quot;</param>
+                </action>
+                <action disabled="1" id="5" name="Generate Maze Map" sid="8128116215643531" type="Roguelike">
+                    <param id="0" name="Width">MAP_WIDTH</param>
+                    <param id="1" name="Height">MAP_HEIGHT</param>
+                    <param id="2" name="Maze type">0</param>
+                    <param id="3" name="Regularity (Icey)">1</param>
+                </action>
+                <action id="0" name="Generate Dungeon Map" sid="6189618177704238" type="Roguelike">
+                    <param id="0" name="Width">MAP_WIDTH</param>
+                    <param id="1" name="Height">MAP_HEIGHT</param>
+                    <param id="2" name="Dungeon type">1</param>
+                    <param id="3" name="Room width min (Digger/Uniform)">5</param>
+                    <param id="4" name="Room width max (Digger/Uniform)">10</param>
+                    <param id="5" name="Room height min (Digger/Uniform)">5</param>
+                    <param id="6" name="Room height max (Digger/Uniform)">10</param>
+                    <param id="7" name="Corridor length min (Digger/Uniform)">0</param>
+                    <param id="8" name="Corridor length max (Digger/Uniform)">10</param>
+                    <param id="9" name="Room dug percentage (Digger/Uniform)">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="4249692695396356">
+                    <conditions />
+                    <actions>
+                        <action id="-7" name="Set size" sid="3050456885665436" type="Tilemap">
+                            <param id="0" name="Width">LayoutWidth</param>
+                            <param id="1" name="Height">LayoutHeight</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="955379221738745" type="Walls">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="820981805132142" type="Instructions">
+                            <param id="0" name="Text">&quot;ARROWS to move&quot; &amp; newline &amp; &quot;LMB on the floor to visualize a possible path&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="5637625545324708" type="Debug">
+                            <param id="0" name="Text">Roguelike.NumberOfRooms</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="8094593980660606" type="Debug">
+                            <param id="0" name="Text">&quot;Left: &quot; &amp; Roguelike.GetRoomEdge(Roguelike.NumberOfRooms - 1, &quot;left&quot;) &amp; newline &amp;&quot;Top: &quot; &amp; Roguelike.GetRoomEdge(Roguelike.NumberOfRooms - 1, &quot;top&quot;) </param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>First way to draw a map.</comment>
+                <event-block disabled="1" sid="1740607257272258">
+                    <conditions>
+                        <condition id="0" name="For each map cell" sid="6415038897534842" type="Roguelike" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="8561343160677809">
+                            <conditions>
+                                <condition id="1" name="Compare map cell char" sid="1768646124399803" type="Roguelike">
+                                    <param id="0" name="Map cell coords">Roguelike.CurrentCoordinates</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;#&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set tile" sid="6828510752048796" type="Walls">
+                                    <param id="0" name="Tile X">Roguelike.parseX(Roguelike.CurrentCoordinates)</param>
+                                    <param id="1" name="Tile Y">Roguelike.parseY(Roguelike.CurrentCoordinates)</param>
+                                    <param id="2" name="Tile">0</param>
+                                    <param id="3" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="7398205089833528">
+                            <conditions>
+                                <condition id="1" name="Compare map cell char" sid="3147322447279238" type="Roguelike">
+                                    <param id="0" name="Map cell coords">Roguelike.CurrentCoordinates</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;.&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set tile" sid="3826459113681944" type="Floors">
+                                    <param id="0" name="Tile X">Roguelike.parseX(Roguelike.CurrentCoordinates)</param>
+                                    <param id="1" name="Tile Y">Roguelike.parseY(Roguelike.CurrentCoordinates)</param>
+                                    <param id="2" name="Tile">1</param>
+                                    <param id="3" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Second way to draw a map. (Uncomment it and comment the first one to see it in action. The result should be the same.)</comment>
+                <event-block sid="4363546180218578">
+                    <conditions>
+                        <condition id="0" name="For each map cell" sid="3561198768921328" type="Roguelike" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3300958180879237">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="8779537222156432" type="System">
+                                    <param id="0" name="First value">Roguelike.CurrentCharacter</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;#&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set tile" sid="2464505780646845" type="Walls">
+                                    <param id="0" name="Tile X">Roguelike.parseX(Roguelike.CurrentCoordinates)</param>
+                                    <param id="1" name="Tile Y">Roguelike.parseY(Roguelike.CurrentCoordinates)</param>
+                                    <param id="2" name="Tile">0</param>
+                                    <param id="3" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6695672405862553">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="8619376791661798" type="System">
+                                    <param id="0" name="First value">Roguelike.CurrentCharacter</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;.&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set tile" sid="2366119062819498" type="Floors">
+                                    <param id="0" name="Tile X">Roguelike.parseX(Roguelike.CurrentCoordinates)</param>
+                                    <param id="1" name="Tile Y">Roguelike.parseY(Roguelike.CurrentCoordinates)</param>
+                                    <param id="2" name="Tile">1</param>
+                                    <param id="3" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Position the player on the first free cell.</comment>
+                <event-block sid="7398046895178463">
+                    <conditions>
+                        <condition id="0" name="For each map cell" sid="7820973807828202" type="Roguelike" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9801157507948407">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="2465520371272882" type="player">
+                                    <param id="0" name="Instance variable">IsPlaced</param>
+                                </condition>
+                                <condition id="1" name="Compare map cell char" sid="3091477868428955" type="Roguelike">
+                                    <param id="0" name="Map cell coords">Roguelike.CurrentCoordinates</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;.&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="6220251831918431" type="player">
+                                    <param id="0" name="X">Walls.TileToPositionX(Roguelike.parseX(Roguelike.CurrentCoordinates))</param>
+                                    <param id="1" name="Y">Walls.TileToPositionX(Roguelike.parseY(Roguelike.CurrentCoordinates))</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="3411064389162451" type="player">
+                                    <param id="0" name="Instance variable">IsPlaced</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-24" name="Stop loop" sid="1603326739327728" type="System" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Get room center and room edges. Useful for map object distribution.</comment>
+                <event-block sid="8664327866613693">
+                    <conditions>
+                        <condition id="7" name="For each room (Digger/Uniform)" sid="1449161776730564" type="Roguelike" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7550670032268679" type="System">
+                            <param id="0" name="Object to create">Goal1Duel</param>
+                            <param id="1" name="Layer">&quot;Objects&quot;</param>
+                            <param id="2" name="X">Roguelike.RoomCenterX(Roguelike.CurRoomInd) * TILE_SIZE + TILE_SIZE / 2</param>
+                            <param id="3" name="Y">Roguelike.RoomCenterY(Roguelike.CurRoomInd) * TILE_SIZE + TILE_SIZE / 2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="6846946646232632" type="System">
+                            <param id="0" name="Object to create">Silver</param>
+                            <param id="1" name="Layer">&quot;Objects&quot;</param>
+                            <param id="2" name="X">Roguelike.getRoomEdge(Roguelike.CurRoomInd, &quot;left&quot;) * TILE_SIZE + TILE_SIZE / 2</param>
+                            <param id="3" name="Y">Roguelike.getRoomEdge(Roguelike.CurRoomInd, &quot;top&quot;) * TILE_SIZE + TILE_SIZE / 2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="721166966892777" type="System">
+                            <param id="0" name="Object to create">Silver</param>
+                            <param id="1" name="Layer">&quot;Objects&quot;</param>
+                            <param id="2" name="X">Roguelike.getRoomEdge(Roguelike.CurRoomInd, &quot;left&quot;) * TILE_SIZE + TILE_SIZE / 2</param>
+                            <param id="3" name="Y">Roguelike.getRoomEdge(Roguelike.CurRoomInd, &quot;bottom&quot;) * TILE_SIZE + TILE_SIZE / 2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="8522061856203616" type="System">
+                            <param id="0" name="Object to create">Silver</param>
+                            <param id="1" name="Layer">&quot;Objects&quot;</param>
+                            <param id="2" name="X">Roguelike.getRoomEdge(Roguelike.CurRoomInd, &quot;right&quot;) * TILE_SIZE + TILE_SIZE / 2</param>
+                            <param id="3" name="Y">Roguelike.getRoomEdge(Roguelike.CurRoomInd, &quot;top&quot;) * TILE_SIZE + TILE_SIZE / 2</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4587583704821204" type="System">
+                            <param id="0" name="Object to create">Silver</param>
+                            <param id="1" name="Layer">&quot;Objects&quot;</param>
+                            <param id="2" name="X">Roguelike.getRoomEdge(Roguelike.CurRoomInd, &quot;right&quot;) * TILE_SIZE + TILE_SIZE / 2</param>
+                            <param id="3" name="Y">Roguelike.getRoomEdge(Roguelike.CurRoomInd, &quot;bottom&quot;) * TILE_SIZE + TILE_SIZE / 2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3703560192868522">
+                            <conditions>
+                                <condition id="8" name="For each door (Digger/Uniform)" sid="8561561156446185" type="Roguelike">
+                                    <param id="0" name="Room index">Roguelike.CurRoomInd</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="9148138687341951" type="System">
+                                    <param id="0" name="Object to create">Door</param>
+                                    <param id="1" name="Layer">&quot;Objects&quot;</param>
+                                    <param id="2" name="X">Roguelike.CurDoorX * TILE_SIZE + TILE_SIZE / 2</param>
+                                    <param id="3" name="Y">Roguelike.CurDoorY * TILE_SIZE + TILE_SIZE / 2</param>
+                                </action>
+                                <action id="1" name="Put character" sid="350553752892845" type="Roguelike">
+                                    <param id="0" name="X">Roguelike.CurDoorX</param>
+                                    <param id="1" name="Y">Roguelike.CurDoorY</param>
+                                    <param id="2" name="Ch">&quot;#&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>FOV (Field of view)</comment>
+        <event-block sid="3817608737219875">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="6041820709339967" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4951782802870038">
+                    <conditions>
+                        <condition id="2" name="For each visible map cell" sid="3117568617813834" type="Roguelike" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Erase tile" sid="7328761056888823" type="Lights">
+                            <param id="0" name="Tile X">Roguelike.parseX(Roguelike.CurrentCoordinates)</param>
+                            <param id="1" name="Tile Y">Roguelike.parseY(Roguelike.CurrentCoordinates)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5199545674576089">
+                    <conditions />
+                    <actions>
+                        <action id="2" name="Compute FOV" sid="6001920758210956" type="Roguelike">
+                            <param id="0" name="X">Floors.PositionToTileX(player.X)</param>
+                            <param id="1" name="Y">Floors.PositionToTileX(player.Y)</param>
+                            <param id="2" name="r">7</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8635213916295789">
+                    <conditions>
+                        <condition id="2" name="For each visible map cell" sid="335164008078088" type="Roguelike" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set tile" sid="3386204595708935" type="Lights">
+                            <param id="0" name="Tile X">Roguelike.parseX(Roguelike.CurrentCoordinates)</param>
+                            <param id="1" name="Tile Y">Roguelike.parseY(Roguelike.CurrentCoordinates)</param>
+                            <param id="2" name="Tile">2</param>
+                            <param id="3" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Pathfinding (Dijkstra algorithm)</comment>
+        <event-block sid="2810128431577922">
+            <conditions>
+                <condition id="0" name="On click" sid="9779819286142055" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="X" sid="1410603361956543" static="0" type="number">0</variable>
+                <variable constant="0" name="Y" sid="5668628507119781" static="0" type="number">0</variable>
+                <event-block sid="9398361113894767">
+                    <conditions>
+                        <condition id="3" name="For each map cell on path" sid="4479965282374363" type="Roguelike" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Erase tile" sid="1168298627910369" type="Paths">
+                            <param id="0" name="Tile X">Roguelike.parseX(Roguelike.CurrentCoordinates)</param>
+                            <param id="1" name="Tile Y">Roguelike.parseY(Roguelike.CurrentCoordinates)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6568704629015495">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="7261545972875757" type="System">
+                            <param id="0" name="Variable">X</param>
+                            <param id="1" name="Value">Floors.PositionToTileX(Mouse.X)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2391111657886027" type="System">
+                            <param id="0" name="Variable">Y</param>
+                            <param id="1" name="Value">Floors.PositionToTileY(Mouse.Y)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9466135328209402">
+                    <conditions>
+                        <condition id="0" name="Compare tile at" sid="2336623860420011" type="Floors">
+                            <param id="0" name="Tile X">X</param>
+                            <param id="1" name="Tile Y">Y</param>
+                            <param id="2" name="Comparison">4</param>
+                            <param id="3" name="Tile">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Compute path" sid="2275517049786624" type="Roguelike">
+                            <param id="0" name="SourceX">Floors.PositionToTileX(player.X)</param>
+                            <param id="1" name="SourceY">Floors.PositionToTileY(player.Y)</param>
+                            <param id="2" name="TargetX">X</param>
+                            <param id="3" name="TargetY">Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3197149968337697">
+                    <conditions>
+                        <condition id="3" name="For each map cell on path" sid="7709008017157352" type="Roguelike" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set tile" sid="8623788190138511" type="Paths">
+                            <param id="0" name="Tile X">Roguelike.parseX(Roguelike.CurrentCoordinates)</param>
+                            <param id="1" name="Tile Y">Roguelike.parseY(Roguelike.CurrentCoordinates)</param>
+                            <param id="2" name="Tile">3</param>
+                            <param id="3" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>In order to see triggers in action, uncomment the corresponding line and move the Debug text inside the layout.</comment>
+        <event-block disabled="1" sid="3040353200357149">
+            <conditions>
+                <condition id="4" name="On path computed" sid="131697504694837" type="Roguelike" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="4663179271966129" type="Debug">
+                    <param id="0" name="Text">&quot;Path found at &quot; &amp; time</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="2580320236771338">
+            <conditions>
+                <condition id="5" name="On FOV computed" sid="9643389790606664" type="Roguelike" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="971457559941542" type="Debug">
+                    <param id="0" name="Text">&quot;FOV computed at &quot; &amp; time</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="5268098028647163">
+            <conditions>
+                <condition id="6" name="On map generated" sid="4464204691473139" type="Roguelike" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="7757646194952907" type="Debug">
+                    <param id="0" name="Text">&quot;Map generated at &quot; &amp; time</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Collisions.</comment>
+        <event-block sid="6290996596328484">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2643904032602268" type="player">
+                    <param id="0" name="Object">Coin</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7554047355147962" type="Coin" />
+            </actions>
+        </event-block>
+        <event-block sid="5360616385289131">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="4532193180502224" type="player">
+                    <param id="0" name="Object">Door</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="7406091234228841" type="Door">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="1" name="Put character" sid="1314024191641539" type="Roguelike">
+                    <param id="0" name="X">floor(Door.X / TILE_SIZE)</param>
+                    <param id="1" name="Y">floor(Door.Y / TILE_SIZE)</param>
+                    <param id="2" name="Ch">&quot;.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

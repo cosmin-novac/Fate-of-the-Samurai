@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="2">Information</layout>
+        <layout order="7">HomeCastle</layout>
+        <layout order="8">Menu</layout>
+        <event-sheet order="0">Decision</event-sheet>
+        <event-sheet order="1">Functions</event-sheet>
+        <event-sheet active="1" order="3">Random</event-sheet>
+        <event-sheet order="4">Information</event-sheet>
+        <event-sheet order="5">Intro</event-sheet>
+        <event-sheet order="6">Map</event-sheet>
+        <event-sheet order="9">HomeCastle</event-sheet>
+        <event-sheet order="10">OpponentCastle</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1">
+        <family expanded="0" name="Selections" />
+        <family expanded="0" name="SelectionShadow" />
+        <family expanded="0" name="MainMapSelection" />
+        <family expanded="0" name="Frames" />
+        <family expanded="0" name="DifficultySelection" />
+        <family expanded="0" name="Button" />
+    </families-expanded>
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/MetaGame/" />
+        <folder expanded="1" path="object-folder/MetaGame/Map/" />
+        <folder expanded="1" path="object-folder/MetaGame/System/" />
+        <folder expanded="1" path="object-folder/MetaGame/InCastle/" />
+        <folder expanded="1" path="object-folder/MetaGame/Decisions/" />
+        <folder expanded="1" path="object-folder/MetaGame/Backgrounds/" />
+        <folder expanded="0" path="object-folder/MetaGame/MainMap/" />
+        <folder expanded="1" path="object-folder/MetaGame/MainMap/Mons/" />
+        <folder expanded="1" path="object-folder/MetaGame/Images/" />
+        <folder expanded="0" path="object-folder/MetaGame/Intro/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="layout-folder/MetaGame/" />
+        <folder expanded="1" path="layout-folder/MetaGame/Intro/" />
+        <folder expanded="1" path="layout-folder/Duel/" />
+        <folder expanded="1" path="layout-folder/Battle/" />
+        <folder expanded="1" path="layout-folder/Mission/" />
+        <folder expanded="1" path="layout-folder/MainMap/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="event-folder/MetaGame/" />
+        <folder expanded="1" path="event-folder/MetaGame/Decisions/" />
+        <folder expanded="1" path="event-folder/MetaGame/System/" />
+        <folder expanded="1" path="event-folder/Duel/" />
+        <folder expanded="1" path="event-folder/Battle/" />
+        <folder expanded="1" path="event-folder/Mission/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="1" path="file-folder/Icons/" />
+        <folder expanded="1" path="file-folder/MetaGame/" />
+        <folder expanded="1" path="sound-folder/MetaGame/" />
+        <folder expanded="1" path="music-folder/MetaGame/" />
+        <folder expanded="1" path="animation-folder/Castle/" />
+        <folder expanded="1" path="animation-folder/Player/" />
+        <folder expanded="1" path="animation-folder/PlayerAnimation/" />
+        <folder expanded="1" path="animation-folder/Map/" />
+        <folder expanded="1" path="animation-folder/ArmyAnimation/" />
+        <folder expanded="1" path="animation-folder/CastleTextBG/" />
+        <folder expanded="1" path="animation-folder/TextBG/" />
+        <folder expanded="1" path="animation-folder/MissionTemp/" />
+        <folder expanded="1" path="animation-folder/equipSamurai/" />
+        <folder expanded="1" path="animation-folder/homeCastle/" />
+        <folder expanded="1" path="animation-folder/BattleTemp/" />
+        <folder expanded="1" path="animation-folder/old_paper/" />
+        <folder expanded="1" path="animation-folder/duel/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/Mons/" />
+        <folder expanded="1" path="animation-folder/Akamatsu/" />
+        <folder expanded="1" path="animation-folder/Amago/" />
+        <folder expanded="1" path="animation-folder/Asakura/" />
+        <folder expanded="1" path="animation-folder/Ashikaga/" />
+        <folder expanded="1" path="animation-folder/Ashina/" />
+        <folder expanded="1" path="animation-folder/Date/" />
+        <folder expanded="1" path="animation-folder/Hatakeyama/" />
+        <folder expanded="1" path="animation-folder/Hosokawa/" />
+        <folder expanded="1" path="animation-folder/Imagawa/" />
+        <folder expanded="1" path="animation-folder/Kono/" />
+        <folder expanded="1" path="animation-folder/Mogami/" />
+        <folder expanded="1" path="animation-folder/Mori/" />
+        <folder expanded="1" path="animation-folder/Otomo/" />
+        <folder expanded="1" path="animation-folder/Ouchi/" />
+        <folder expanded="1" path="animation-folder/Satake/" />
+        <folder expanded="1" path="animation-folder/Shimazu/" />
+        <folder expanded="1" path="animation-folder/Shoni/" />
+        <folder expanded="1" path="animation-folder/Takeda/" />
+        <folder expanded="1" path="animation-folder/Toki/" />
+        <folder expanded="1" path="animation-folder/Uesugi/" />
+        <folder expanded="1" path="animation-folder/Yamana/" />
+        <folder expanded="1" path="animation-folder/JapanMap_LOTS/" />
+        <folder expanded="1" path="animation-folder/SamuraiImage/" />
+        <folder expanded="1" path="animation-folder/BrideImage/" />
+        <folder expanded="1" path="animation-folder/decisionScenes/" />
+        <folder expanded="1" path="animation-folder/difficulty/" />
+        <folder expanded="1" path="animation-folder/Standing/" />
+        <folder expanded="1" path="animation-folder/Katana/" />
+        <folder expanded="1" path="animation-folder/Wakizashi/" />
+        <folder expanded="1" path="animation-folder/Tanto/" />
+    </folders-expanded>
+</c2uistate>

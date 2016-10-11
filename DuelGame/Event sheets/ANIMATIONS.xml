@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ANIMATIONS</name>
+    <events>
+        <event-block sid="4209463874548175">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3493443354426032" type="System" />
+            </conditions>
+            <actions>
+                <action id="2" name="Set object scale ratio" sid="7767376017306606" type="samurai_duel">
+                    <param id="0" name="Scale Ratio">0.5</param>
+                    <param id="1" name="Flip X Axis">0</param>
+                    <param id="2" name="Flip Y Axis">0</param>
+                </action>
+                <action id="1" name="Set playback speed ratio" sid="1288014319085586" type="samurai_duel">
+                    <param id="0" name="Speed Ratio">0.4</param>
+                </action>
+                <action id="2" name="Set object scale ratio" sid="3907857283684764" type="real_samurai_black_duel">
+                    <param id="0" name="Scale Ratio">0.6</param>
+                    <param id="1" name="Flip X Axis">1</param>
+                    <param id="2" name="Flip Y Axis">0</param>
+                </action>
+                <action id="1" name="Set playback speed ratio" sid="9301586946657291" type="real_samurai_black_duel">
+                    <param id="0" name="Speed Ratio">0.4</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6154524607446559">
+            <conditions>
+                <condition id="666" name="On initialised" sid="3208258507557184" type="real_samurai_black_duel" />
+            </conditions>
+            <actions>
+                <action id="666" name="Associate object type" sid="102984073452553" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_foot_front</param>
+                    <param id="1" name="Name">&quot;Samurai_foot_front&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="863975523287369" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_leg_top_000</param>
+                    <param id="1" name="Name">&quot;Samurai_leg_top_000&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="4044731001712533" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_leg_bottom_000</param>
+                    <param id="1" name="Name">&quot;Samurai_leg_bottom_000&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="3815944305874994" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_foot_side_000</param>
+                    <param id="1" name="Name">&quot;Samurai_foot_side_000&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="5600492303004598" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_leg_bottom</param>
+                    <param id="1" name="Name">&quot;Samurai_leg_bottom&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="4535360491629478" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_leg_top</param>
+                    <param id="1" name="Name">&quot;Samurai_leg_top&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="9663387702434602" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_pelvis</param>
+                    <param id="1" name="Name">&quot;Samurai_pelvis&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="9435029584167262" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_torso</param>
+                    <param id="1" name="Name">&quot;Samurai_torso&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="3594738320894573" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_arm_rightside</param>
+                    <param id="1" name="Name">&quot;Samurai_arm_rightside&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="2521037379103796" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_upperarm_leftside</param>
+                    <param id="1" name="Name">&quot;Samurai_upperarm_leftside&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="348789181560373" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_head</param>
+                    <param id="1" name="Name">&quot;Samurai_head&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="8113915792580324" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_sword</param>
+                    <param id="1" name="Name">&quot;Samurai_sword&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="9430957922498402" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_upperarm_rightside</param>
+                    <param id="1" name="Name">&quot;Samurai_upperarm_rightside&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="4953345488796518" type="real_samurai_black_duel">
+                    <param id="0" name="Object">real_samurai_black_duel_Samurai_arm_leftside</param>
+                    <param id="1" name="Name">&quot;Samurai_arm_leftside&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3392772349604714">
+            <conditions>
+                <condition id="666" name="On initialised" sid="760052494220595" type="samurai_duel" />
+            </conditions>
+            <actions>
+                <action id="666" name="Associate object type" sid="9456928218519624" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_foot_front</param>
+                    <param id="1" name="Name">&quot;Samurai_foot_front&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="4976151227547668" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_leg_top_000</param>
+                    <param id="1" name="Name">&quot;Samurai_leg_top_000&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="7343909794969412" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_leg_bottom_000</param>
+                    <param id="1" name="Name">&quot;Samurai_leg_bottom_000&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="6071202556795788" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_foot_side_000</param>
+                    <param id="1" name="Name">&quot;Samurai_foot_side_000&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="297135367063939" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_leg_bottom</param>
+                    <param id="1" name="Name">&quot;Samurai_leg_bottom&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="6281954901201736" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_leg_top</param>
+                    <param id="1" name="Name">&quot;Samurai_leg_top&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="4893643649321195" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_pelvis</param>
+                    <param id="1" name="Name">&quot;Samurai_pelvis&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="8372929075887259" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_torso</param>
+                    <param id="1" name="Name">&quot;Samurai_torso&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="7383354502207236" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_arm_rightside</param>
+                    <param id="1" name="Name">&quot;Samurai_arm_rightside&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="3696147340302904" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_upperarm_leftside</param>
+                    <param id="1" name="Name">&quot;Samurai_upperarm_leftside&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="7930030549727435" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_head</param>
+                    <param id="1" name="Name">&quot;Samurai_head&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="1874091245213568" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_sword</param>
+                    <param id="1" name="Name">&quot;Samurai_sword&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="4908110898767248" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_upperarm_rightside</param>
+                    <param id="1" name="Name">&quot;Samurai_upperarm_rightside&quot;</param>
+                </action>
+                <action id="666" name="Associate object type" sid="5817553185332695" type="samurai_duel">
+                    <param id="0" name="Object">samurai_duel_Samurai_arm_leftside</param>
+                    <param id="1" name="Name">&quot;Samurai_arm_leftside&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>HomeCastle</name>
+    <events>
+        <include>Functions</include>
+        <include>Random</include>
+        <event-group description="" sid="3489638833699749" title="DrawMenuHome">
+            <sub-events>
+                <event-block sid="2067005298516549">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="9453605326786569" type="System" />
+                        <condition id="0" name="Compare value" sid="4520856616809864" type="Data">
+                            <param id="0" name="Key">&quot;index&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7615036355999566" type="System">
+                            <param id="0" name="Variable">MenuX</param>
+                            <param id="1" name="Value">330</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8963301013397109" type="System">
+                            <param id="0" name="Variable">MenuY</param>
+                            <param id="1" name="Value">470</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>Add conditions for Equip: current number/land, Drill: after hatamoto, Conquer: after daimyo, Retire: old+heir.</comment>
+                        <event-block sid="4268839401584272">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="4502015651917271" type="Function">
+                                    <param id="0" name="Name">&quot;CreateStoryForDecision&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Considering the situation, you decide to&quot;{###}MenuX{###}MenuY-200</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="5122338258251826" type="Frames">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="6092862080556462" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Equip&quot;{###}&quot;Equip more Samurai.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="9748562254737404" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;IncreaseTax&quot;{###}&quot;Increase the tax on your land.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="1775852152081662" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Donate&quot;{###}&quot;Donate Land to the Buddhist Temple.&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="7665377793778278" type="Function">
+                                    <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;Information&quot;{###}&quot;Consult your informants.&quot;</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block any="1" sid="8672191221090331">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="5076076760597525" type="System">
+                                            <param id="0" name="Variable">currentTitle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Hatamoto&quot;</param>
+                                        </condition>
+                                        <condition id="-14" name="Compare variable" sid="4430595507520656" type="System">
+                                            <param id="0" name="Variable">currentTitle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Daimyo&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="4488256429165398" type="Function">
+                                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Drill&quot;{###}&quot;Drill your troops.&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="4705137093282422" type="Function">
+                                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;TrainKenjutsu&quot;{###}&quot;Train Kenjutsu.&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="394298582081488">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="3967669040927854" type="System">
+                                            <param id="0" name="Variable">currentTitle</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Daimyo&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="5401024076250789" type="Function">
+                                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;ConquerNeighbour&quot;{###}&quot;Conquer a neighbouring province.&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="7816529572494757" type="Function">
+                                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Retire&quot;{###}&quot;Retire from worldy affairs.&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="5507521289661946" type="Function">
+                                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;DeclareShogunate&quot;{###}&quot;Declare yourself Shogun.&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="947021640464794">
+                                    <conditions>
+                                        <condition id="3" name="Has key" sid="5730704666172107" type="Data">
+                                            <param id="0" name="Key">&quot;mustCommitSeppuku&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="4469078756665554" type="Function">
+                                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;CommitSeppuku&quot;{###}&quot;Commit Seppuku.&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6399304557012381">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Call function" sid="9877002710323259" type="Function">
+                                            <param id="0" name="Name">&quot;CreateMenuItem&quot;</param>
+                                            <param id="1" name="Parameter {n}">&quot;Travel&quot;{###}&quot;Travel.&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7168748338693727" title="ActionsHome">
+            <sub-events>
+                <event-block sid="3407413384531895">
+                    <conditions>
+                        <condition id="0" name="On function" sid="2443620349283404" type="Function">
+                            <param id="0" name="Name">&quot;Information&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="9775035894319122" type="System">
+                            <param id="0" name="Layout">Information</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1896954898338623">
+                    <conditions>
+                        <condition id="0" name="On function" sid="1422680691513871" type="Function">
+                            <param id="0" name="Name">&quot;Travel&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Push" sid="6096480863911488" type="EventsList">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="6142742373836533" type="System">
+                            <param id="0" name="Layout">Decision</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="688283191220605">
+                    <conditions>
+                        <condition id="0" name="On function" sid="9840105052443391" type="Function">
+                            <param id="0" name="Name">&quot;Retire&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Push" sid="370992782779931" type="EventsList">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="9242123822667094" type="System">
+                            <param id="0" name="Layout">Decision</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6184123852515855">
+                    <conditions>
+                        <condition id="0" name="On function" sid="5291202646629294" type="Function">
+                            <param id="0" name="Name">&quot;CommitSeppuku&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Push" sid="5508521384038374" type="EventsList">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="2208699265777876" type="System">
+                            <param id="0" name="Layout">Decision</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="877520154992949">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8824951992975338" type="Function">
+                            <param id="0" name="Name">&quot;Drill&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="1022847728964183" type="Function">
+                            <param id="0" name="Name">&quot;checkRandomEvents&quot;</param>
+                            <param id="1" name="Parameter {n}">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="25084711582057">
+                    <conditions>
+                        <condition id="0" name="On function" sid="7904466256158275" type="Function">
+                            <param id="0" name="Name">&quot;TrainKenjutsu&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="7419849508301055" type="Function">
+                            <param id="0" name="Name">&quot;checkRandomEvents&quot;</param>
+                            <param id="1" name="Parameter {n}">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5818474614111353">
+                    <conditions>
+                        <condition id="0" name="On function" sid="2873697102700741" type="Function">
+                            <param id="0" name="Name">&quot;IncreaseTax&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="9578193213571688" type="Function">
+                            <param id="0" name="Name">&quot;checkRandomEvents&quot;</param>
+                            <param id="1" name="Parameter {n}">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5739403922174078">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8752902974896216" type="Function">
+                            <param id="0" name="Name">&quot;Donate&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="157833521961729" type="Function">
+                            <param id="0" name="Name">&quot;checkRandomEvents&quot;</param>
+                            <param id="1" name="Parameter {n}">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6019218846524956">
+                    <conditions>
+                        <condition id="0" name="On function" sid="1560296643029528" type="Function">
+                            <param id="0" name="Name">&quot;Equip&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="7091148438345975" type="Function">
+                            <param id="0" name="Name">&quot;checkRandomEvents&quot;</param>
+                            <param id="1" name="Parameter {n}">Function.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1551494321956833">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8000743321100014" type="Function">
+                            <param id="0" name="Name">&quot;DeclareShogunate&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Push" sid="916048197202405" type="EventsList">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Value">Function.Param(0)</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="7498090549481453" type="System">
+                            <param id="0" name="Layout">Decision</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

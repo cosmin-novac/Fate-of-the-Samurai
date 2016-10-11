@@ -1,0 +1,1509 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>MetaGame</name>
+    <description>Life of the Samurai</description>
+    <version>1.8</version>
+    <author>Cos</author>
+    <author-email>fundation2000@gmail.com</author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>3k8y8jenijj4j</unique-id>
+    <saved-with-version>20600</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Dictionary" version="1">Dictionary</plugin>
+        <plugin author="ramones" id="DropShadowText" version="1.299999952">Text (Drop shadow)</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
+        <plugin author="Rex.Rainbow" id="Rex_CSV" version="1">CSV</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1920</width>
+        <height>1080</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>1</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use iOS retina display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="MetaGame">
+            <object-folder name="Map">
+                <object-type name="Castle" sid="3547755947440556">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="DataUID" sid="2018282752836704" type="number" />
+                        <instance-variable name="CastleIndex" sid="8398495359688763" type="number" />
+                    </instance-variables>
+                    <container>
+                        <type>Castle</type>
+                        <type>CastleNameText</type>
+                        <type>CastleTextBG</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1678665897650803" speed="5">
+                            <frame duration="1" hotspotX="0.105263" hotspotY="1.14583" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\sprite_castle.png">
+                                <collision-poly>
+                                    <point x="0.305263" y="0.302083" />
+                                    <point x="0.494737" y="0" />
+                                    <point x="0.705263" y="0.291667" />
+                                    <point x="0.884211" y="0.5" />
+                                    <point x="0.915789" y="0.916667" />
+                                    <point x="0.494737" y="1" />
+                                    <point x="0.0947368" y="0.90625" />
+                                    <point x="0.126316" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Player" sid="981048396780087">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="DirectionCode" sid="1530581308744084" type="number" />
+                    </instance-variables>
+                    <behaviors>
+                        <behavior-type name="8Direction" sid="5785692467343045">
+                            <behavior id="EightDir" />
+                        </behavior-type>
+                        <behavior-type name="BoundToLayout" sid="4173269058318951">
+                            <behavior id="bound" />
+                        </behavior-type>
+                        <behavior-type name="ScrollTo" sid="9243750149931839">
+                            <behavior id="scrollto" />
+                        </behavior-type>
+                        <behavior-type name="Persist" sid="7819285657628662">
+                            <behavior id="Persist" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5667064023930558" speed="5">
+                            <frame duration="1" hotspotX="0.32" hotspotY="0.44">
+                                <image-point name="ShootPoint" x="1.16" y="0.64" />
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="0.977273" y="0.63" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="CastleNameText" sid="3972617682920918">
+                    <plugin id="Text" />
+                    <container>
+                        <type>Castle</type>
+                        <type>CastleNameText</type>
+                        <type>CastleTextBG</type>
+                    </container>
+                </object-type>
+                <object-type global="1" name="Data" sid="6890070905413336">
+                    <plugin id="Dictionary" />
+                </object-type>
+                <object-type name="PlayerAnimation" sid="1431421700596294">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="9715507473636629">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="4" loop="0" name="Walk0" pingpong="0" repeatcount="1" repeatto="0" sid="1972848661852069" speed="5">
+                            <frame duration="1" hotspotX="0.64" hotspotY="0.478261">
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0.655369" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.571429" hotspotY="0.44">
+                                <image-point name="ShootPoint" x="2.14286" y="0.64" />
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0.63" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.615385" hotspotY="0.458333">
+                                <image-point name="ShootPoint" x="2.15385" y="0.645833" />
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0.63" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.571429" hotspotY="0.44">
+                                <image-point name="ShootPoint" x="2.14286" y="0.64" />
+                                <collision-poly>
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0.63" />
+                                    <point x="0" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="4" loop="0" name="Walk1" pingpong="0" repeatcount="1" repeatto="0" sid="3525212670099658" speed="5">
+                            <frame duration="1" hotspotX="0.541667" hotspotY="0.478261" />
+                            <frame duration="1" hotspotX="0.535714" hotspotY="0.4375" />
+                            <frame duration="1" hotspotX="0.482759" hotspotY="0.45098" />
+                            <frame duration="1" hotspotX="0.535714" hotspotY="0.416667" />
+                        </animation>
+                        <animation framecount="4" loop="0" name="Walk3" pingpong="0" repeatcount="1" repeatto="0" sid="3067007898029894" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.413043" />
+                            <frame duration="1" hotspotX="0.541667" hotspotY="0.404255" />
+                            <frame duration="1" hotspotX="0.541667" hotspotY="0.391304" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.382979" />
+                        </animation>
+                        <animation framecount="4" loop="0" name="Walk2" pingpong="0" repeatcount="1" repeatto="0" sid="8265328553428303" speed="5">
+                            <frame duration="1" hotspotX="0.48" hotspotY="0.434783">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="0.655369" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.428571" hotspotY="0.44">
+                                <image-point name="ShootPoint" x="-1.14286" y="0.64" />
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="0.63" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.423077" hotspotY="0.4375">
+                                <image-point name="ShootPoint" x="-1.15385" y="0.645833" />
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="0.63" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.428571" hotspotY="0.44">
+                                <image-point name="ShootPoint" x="-1.14286" y="0.64" />
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="0.63" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Map" sid="4583119472071514">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2812936565456529" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.500223" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Map.jpg" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type global="1" name="GlobalDictionary" sid="9782838781809393">
+                    <plugin id="Dictionary" />
+                </object-type>
+                <object-type name="ArmyAnimation" sid="5420178357283185">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Pin" sid="5741523554077109">
+                            <behavior id="Pin" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Walk0" pingpong="0" repeatcount="1" repeatto="0" sid="1516028222986941" speed="5">
+                            <frame duration="1" hotspotX="0.497797" hotspotY="0.496774">
+                                <collision-poly>
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Walk1" pingpong="0" repeatcount="1" repeatto="0" sid="3690308828526185" speed="5">
+                            <frame duration="1" hotspotX="0.496774" hotspotY="0.497797">
+                                <collision-poly>
+                                    <point x="1" y="1" />
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                        <animation framecount="1" loop="0" name="Walk3" pingpong="0" repeatcount="1" repeatto="0" sid="2488701532609219" speed="5">
+                            <frame duration="1" hotspotX="0.496774" hotspotY="0.497797" />
+                        </animation>
+                        <animation framecount="1" loop="0" name="Walk2" pingpong="0" repeatcount="1" repeatto="0" sid="7166611501017592" speed="5">
+                            <frame duration="1" hotspotX="0.497797" hotspotY="0.496774">
+                                <collision-poly>
+                                    <point x="0" y="1" />
+                                    <point x="0" y="0" />
+                                    <point x="1" y="0" />
+                                    <point x="1" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="InfoTextMap" sid="3321303833119447">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="CastleTextBG" sid="4313198863092187">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>Castle</type>
+                        <type>CastleNameText</type>
+                        <type>CastleTextBG</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2751754302014659" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0.004" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type global="1" name="takenNames" sid="2876941551270731">
+                    <plugin id="Arr" />
+                </object-type>
+                <object-type global="1" name="takenImages" sid="3495663718372167">
+                    <plugin id="Arr" />
+                </object-type>
+                <object-type name="InfoText" sid="6163967728648247">
+                    <plugin id="Text" />
+                </object-type>
+            </object-folder>
+            <object-folder name="System">
+                <object-type name="Btn_LOAD" sid="602764106216174">
+                    <plugin id="Button" />
+                </object-type>
+                <object-type name="Btn_SAVE" sid="9403240245076866">
+                    <plugin id="Button" />
+                </object-type>
+                <object-type name="Btn_START" sid="1670995162377337">
+                    <plugin id="Button" />
+                </object-type>
+                <object-type name="Browser" sid="218516545698485">
+                    <plugin id="Browser" />
+                </object-type>
+                <object-type global="1" name="CastlePosCSV" sid="9044349642382802">
+                    <plugin id="Rex_CSV" />
+                </object-type>
+                <object-type global="1" name="EventsListCSV" sid="8586021890654666">
+                    <plugin id="Rex_CSV" />
+                </object-type>
+                <object-type name="Function" sid="2230747439029351">
+                    <plugin id="Function" />
+                </object-type>
+                <object-type global="1" name="GirlNamesCSV" sid="6361455360168018">
+                    <plugin id="Rex_CSV" />
+                </object-type>
+                <object-type name="Keyboard" sid="6794278048006596">
+                    <plugin id="Keyboard" />
+                </object-type>
+                <object-type name="Mouse" sid="853602852331248">
+                    <plugin id="Mouse" />
+                </object-type>
+                <object-type global="1" name="NamesCSV" sid="2664293850535526">
+                    <plugin id="Rex_CSV" />
+                </object-type>
+            </object-folder>
+            <object-folder name="InCastle">
+                <object-type name="OpponentName" sid="1195250127699277">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="MenuSelection" sid="7223146683191861">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="Story" sid="2460438936281563">
+                    <plugin id="Text" />
+                </object-type>
+            </object-folder>
+            <object-folder name="Decisions">
+                <object-type global="1" name="EventsList" sid="8594846750715637">
+                    <plugin id="Arr" />
+                </object-type>
+                <object-type name="Frame1" sid="2147350399610047">
+                    <plugin id="NinePatch" />
+                    <texture original-source="C:\Users\Cosmin\Pictures\Samurai\Frames and BGs\frame1.png" />
+                </object-type>
+                <object-type name="StoryShadow" sid="9938890911529872">
+                    <plugin id="DropShadowText" />
+                </object-type>
+                <object-type name="MenuSelectionShadow" sid="1674683804679818">
+                    <plugin id="DropShadowText" />
+                </object-type>
+                <object-type name="Frame2" sid="4983147096060302">
+                    <plugin id="NinePatch" />
+                    <texture />
+                </object-type>
+                <object-type name="Frame3" sid="7572084806404776">
+                    <plugin id="NinePatch" />
+                    <texture original-source="C:\Users\Cosmin\Pictures\Samurai\Frames and BGs\frame3.png" />
+                </object-type>
+                <object-type name="Frame4" sid="1638254779768365">
+                    <plugin id="NinePatch" />
+                    <texture original-source="C:\Users\Cosmin\Pictures\Samurai\Frames and BGs\frame4.png" />
+                </object-type>
+                <object-type name="Frame5" sid="3878620234673608">
+                    <plugin id="NinePatch" />
+                    <texture original-source="C:\Users\Cosmin\Pictures\Samurai\Frames and BGs\frame5.png" />
+                </object-type>
+                <object-type name="Frame6" sid="6626336206299975">
+                    <plugin id="NinePatch" />
+                    <texture original-source="C:\Users\Cosmin\Pictures\Samurai\Frames and BGs\frame6.png" />
+                </object-type>
+                <object-type name="Frame7" sid="759777938792612">
+                    <plugin id="NinePatch" />
+                    <texture original-source="C:\Users\Cosmin\Pictures\Samurai\Frames and BGs\frame7.png" />
+                </object-type>
+                <object-type name="Frame8" sid="92896209829134">
+                    <plugin id="NinePatch" />
+                    <texture original-source="C:\Users\Cosmin\Pictures\Samurai\Frames and BGs\frame8.png" />
+                </object-type>
+                <object-type name="Frame9" sid="6530619420328634">
+                    <plugin id="NinePatch" />
+                    <texture original-source="C:\Users\Cosmin\Pictures\Samurai\Frames and BGs\frame9.png" />
+                </object-type>
+                <object-type name="TextBG" sid="8143410834903556">
+                    <plugin id="Sprite" />
+                    <effects>
+                        <effect-type name="AdjustHSL">
+                            <effect id="hsladjust" />
+                        </effect-type>
+                    </effects>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1684334609652528" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0.004" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type global="1" name="RenownList" sid="9749095508894348">
+                    <plugin id="Arr" />
+                </object-type>
+                <object-type name="SamuraiName" sid="6636813017148843">
+                    <plugin id="DropShadowText" />
+                    <container>
+                        <type>SamuraiImage</type>
+                        <type>SamuraiName</type>
+                    </container>
+                </object-type>
+            </object-folder>
+            <object-folder name="Backgrounds">
+                <object-type name="MissionTemp" sid="1726253897513344">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1516043985872663" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.500678" original-source="C:\Users\Cosmin\Pictures\Samurai\2RofDwK.jpg" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="equipSamurai" sid="4646265300390635">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5751238734673581" speed="5">
+                            <frame duration="1" hotspotX="1" hotspotY="1.00179" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\EquipSamurai.png">
+                                <collision-poly>
+                                    <point x="0.310811" y="0.407143" />
+                                    <point x="0.5" y="0.178571" />
+                                    <point x="0.901247" y="0.0428571" />
+                                    <point x="0.99896" y="0.517857" />
+                                    <point x="0.905405" y="1" />
+                                    <point x="0.0945946" y="1" />
+                                    <point x="0.316008" y="0.517857" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="homeCastle" sid="6218473405413484">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2249116624539587" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\homeCastle1.png">
+                                <collision-poly>
+                                    <point x="0.066" y="0.107375" />
+                                    <point x="0.5" y="0.0629067" />
+                                    <point x="0.930667" y="0.112798" />
+                                    <point x="0.942" y="0.5" />
+                                    <point x="0.914" y="0.860087" />
+                                    <point x="0.5" y="0.729935" />
+                                    <point x="0.102" y="0.834056" />
+                                    <point x="0.174667" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="BattleTemp" sid="6196175293168502">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3337548651422415" speed="5">
+                            <frame duration="1" hotspotX="0.500971" hotspotY="0.501292" original-source="C:\Users\Cosmin\Pictures\Samurai\kennyo6.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="old_paper" sid="9072704618916488">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8585117801783038" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.500375" original-source="C:\Users\Cosmin\Pictures\Samurai\old_paper.jpg" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="duel" sid="2269501051831675">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="289651122332914" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.50075" original-source="C:\Users\Cosmin\Pictures\Samurai\samurai-8ec910c3-8a68-4024-a505-ca58e91ab508.jpg" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Sprite" sid="7431710757721746">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8196244973687512" speed="5">
+                            <frame duration="1" hotspotX="0.914152" hotspotY="1.54436" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Sprite2" sid="774096011267928">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8436175654171368" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="MainMap">
+                <object-folder name="Mons">
+                    <object-type name="Mons" sid="5635675438825214">
+                        <plugin id="Sprite" />
+                        <animation-folder>
+                            <animation framecount="21" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1253674549083075" speed="5">
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\akamatsu.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Amako.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\asakura.png" />
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Ashikaga.png">
+                                    <collision-poly>
+                                        <point x="0.145" y="0.145" />
+                                        <point x="0.5" y="0" />
+                                        <point x="0.855" y="0.145" />
+                                        <point x="1" y="0.5" />
+                                        <point x="0.855" y="0.855" />
+                                        <point x="0.5" y="1" />
+                                        <point x="0.145" y="0.855" />
+                                        <point x="0" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Ashina.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Date.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Hatakeyama.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Hosokawa.JPG" />
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\imagawa.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Kono.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Mogami.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Mori.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\otomo.jpg" />
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Ouchi_2.png">
+                                    <collision-poly>
+                                        <point x="0.148973" y="0.148973" />
+                                        <point x="0.5" y="0.00513699" />
+                                        <point x="0.849315" y="0.150685" />
+                                        <point x="0.991438" y="0.5" />
+                                        <point x="0.847603" y="0.847603" />
+                                        <point x="0.5" y="0.991438" />
+                                        <point x="0.150685" y="0.849315" />
+                                        <point x="0.00513699" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Satake.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\shimazu.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\shoni.jpg" />
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Takeda.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.503906" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Toki.png">
+                                    <collision-poly>
+                                        <point x="0.178571" y="0.179856" />
+                                        <point x="0.5" y="0" />
+                                        <point x="0.814286" y="0.18705" />
+                                        <point x="0.978571" y="0.496403" />
+                                        <point x="0.857143" y="0.856115" />
+                                        <point x="0.5" y="0.589928" />
+                                        <point x="0.142857" y="0.856115" />
+                                        <point x="0.0214286" y="0.496403" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Uesugi.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                                <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\symbols\Yamana.png">
+                                    <collision-poly>
+                                        <point x="0.148438" y="0.148438" />
+                                        <point x="0.5" y="0.00390625" />
+                                        <point x="0.851563" y="0.148438" />
+                                        <point x="0.996094" y="0.5" />
+                                        <point x="0.851563" y="0.851563" />
+                                        <point x="0.5" y="0.996094" />
+                                        <point x="0.148438" y="0.851563" />
+                                        <point x="0.00390625" y="0.5" />
+                                    </collision-poly>
+                                </frame>
+                            </animation>
+                        </animation-folder>
+                    </object-type>
+                </object-folder>
+                <object-type name="Akamatsu" sid="5856228395127464">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5376581442201957" speed="5">
+                            <frame duration="1" hotspotX="1.9887" hotspotY="-0.318471" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Akamatsu.png">
+                                <collision-poly>
+                                    <point x="0.112994" y="0.159236" />
+                                    <point x="0.519774" y="0.0955414" />
+                                    <point x="0.757062" y="0.235669" />
+                                    <point x="0.920904" y="0.407643" />
+                                    <point x="0.785311" y="0.592357" />
+                                    <point x="0.694915" y="0.859873" />
+                                    <point x="0.0960452" y="0.821656" />
+                                    <point x="0.101695" y="0.477707" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Amago" sid="717332403697699">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8790002594254643" speed="5">
+                            <frame duration="1" hotspotX="2.21111" hotspotY="0.145631" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Amago.png">
+                                <collision-poly>
+                                    <point x="0.0888889" y="0.174757" />
+                                    <point x="0.4" y="0.0776699" />
+                                    <point x="0.55" y="0.398058" />
+                                    <point x="0.861111" y="0.533981" />
+                                    <point x="0.955556" y="0.747573" />
+                                    <point x="0.7" y="0.747573" />
+                                    <point x="0.511111" y="0.912621" />
+                                    <point x="0.05" y="0.679612" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Asakura" sid="9084506017206813">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9731561063282057" speed="5">
+                            <frame duration="1" hotspotX="-0.101974" hotspotY="0.379845" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Asakura.png">
+                                <collision-poly>
+                                    <point x="0.667763" y="0.0775193" />
+                                    <point x="0.914474" y="0.0542636" />
+                                    <point x="0.720395" y="0.217054" />
+                                    <point x="0.697369" y="0.484496" />
+                                    <point x="0.955592" y="0.46124" />
+                                    <point x="0.865132" y="0.744186" />
+                                    <point x="0.513158" y="0.589147" />
+                                    <point x="0.338816" y="0.885659" />
+                                    <point x="0.103618" y="0.907946" />
+                                    <point x="0.125" y="0.655039" />
+                                    <point x="0.539473" y="0.379845" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Ashikaga" sid="781682579527118">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4727119149385216" speed="5">
+                            <frame duration="1" hotspotX="0.375" hotspotY="-0.606557" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Ashikaga.png">
+                                <collision-poly>
+                                    <point x="0.3125" y="0.322404" />
+                                    <point x="0.166667" y="0.10929" />
+                                    <point x="0.909722" y="0.229508" />
+                                    <point x="0.881945" y="0.497268" />
+                                    <point x="0.715278" y="0.754098" />
+                                    <point x="0.208333" y="0.857923" />
+                                    <point x="0.118056" y="0.677596" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Ashina" sid="8283648182957865">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9090314247361818" speed="5">
+                            <frame duration="1" hotspotX="-3.06875" hotspotY="-0.529801" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Ashina.png">
+                                <collision-poly>
+                                    <point x="0.21875" y="0.198676" />
+                                    <point x="0.50625" y="0.119205" />
+                                    <point x="0.8625" y="0.125828" />
+                                    <point x="0.88125" y="0.483444" />
+                                    <point x="0.76875" y="0.768212" />
+                                    <point x="0.50625" y="0.874172" />
+                                    <point x="0.19375" y="0.827815" />
+                                    <point x="0.18125" y="0.476821" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Date" sid="9874655681812488">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3035650887145659" speed="5">
+                            <frame duration="1" hotspotX="-0.98062" hotspotY="0.759285" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Date.png">
+                                <collision-poly>
+                                    <point x="0.761628" y="0.237964" />
+                                    <point x="0.552326" y="0.177442" />
+                                    <point x="0.910853" y="0.0357634" />
+                                    <point x="0.899225" y="0.502063" />
+                                    <point x="0.515504" y="0.737276" />
+                                    <point x="0.418605" y="0.964237" />
+                                    <point x="0.0968992" y="0.832187" />
+                                    <point x="0.356589" y="0.766162" />
+                                    <point x="0.592054" y="0.561898" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Hatakeyama" sid="832234329642686">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8469918443332041" speed="5">
+                            <frame duration="1" hotspotX="0.968085" hotspotY="-1.60345" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Hatakeyama.png">
+                                <collision-poly>
+                                    <point x="0.18617" y="0.166667" />
+                                    <point x="0.515958" y="0.091954" />
+                                    <point x="0.31383" y="0.45977" />
+                                    <point x="0.478723" y="0.62069" />
+                                    <point x="0.930851" y="0.45977" />
+                                    <point x="0.351064" y="0.936782" />
+                                    <point x="0.0797872" y="0.413793" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Hosokawa" sid="9587275251493962">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6535159264924017" speed="5">
+                            <frame duration="1" hotspotX="0.994633" hotspotY="-0.324675" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Hosokawa.png">
+                                <collision-poly>
+                                    <point x="0.220036" y="0.561688" />
+                                    <point x="0.372093" y="0.548701" />
+                                    <point x="0.629696" y="0.246753" />
+                                    <point x="0.68068" y="0.0373376" />
+                                    <point x="0.91771" y="0.357143" />
+                                    <point x="0.887299" y="0.87987" />
+                                    <point x="0.821109" y="0.561689" />
+                                    <point x="0.0554562" y="0.935065" />
+                                    <point x="0.0250447" y="0.792207" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Imagawa" sid="9635401605692398">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9882773719529798" speed="5">
+                            <frame duration="1" hotspotX="-0.228814" hotspotY="-0.883178" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Imagawa.png">
+                                <collision-poly>
+                                    <point x="0.112994" y="0.200935" />
+                                    <point x="0.519774" y="0.471963" />
+                                    <point x="0.740113" y="0.0747664" />
+                                    <point x="0.949152" y="0.345794" />
+                                    <point x="0.822034" y="0.668225" />
+                                    <point x="0.474576" y="0.883177" />
+                                    <point x="0.177966" y="0.705608" />
+                                    <point x="0.0706215" y="0.485981" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Kono" sid="7212204278018809">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8563435711902005" speed="5">
+                            <frame duration="1" hotspotX="2.30859" hotspotY="-1.08" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Kono.png">
+                                <collision-poly>
+                                    <point x="0.371094" y="0.36" />
+                                    <point x="0.597656" y="0.0971429" />
+                                    <point x="0.683594" y="0.308571" />
+                                    <point x="0.933594" y="0.417143" />
+                                    <point x="0.671875" y="0.428571" />
+                                    <point x="0.472656" y="0.577143" />
+                                    <point x="0.179688" y="0.84" />
+                                    <point x="0.1875" y="0.365714" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Mogami" sid="6319455806429441">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="746144091804548" speed="5">
+                            <frame duration="1" hotspotX="-2" hotspotY="0.956422" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Mogami.png">
+                                <collision-poly>
+                                    <point x="0.501639" y="0.318807" />
+                                    <point x="0.613115" y="0.0366973" />
+                                    <point x="0.947541" y="0.107798" />
+                                    <point x="0.642623" y="0.518349" />
+                                    <point x="0.219672" y="0.951835" />
+                                    <point x="0.0622951" y="0.866972" />
+                                    <point x="0.281967" y="0.513762" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Mori" sid="6969465004858823">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9590171741178206" speed="5">
+                            <frame duration="1" hotspotX="2.36709" hotspotY="-0.0153061" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Mori.png">
+                                <collision-poly>
+                                    <point x="0.189873" y="0.260204" />
+                                    <point x="0.662447" y="0.0612245" />
+                                    <point x="0.738397" y="0.285714" />
+                                    <point x="0.940928" y="0.377551" />
+                                    <point x="0.860759" y="0.852041" />
+                                    <point x="0.455696" y="0.795918" />
+                                    <point x="0.413502" y="0.642857" />
+                                    <point x="0.0843882" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Otomo" sid="9321038862582742">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2825976326078906" speed="5">
+                            <frame duration="1" hotspotX="3.83568" hotspotY="-0.358268" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Otomo.png">
+                                <collision-poly>
+                                    <point x="0.0751174" y="0.161417" />
+                                    <point x="0.619718" y="0.110236" />
+                                    <point x="0.671362" y="0.311024" />
+                                    <point x="0.948357" y="0.496063" />
+                                    <point x="0.748826" y="0.574803" />
+                                    <point x="0.901408" y="0.933071" />
+                                    <point x="0.516432" y="0.795276" />
+                                    <point x="0.497653" y="0.570866" />
+                                    <point x="0.338028" y="0.374016" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Ouchi" sid="4871948638495048">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="381368548566453" speed="5">
+                            <frame duration="1" hotspotX="3.48485" hotspotY="-0.225434" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Ouchi.png">
+                                <collision-poly>
+                                    <point x="0.247475" y="0.0924855" />
+                                    <point x="0.5" y="0.127168" />
+                                    <point x="0.772727" y="0.0346821" />
+                                    <point x="0.717172" y="0.468208" />
+                                    <point x="0.919192" y="0.369943" />
+                                    <point x="0.818182" y="0.815029" />
+                                    <point x="0.0808081" y="0.33526" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Satake" sid="131300350414179">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="26167184621804" speed="5">
+                            <frame duration="1" hotspotX="-1.94142" hotspotY="-0.411576" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Satake.png">
+                                <collision-poly>
+                                    <point x="0.276151" y="0.305466" />
+                                    <point x="0.589958" y="0.257235" />
+                                    <point x="0.757322" y="0.0321543" />
+                                    <point x="0.958159" y="0.128617" />
+                                    <point x="0.711297" y="0.424437" />
+                                    <point x="0.71339" y="0.644695" />
+                                    <point x="0.151674" y="0.936495" />
+                                    <point x="0.0962343" y="0.839228" />
+                                    <point x="0.334728" y="0.678456" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Shimazu" sid="7370584044641398">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3527330619475894" speed="5">
+                            <frame duration="1" hotspotX="2.93333" hotspotY="-0.610272" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Shimazu.png">
+                                <collision-poly>
+                                    <point x="0.451515" y="0.31722" />
+                                    <point x="0.521212" y="0.0513595" />
+                                    <point x="0.69394" y="0.123867" />
+                                    <point x="0.909091" y="0.407855" />
+                                    <point x="0.5" y="0.876133" />
+                                    <point x="0.221212" y="0.960725" />
+                                    <point x="0.0151515" y="0.785498" />
+                                    <point x="0.212121" y="0.214501" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Shoni" sid="5992117651471759">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9258090584395454" speed="5">
+                            <frame duration="1" hotspotX="4.65327" hotspotY="-0.595376" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Shoni.png">
+                                <collision-poly>
+                                    <point x="0.226131" y="0.104046" />
+                                    <point x="0.557789" y="0.179191" />
+                                    <point x="0.944724" y="0.554913" />
+                                    <point x="0.718593" y="0.630058" />
+                                    <point x="0.487437" y="0.445087" />
+                                    <point x="0.457286" y="0.809249" />
+                                    <point x="0.040201" y="0.739884" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Takeda" sid="350279031596034">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5827377799548382" speed="5">
+                            <frame duration="1" hotspotX="-0.813008" hotspotY="-0.113208" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Takeda.png">
+                                <collision-poly>
+                                    <point x="0.544715" y="0.0792453" />
+                                    <point x="0.934959" y="0.139623" />
+                                    <point x="0.747968" y="0.332075" />
+                                    <point x="0.747968" y="0.675471" />
+                                    <point x="0.548781" y="0.615094" />
+                                    <point x="0.308943" y="0.935849" />
+                                    <point x="0.109756" y="0.898113" />
+                                    <point x="0.130081" y="0.55849" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Toki" sid="5470723146743161">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1094037886104912" speed="5">
+                            <frame duration="1" hotspotX="0.121951" hotspotY="-0.183486" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Toki.png">
+                                <collision-poly>
+                                    <point x="0.243903" y="0.626911" />
+                                    <point x="0.387195" y="0.37156" />
+                                    <point x="0.716463" y="0.0948012" />
+                                    <point x="0.942073" y="0.116208" />
+                                    <point x="0.695122" y="0.574923" />
+                                    <point x="0.481707" y="0.458716" />
+                                    <point x="0.268293" y="0.72477" />
+                                    <point x="0.298781" y="0.938838" />
+                                    <point x="0.0487805" y="0.840979" />
+                                    <point x="0.121951" y="0.610092" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Uesugi" sid="651097581335415">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4425406688536112" speed="5">
+                            <frame duration="1" hotspotX="-0.869081" hotspotY="0.268128" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Uesugi.png">
+                                <collision-poly>
+                                    <point x="0.0473537" y="0.318718" />
+                                    <point x="0.440112" y="0.0573356" />
+                                    <point x="0.949861" y="0.0775716" />
+                                    <point x="0.598886" y="0.306914" />
+                                    <point x="0.520891" y="0.569983" />
+                                    <point x="0.628134" y="0.741147" />
+                                    <point x="0.431755" y="0.897133" />
+                                    <point x="0.0473538" y="0.962901" />
+                                    <point x="0.288301" y="0.786678" />
+                                    <point x="0.342618" y="0.370995" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Yamana" sid="9363317163490914">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2036988441437798" speed="5">
+                            <frame duration="1" hotspotX="0.987603" hotspotY="-0.221591" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\Provinces\Yamana.png">
+                                <collision-poly>
+                                    <point x="0.0330578" y="0.0454545" />
+                                    <point x="0.615702" y="0.210227" />
+                                    <point x="0.822314" y="0.238636" />
+                                    <point x="0.729339" y="0.357955" />
+                                    <point x="0.933884" y="0.732955" />
+                                    <point x="0.809917" y="0.931818" />
+                                    <point x="0.530991" y="0.53125" />
+                                    <point x="0.147727" y="0.393466" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="JapanMap_LOTS" sid="3707664869542338">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7603309446079442" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Map\JapanMap_LOTS.jpg" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="ClanInformation" sid="6297942116149729">
+                    <plugin id="DropShadowText" />
+                </object-type>
+                <object-type global="1" name="ClanData" sid="9084962729731848">
+                    <plugin id="Rex_CSV" />
+                </object-type>
+            </object-folder>
+            <object-folder name="Images">
+                <object-type name="SamuraiImage" sid="4808981846277357">
+                    <plugin id="Sprite" />
+                    <container>
+                        <type>SamuraiImage</type>
+                        <type>SamuraiName</type>
+                    </container>
+                    <animation-folder>
+                        <animation framecount="42" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3613369114534715" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501155" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[10].png">
+                                <image-point name="Frame" x="0" y="0.00230947" />
+                                <image-point name="Text" x="0.00645161" y="1.05312" />
+                            </frame>
+                            <frame duration="1" hotspotX="0.502262" hotspotY="0.501639" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[11].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501155" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[12].png" />
+                            <frame duration="1" hotspotX="0.501859" hotspotY="0.501241" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[13].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501155" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[14].png" />
+                            <frame duration="1" hotspotX="0.503205" hotspotY="0.501149" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[15].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[16].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[17].png" />
+                            <frame duration="1" hotspotX="0.502262" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[18].png" />
+                            <frame duration="1" hotspotX="0.504505" hotspotY="0.503012" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[19].png" />
+                            <frame duration="1" hotspotX="0.509009" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[1].png" />
+                            <frame duration="1" hotspotX="0.504545" hotspotY="0.50303" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[20].png" />
+                            <frame duration="1" hotspotX="0.504505" hotspotY="0.503012" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[21].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503012" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[22].png" />
+                            <frame duration="1" hotspotX="0.502732" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[23].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501266" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[24].png" />
+                            <frame duration="1" hotspotX="0.504854" hotspotY="0.503185" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[25].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.50303" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[26].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501901" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[27].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501901" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[28].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[29].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[2].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[30].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[31].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.503012" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[32].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[34].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.512644" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[35].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.512644" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[36].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[37].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[38].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[39].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[3].png" />
+                            <frame duration="1" hotspotX="0.502164" hotspotY="0.501401" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[40].png" />
+                            <frame duration="1" hotspotX="0.503226" hotspotY="0.501155" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[41].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501155" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[49].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[4].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[51].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.50303" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[55].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[5].png" />
+                            <frame duration="1" hotspotX="0.501597" hotspotY="0.502294" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[6].png" />
+                            <frame duration="1" hotspotX="0.503205" hotspotY="0.501149" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[8].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\rivals\SOTS[9].png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="BrideImage" sid="7763006287536371">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="12" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="877605083472094" speed="5">
+                            <frame duration="1" hotspotX="0.502463" hotspotY="0.501577" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[42].png" />
+                            <frame duration="1" hotspotX="0.502463" hotspotY="0.501577" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[43].png" />
+                            <frame duration="1" hotspotX="0.502463" hotspotY="0.501577" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[44].png" />
+                            <frame duration="1" hotspotX="0.502618" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[45].png" />
+                            <frame duration="1" hotspotX="0.502618" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[46].png" />
+                            <frame duration="1" hotspotX="0.50237" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[47].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501558" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[48].png" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.501229" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[50].png" />
+                            <frame duration="1" hotspotX="0.502439" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[52].png" />
+                            <frame duration="1" hotspotX="0.502439" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[53].png" />
+                            <frame duration="1" hotspotX="0.502024" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[54].png" />
+                            <frame duration="1" hotspotX="0.502164" hotspotY="0.501341" original-source="C:\Users\Cosmin\Pictures\Samurai\Faces\brides\SOTS[56].png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="decisionScenes" sid="437527962109881">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="20" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1234857684051038" speed="5">
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\battle_lost.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\castle2.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\EquipSamurai.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\homeCastle2.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\inciteRevolt.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\returnedToEstate2.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\roninInRegion.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\stormySea.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\wildhorses.png" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                            <frame duration="1" hotspotX="0" hotspotY="0" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="difficulty" sid="8861887131910245">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8773087362255879" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\difficulty.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Standing" sid="6482970627241065">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="index" sid="9198070912453085" type="number" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4036376514997088" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.451923" hotspotY="0.657143" />
+                            <frame duration="1" hotspotX="0.47191" hotspotY="0.604839" />
+                            <frame duration="1" hotspotX="0.443966" hotspotY="0.442786" original-source="C:\Users\Cosmin\Desktop\3.png">
+                                <collision-poly>
+                                    <point x="0.439655" y="0.41791" />
+                                    <point x="0.478448" y="0.0597015" />
+                                    <point x="0.741379" y="0.159204" />
+                                    <point x="0.715517" y="0.512438" />
+                                    <point x="0.784483" y="0.920398" />
+                                    <point x="0.478448" y="0.910448" />
+                                    <point x="0.125" y="0.975124" />
+                                    <point x="0.284483" y="0.512438" />
+                                </collision-poly>
+                            </frame>
+                            <frame duration="1" hotspotX="0.472477" hotspotY="0.454128" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="Intro">
+                <object-type name="Katana" sid="148913922995931">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9679541315741718" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.741176" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\katana.png">
+                                <collision-poly>
+                                    <point x="0.0124851" y="0.123529" />
+                                    <point x="0.5" y="0.341176" />
+                                    <point x="0.984542" y="0.152941" />
+                                    <point x="0.98157" y="0.5" />
+                                    <point x="0.956005" y="0.564706" />
+                                    <point x="0.5" y="0.811765" />
+                                    <point x="0.0439952" y="0.564706" />
+                                    <point x="0.0148633" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Wakizashi" sid="801014542105063">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3270748413110782" speed="5">
+                            <frame duration="1" hotspotX="0.500378" hotspotY="0.503311" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\wakizashi.png">
+                                <collision-poly>
+                                    <point x="0.026455" y="0.231788" />
+                                    <point x="0.499622" y="0.311258" />
+                                    <point x="0.981859" y="0.15894" />
+                                    <point x="0.973545" y="0.496689" />
+                                    <point x="0.949358" y="0.556291" />
+                                    <point x="0.499622" y="0.84106" />
+                                    <point x="0.0309902" y="0.728477" />
+                                    <point x="0.0120937" y="0.496689" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Tanto" sid="7031076804627565">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="696795810810821" speed="5">
+                            <frame duration="1" hotspotX="0.501062" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\inGame\tanto.png">
+                                <collision-poly>
+                                    <point x="0.0201699" y="0.506494" />
+                                    <point x="0.5" y="0.305195" />
+                                    <point x="0.968153" y="0.5" />
+                                    <point x="0.974522" y="0.454545" />
+                                    <point x="0.5" y="0.850649" />
+                                    <point x="0.0212314" y="0.487013" />
+                                    <point x="0.0212314" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="NameInput" sid="6778517190300872">
+                    <plugin id="Text" />
+                </object-type>
+                <object-type name="TextBox" sid="4503876467169607">
+                    <plugin id="TextBox" />
+                </object-type>
+                <object-type name="TextDifficulty" sid="6349846090068145">
+                    <plugin id="DropShadowText" />
+                </object-type>
+            </object-folder>
+        </object-folder>
+    </object-folder>
+    <families>
+        <family name="Selections" plugin-id="Text" sid="5451794928151151">
+            <members>
+                <member>MenuSelection</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="functionName" sid="1971454618365356" type="string" />
+            </instance-variables>
+        </family>
+        <family name="SelectionShadow" plugin-id="DropShadowText" sid="505110734952586">
+            <members>
+                <member>MenuSelectionShadow</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="functionName" sid="2833905943821234" type="string" />
+                <instance-variable comment="For example useful for selecting assassination victim" name="passOnParameter" sid="7837028169546183" type="string" />
+            </instance-variables>
+        </family>
+        <family name="MainMapSelection" plugin-id="Sprite" sid="9512799942893165">
+            <members>
+                <member>Akamatsu</member>
+                <member>Amago</member>
+                <member>Asakura</member>
+                <member>Ashikaga</member>
+                <member>Ashina</member>
+                <member>Date</member>
+                <member>Hatakeyama</member>
+                <member>Hosokawa</member>
+                <member>Imagawa</member>
+                <member>Kono</member>
+                <member>Mogami</member>
+                <member>Mori</member>
+                <member>Otomo</member>
+                <member>Ouchi</member>
+                <member>Satake</member>
+                <member>Shimazu</member>
+                <member>Shoni</member>
+                <member>Takeda</member>
+                <member>Toki</member>
+                <member>Uesugi</member>
+                <member>Yamana</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="ClanID" sid="4188033772186517" type="number" />
+            </instance-variables>
+        </family>
+        <family name="Frames" plugin-id="NinePatch" sid="3220662875079349">
+            <members>
+                <member>Frame1</member>
+                <member>Frame3</member>
+                <member>Frame4</member>
+                <member>Frame5</member>
+                <member>Frame6</member>
+                <member>Frame7</member>
+                <member>Frame9</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="FrameNr" sid="1636104090736547" type="number" />
+            </instance-variables>
+        </family>
+        <family name="DifficultySelection" plugin-id="Sprite" sid="2819650539826365">
+            <members>
+                <member>Katana</member>
+                <member>Tanto</member>
+                <member>Wakizashi</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="difficulty" sid="9244073985083101" type="number" />
+            </instance-variables>
+        </family>
+        <family name="Button" plugin-id="Button" sid="2801379525403672">
+            <members>
+                <member>Btn_LOAD</member>
+                <member>Btn_SAVE</member>
+                <member>Btn_START</member>
+            </members>
+        </family>
+    </families>
+    <layout-folder>
+        <layout-folder name="MetaGame">
+            <layout-folder name="Intro">
+                <layout>PlayerName.xml</layout>
+                <layout>Difficulty.xml</layout>
+                <layout>Menu.xml</layout>
+            </layout-folder>
+            <layout>Map.xml</layout>
+            <layout>OpponentCastle.xml</layout>
+            <layout>HomeCastle.xml</layout>
+            <layout>Decision.xml</layout>
+            <layout>Information.xml</layout>
+        </layout-folder>
+        <layout-folder name="Duel">
+            <layout>TestDuel.xml</layout>
+        </layout-folder>
+        <layout-folder name="Battle">
+            <layout>TestBattle.xml</layout>
+        </layout-folder>
+        <layout-folder name="Mission">
+            <layout>TestMission.xml</layout>
+        </layout-folder>
+        <layout-folder name="MainMap">
+            <layout>MainMap.xml</layout>
+        </layout-folder>
+    </layout-folder>
+    <event-folder>
+        <event-folder name="MetaGame">
+            <event-folder name="Decisions">
+                <event-sheet>Decision.xml</event-sheet>
+                <event-sheet>Random.xml</event-sheet>
+            </event-folder>
+            <event-folder name="System">
+                <event-sheet>Intro.xml</event-sheet>
+                <event-sheet>Menu.xml</event-sheet>
+                <event-sheet>Difficulty.xml</event-sheet>
+            </event-folder>
+            <event-sheet>OpponentCastle.xml</event-sheet>
+            <event-sheet>Map.xml</event-sheet>
+            <event-sheet>HomeCastle.xml</event-sheet>
+            <event-sheet>Functions.xml</event-sheet>
+            <event-sheet>MainMap.xml</event-sheet>
+            <event-sheet>Information.xml</event-sheet>
+        </event-folder>
+        <event-folder name="Duel">
+            <event-sheet>TestDuel.xml</event-sheet>
+        </event-folder>
+        <event-folder name="Battle">
+            <event-sheet>TestBattle.xml</event-sheet>
+        </event-folder>
+        <event-folder name="Mission">
+            <event-sheet>TestMission.xml</event-sheet>
+        </event-folder>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Mouse" uid="16" />
+        <global-instance type="Keyboard" uid="17" />
+        <global-instance type="Function" uid="21" />
+        <global-instance type="Browser" uid="25" />
+    </global-instances>
+    <sounds-folder>
+        <sound-folder name="MetaGame" />
+    </sounds-folder>
+    <music-folder>
+        <music-folder name="MetaGame" />
+    </music-folder>
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="MetaGame">
+            <file name="japanese_names.csv" />
+            <file name="Samurai.woff" />
+            <file name="style.css" />
+            <file name="Japanese-Brush.woff" />
+            <file name="Bonzai-Regular.woff" />
+        </file-folder>
+    </files-folder>
+</c2project>

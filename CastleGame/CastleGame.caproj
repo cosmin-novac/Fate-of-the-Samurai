@@ -1,0 +1,897 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>CastleGame</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author>fundation2000</author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>32z1g5n1wljo9</unique-id>
+    <saved-with-version>20600</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Darko Draskovic" id="Roguelike" version="1">Roguelike</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="lunarray" id="lunarray_LiteTween" version="1.399999976">LiteTween</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects>
+        <effect author="Scirra" id="exposure">Exposure</effect>
+        <effect author="Scirra" id="hsladjust">Adjust HSL</effect>
+    </used-effects>
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1920</width>
+        <height>1080</height>
+    </window-size>
+    <pixel-rounding>1</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>CastleLevel0</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox integer scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D web</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-folder name="MissionGame">
+            <object-type name="Blood" sid="8950399120922287">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7767835597140965" speed="5">
+                        <frame duration="1" hotspotX="2.97436" hotspotY="2.86486" />
+                        <frame duration="1" hotspotX="2.97436" hotspotY="2.86486" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="deadRival" sid="8316950116639258">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Persist" sid="464381512149433">
+                        <behavior id="Persist" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="313099199238129" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\dead_samurai.png">
+                            <collision-poly>
+                                <point x="0.403125" y="0.368571" />
+                                <point x="0.5" y="0.188571" />
+                                <point x="0.865625" y="0.122857" />
+                                <point x="0.7875" y="0.5" />
+                                <point x="0.621875" y="0.654286" />
+                                <point x="0.5" y="0.928571" />
+                                <point x="0.478125" y="0.562857" />
+                                <point x="0.3" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Debug" sid="1302612305502648">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Door" sid="557063613806373">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7806863095856163" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.84375" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0.84375" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Floors" sid="149685143358005">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Persist" sid="4739862079639224">
+                        <behavior id="Persist" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\darko\Desktop\C2RoguelikeTest\tiles_x2.png" />
+                <tiles />
+            </object-type>
+            <object-type name="Goal1Duel" sid="9275316840865121">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Persist" sid="6836371980081893">
+                        <behavior id="Persist" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1775157362415298" speed="5">
+                        <frame duration="1" hotspotX="0.507353" hotspotY="0.412121" original-source="C:\Users\darko\Desktop\C2RoguelikeTest\coin_x2.png">
+                            <collision-poly>
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Instructions" sid="4188185211870435">
+                <plugin id="Text" />
+            </object-type>
+            <object-type name="Lights" sid="4992677343581306">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Persist" sid="3618650818933822">
+                        <behavior id="Persist" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\darko\Desktop\C2RoguelikeTest\tiles_x2.png" />
+                <tiles />
+            </object-type>
+            <object-type name="player" sid="119497010693993">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="IsPlaced" sid="2305607819749434" type="boolean" />
+                    <instance-variable name="health" sid="6118743294621468" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="ScrollTo" sid="1272907481599182">
+                        <behavior id="scrollto" />
+                    </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="7069609784048177">
+                        <behavior id="bound" />
+                    </behavior-type>
+                    <behavior-type name="8Direction" sid="4517773119215663">
+                        <behavior id="EightDir" />
+                    </behavior-type>
+                    <behavior-type name="LineOfSight" sid="269229868624698">
+                        <behavior id="LOS" />
+                    </behavior-type>
+                    <behavior-type name="Persist" sid="9904965006602715">
+                        <behavior id="Persist" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9928162888648933" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="AttackPoint" x="1.67391" y="0.456522" />
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="5" loop="0" name="Default2" pingpong="0" repeatcount="1" repeatto="0" sid="9597132951870916" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\old\sword_ronin_idle.png">
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\old\sword_ronin_prepare.png">
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.509434" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\old\sword_ronin_attack.png">
+                            <image-point name="Imagepoint 1" x="0.943396" y="0.863636" />
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\old\ronin_bow_attack.png">
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.418182" hotspotY="0.469388">
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="playerHit" sid="4951024508906037">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6176982551739687" speed="5">
+                        <frame duration="1" hotspotX="0.966667" hotspotY="0.6" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="rival1" sid="1507703313590205">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="9668165419133653">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1858878564268668" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="AttackPoint" x="1.48438" y="0.46875" />
+                            <collision-poly>
+                                <point x="0.1875" y="0.25" />
+                                <point x="0.8125" y="0.28125" />
+                                <point x="0.828125" y="0.890625" />
+                                <point x="0.171875" y="0.875" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="0" name="Default2" pingpong="0" repeatcount="1" repeatto="0" sid="3194282442563102" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\old\sword_idle.png">
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\old\sword_prepare.png">
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\old\sword_attack.png">
+                            <image-point name="Imagepoint 1" x="0.953125" y="0.869565" />
+                            <collision-poly>
+                                <point x="0.125" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.703125" y="0.413043" />
+                                <point x="0.703125" y="0.5" />
+                                <point x="0.65625" y="0.782609" />
+                                <point x="0.5" y="0.956522" />
+                                <point x="0.125" y="0.826087" />
+                                <point x="0.015625" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.173913" y="0.173913" />
+                                <point x="0.5" y="0.0217391" />
+                                <point x="0.826087" y="0.173913" />
+                                <point x="0.978261" y="0.5" />
+                                <point x="0.804348" y="0.804348" />
+                                <point x="0.5" y="0.978261" />
+                                <point x="0.173913" y="0.826087" />
+                                <point x="0.0217391" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="rivalHit" sid="6406000570978773">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8018494373945821" speed="5">
+                        <frame duration="1" hotspotX="0.95" hotspotY="0.6" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Roguelike" sid="7523945399796769">
+                <plugin id="Roguelike" />
+            </object-type>
+            <object-type global="1" name="RoomCenters" sid="4719804582798354">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type name="Shadows" sid="5257859096179222">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Persist" sid="129974486327617">
+                        <behavior id="Persist" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\darko\Desktop\C2RoguelikeTest\tiles_x2.png" />
+                <tiles />
+            </object-type>
+            <object-type name="Silver" sid="1360685062085291">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5448985162045621" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\darko\Desktop\C2RoguelikeTest\silver_2.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Steps" sid="4131770154149126">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7521335137984932" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Walls" sid="5811198239978313">
+                <plugin id="Tilemap" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="4581237521757466">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Persist" sid="3246612230111989">
+                        <behavior id="Persist" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\darko\Desktop\C2RoguelikeTest\tiles_x2.png" />
+                <tiles />
+            </object-type>
+            <object-type name="Goal2Kidnap" sid="7727833727869307">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Persist" sid="8764817186007012">
+                        <behavior id="Persist" />
+                    </behavior-type>
+                </behaviors>
+                <effects>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8551508141240967" speed="5">
+                        <frame duration="1" hotspotX="0.503704" hotspotY="0.503937" />
+                        <frame duration="1" hotspotX="0.436214" hotspotY="0.507937" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.503704" hotspotY="0.503937" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Goal3Treachery" sid="3814011213504895">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Persist" sid="5463484749080115">
+                        <behavior id="Persist" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4376809774504486" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Exit" sid="1394304856642061">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8482920728633727" speed="0">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.84375" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0.84375" y="1" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="System">
+            <object-type name="Keyboard" sid="7325557221358525">
+                <plugin id="Keyboard" />
+            </object-type>
+            <object-type name="Browser" sid="1095695663141441">
+                <plugin id="Browser" />
+            </object-type>
+            <object-type name="Mouse" sid="9943150446884783">
+                <plugin id="Mouse" />
+            </object-type>
+            <object-type name="Touch" sid="5251342923610924">
+                <plugin id="Touch" />
+            </object-type>
+            <object-type name="Function" sid="1454335790086825">
+                <plugin id="Function" />
+            </object-type>
+        </object-folder>
+        <object-folder name="Obsolete">
+            <object-type name="Floors2" sid="6531631503037621">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\darko\Desktop\C2RoguelikeTest\tiles_x2.png" />
+                <tiles />
+            </object-type>
+            <object-type name="Paths" sid="7311327448242193">
+                <plugin id="Tilemap" />
+                <texture original-source="C:\Users\darko\Desktop\C2RoguelikeTest\tiles_x2.png" />
+                <tiles />
+            </object-type>
+        </object-folder>
+        <object-folder name="PlayerBody">
+            <object-type name="Legs" sid="4616161220201566">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="5652662480212086">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3406466495308734" speed="5">
+                        <frame duration="1" hotspotX="0.501629" hotspotY="0.503311" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\legs_standing.png">
+                            <collision-poly>
+                                <point x="0.110749" y="0.225166" />
+                                <point x="0.498371" y="0" />
+                                <point x="0.876221" y="0.251656" />
+                                <point x="0.980456" y="0.496689" />
+                                <point x="0.934853" y="0.86755" />
+                                <point x="0.498371" y="0.81457" />
+                                <point x="0.0716612" y="0.854305" />
+                                <point x="0.00651466" y="0.496689" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="2" loop="0" name="Walk" pingpong="0" repeatcount="1" repeatto="0" sid="1557083722284864" speed="5">
+                        <frame duration="1" hotspotX="0.488673" hotspotY="0.502262" />
+                        <frame duration="1" hotspotX="0.48913" hotspotY="0.504464" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Body" sid="3229802551446269">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="4881292930335869">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <effects>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="12" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2193502904138035" speed="5">
+                        <frame duration="1" hotspotX="0.454839" hotspotY="0.433333" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_idle.png">
+                            <image-point name="Weapon" x="0.0354839" y="0.741667" />
+                            <collision-poly>
+                                <point x="0.135484" y="0.35" />
+                                <point x="0.5" y="0.00833333" />
+                                <point x="0.822581" y="0.458333" />
+                                <point x="0.8" y="0.841667" />
+                                <point x="0.5" y="0.983333" />
+                                <point x="0.0354839" y="0.908333" />
+                                <point x="0.0645161" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.555556" hotspotY="0.702509" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_sword_idle.png">
+                            <collision-poly>
+                                <point x="0.262935" y="0.658244" />
+                                <point x="0.5" y="0.560305" />
+                                <point x="0.668986" y="0.56586" />
+                                <point x="0.898904" y="0.736559" />
+                                <point x="0.844317" y="0.917205" />
+                                <point x="0.5" y="0.983333" />
+                                <point x="0.185811" y="0.89758" />
+                                <point x="0.159287" y="0.743727" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.679525" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_sword_prepare.png">
+                            <collision-poly>
+                                <point x="0.418397" y="0.211538" />
+                                <point x="0.498516" y="0.0576923" />
+                                <point x="0.922849" y="0.166667" />
+                                <point x="1" y="0.5" />
+                                <point x="0.896142" y="0.775641" />
+                                <point x="0.498516" y="0.839744" />
+                                <point x="0.362018" y="0.615385" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.497717" hotspotY="0.81701" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_attack_sword2.png">
+                            <image-point name="AttackPoint" x="0.515982" y="0.0824742" />
+                            <collision-poly>
+                                <point x="0.141552" y="0.703608" />
+                                <point x="0.557078" y="0.708763" />
+                                <point x="0.885845" y="0.8067" />
+                                <point x="0.913242" y="0.951031" />
+                                <point x="0.497717" y="1" />
+                                <point x="0.105023" y="0.940722" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.545752" hotspotY="0.628499" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_spear_idle.png">
+                            <image-point name="Weapon" x="0.0326797" y="0.740458" />
+                            <collision-poly>
+                                <point x="0.140523" y="0.737913" />
+                                <point x="0.330065" y="0.615776" />
+                                <point x="0.676471" y="0.53944" />
+                                <point x="0.892157" y="0.659033" />
+                                <point x="0.738562" y="0.796438" />
+                                <point x="0.5" y="0.819338" />
+                                <point x="0.303922" y="0.811705" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.505814" hotspotY="0.519084" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_prepare_spear.png">
+                            <image-point name="Weapon" x="0.00581395" y="1.01781" />
+                            <collision-poly>
+                                <point x="0.135484" y="0.35" />
+                                <point x="0.5" y="0.00833333" />
+                                <point x="0.822581" y="0.458333" />
+                                <point x="0.983871" y="0.5" />
+                                <point x="0.909677" y="0.766667" />
+                                <point x="0.5" y="0.983333" />
+                                <point x="0.0354839" y="0.908333" />
+                                <point x="0.0645161" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.466454" hotspotY="0.799492" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_attack_spear2.png">
+                            <image-point name="AttackPoint" x="0.389776" y="0.0583756" />
+                            <collision-poly>
+                                <point x="0.0546075" y="0.0381862" />
+                                <point x="0.498294" y="0.713604" />
+                                <point x="0.129693" y="0.608592" />
+                                <point x="0.0887372" y="0.498807" />
+                                <point x="0.959044" y="0.97136" />
+                                <point x="0.498294" y="0.988067" />
+                                <point x="0.0955631" y="0.933174" />
+                                <point x="0.0580205" y="0.498807" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.555556" hotspotY="0.466463" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_bow_idle.png">
+                            <image-point name="Weapon" x="0.00653595" y="1.01829" />
+                            <collision-poly>
+                                <point x="0.135484" y="0.35" />
+                                <point x="0.5" y="0.00833333" />
+                                <point x="0.822581" y="0.458333" />
+                                <point x="0.983871" y="0.5" />
+                                <point x="0.909677" y="0.766667" />
+                                <point x="0.5" y="0.983333" />
+                                <point x="0.0354839" y="0.908333" />
+                                <point x="0.0645161" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.422961" hotspotY="0.621818">
+                            <image-point name="Weapon" x="0.0060423" y="1.01818" />
+                            <collision-poly>
+                                <point x="0.135484" y="0.35" />
+                                <point x="0.5" y="0.00833333" />
+                                <point x="0.822581" y="0.458333" />
+                                <point x="0.983871" y="0.5" />
+                                <point x="0.909677" y="0.766667" />
+                                <point x="0.5" y="0.983333" />
+                                <point x="0.0354839" y="0.908333" />
+                                <point x="0.0645161" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.502513" hotspotY="0.648746" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_attack_bow2.png">
+                            <collision-poly>
+                                <point x="0.151057" y="0.181818" />
+                                <point x="0.498489" y="0.0181818" />
+                                <point x="0.870091" y="0.156364" />
+                                <point x="0.685801" y="0.498182" />
+                                <point x="0.637462" y="0.563636" />
+                                <point x="0.498489" y="0.887273" />
+                                <point x="0.172205" y="0.792727" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.53" hotspotY="0.241935">
+                            <collision-poly>
+                                <point x="0.153333" y="0.148387" />
+                                <point x="0.48" y="0" />
+                                <point x="0.823333" y="0.135484" />
+                                <point x="0.24" y="0.451613" />
+                                <point x="0.406667" y="0.364516" />
+                                <point x="0.48" y="0.383871" />
+                                <point x="0.296667" y="0.616129" />
+                                <point x="0.2" y="0.451613" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.526667" hotspotY="0.235484" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\body_sword_idle2.png">
+                            <collision-poly>
+                                <point x="0.153333" y="0.148387" />
+                                <point x="0.48" y="0" />
+                                <point x="0.823333" y="0.135484" />
+                                <point x="0.24" y="0.451613" />
+                                <point x="0.406667" y="0.364516" />
+                                <point x="0.48" y="0.383871" />
+                                <point x="0.296667" y="0.616129" />
+                                <point x="0.2" y="0.451613" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Head" sid="5194817176002677">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Pin" sid="7928734378269108">
+                        <behavior id="Pin" />
+                    </behavior-type>
+                </behaviors>
+                <effects>
+                    <effect-type name="AdjustHSL">
+                        <effect id="hsladjust" />
+                    </effect-type>
+                </effects>
+                <animation-folder>
+                    <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="146479490424631" speed="5">
+                        <frame duration="1" hotspotX="0.503497" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\head_armor_complex.png">
+                            <collision-poly>
+                                <point x="0.118881" y="0.163462" />
+                                <point x="0.496504" y="0.0576923" />
+                                <point x="0.881119" y="0.163462" />
+                                <point x="0.916084" y="0.5" />
+                                <point x="0.916084" y="0.884615" />
+                                <point x="0.0839161" y="0.884615" />
+                                <point x="0.0769231" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.503937" hotspotY="0.5" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\head_armor_simple.png">
+                            <collision-poly>
+                                <point x="0.188976" y="0.244898" />
+                                <point x="0.496063" y="0" />
+                                <point x="0.80315" y="0.255102" />
+                                <point x="0.984252" y="0.5" />
+                                <point x="0.944882" y="0.928571" />
+                                <point x="0.496063" y="0.887755" />
+                                <point x="0.0551181" y="0.928571" />
+                                <point x="0.015748" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.404959" original-source="C:\Users\Cosmin\Pictures\Samurai\Illustrator\results\head_hair.png">
+                            <collision-poly>
+                                <point x="0.175676" y="0.107438" />
+                                <point x="0.5" y="0" />
+                                <point x="0.837838" y="0.0991736" />
+                                <point x="0.891892" y="0.495868" />
+                                <point x="0.675676" y="0.801653" />
+                                <point x="0.5" y="0.917355" />
+                                <point x="0.337838" y="0.793388" />
+                                <point x="0.148649" y="0.495868" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+    </object-folder>
+    <families>
+        <family name="Tilemap" plugin-id="Tilemap" sid="3206455415988486">
+            <members>
+                <member>Floors</member>
+                <member>Floors2</member>
+                <member>Lights</member>
+                <member>Paths</member>
+                <member>Shadows</member>
+                <member>Walls</member>
+            </members>
+        </family>
+        <family name="Coin" plugin-id="Sprite" sid="8328830716444012">
+            <members>
+                <member>Silver</member>
+            </members>
+        </family>
+        <family name="HiddenObjects" plugin-id="Sprite" sid="4490551350047341">
+            <members>
+                <member>Door</member>
+                <member>Exit</member>
+                <member>Goal1Duel</member>
+                <member>Goal2Kidnap</member>
+                <member>Goal3Treachery</member>
+                <member>rival1</member>
+                <member>Silver</member>
+                <member>Steps</member>
+            </members>
+        </family>
+        <family name="Enemy" plugin-id="Sprite" sid="3548979658563259">
+            <members>
+                <member>rival1</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment="fighting, patrolling, searching (if he knows the player&apos;s last position)" name="logicState" sid="5741307639720827" type="string" />
+                <instance-variable name="currentRoom" sid="2231417536669723" type="number" />
+                <instance-variable name="attackCounter" sid="3642524760702197" type="number" />
+                <instance-variable name="lastPositionXPlayer" sid="3589533525002632" type="number" />
+                <instance-variable name="lastPositionYPlayer" sid="2485761216564184" type="number" />
+                <instance-variable name="distanceFromPlayer" sid="1916712455122715" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pathfinding" sid="6265106506374156">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+                <behavior-type name="LineOfSight" sid="9386120972478018">
+                    <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="LiteTween" sid="9987284897014321">
+                    <behavior id="lunarray_LiteTween" />
+                </behavior-type>
+                <behavior-type name="Persist" sid="4702749047448521">
+                    <behavior id="Persist" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="EntityBody" plugin-id="Sprite" sid="2605725035171665">
+            <members>
+                <member>Body</member>
+                <member>Head</member>
+                <member>Legs</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="attachedToUID" sid="2999393951419882" type="number" />
+            </instance-variables>
+        </family>
+        <family name="bodyUsers" plugin-id="Sprite" sid="5291210022104781">
+            <members>
+                <member>player</member>
+                <member>rival1</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment="idle, walking, preparing,attacking,hasGoal(player only)" name="animationState" sid="9215320758623433" type="string" />
+                <instance-variable comment="sword, spear, bow" name="weapon" sid="8912101965243143" type="string" />
+                <instance-variable comment="hair, simple, complex" name="head" sid="8204751256243624" type="string" />
+                <instance-variable name="entityIndex" sid="6852238816777721" type="number" />
+            </instance-variables>
+        </family>
+    </families>
+    <layout-folder>
+        <layout-folder name="Mission">
+            <layout>CastleLevel1.xml</layout>
+            <layout>CastleLevel0.xml</layout>
+        </layout-folder>
+    </layout-folder>
+    <event-folder>
+        <event-folder name="Mission">
+            <event-sheet>CastleLogic.xml</event-sheet>
+            <event-sheet>Backup.xml</event-sheet>
+            <event-sheet>RiceFields.xml</event-sheet>
+            <event-sheet>CastleLevel1.xml</event-sheet>
+            <event-sheet>CastleLevel0.xml</event-sheet>
+            <event-sheet>Characters.xml</event-sheet>
+        </event-folder>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="5" />
+        <global-instance type="Mouse" uid="6" />
+        <global-instance type="Browser" uid="13" />
+        <global-instance type="Touch" uid="20">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Function" uid="40" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>CastleLevel1</name>
+    <events>
+        <include>CastleLogic</include>
+        <event-block sid="5228001381726927">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4337120448831219" type="System" />
+            </conditions>
+            <actions>
+                <action id="-29" name="Set layout effect enabled" sid="5210234902570221" type="System">
+                    <param id="0" name="Mode">0</param>
+                    <param id="1" name="Effect">&quot;Exposure&quot;</param>
+                </action>
+                <action id="-7" name="Set size" sid="4177776121446117" type="Tilemap">
+                    <param id="0" name="Width">LayoutWidth</param>
+                    <param id="1" name="Height">LayoutHeight</param>
+                </action>
+                <action id="0" name="Set text" sid="2072631216798267" type="Instructions">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="6780958654017854" type="Debug">
+                    <param id="0" name="Text">Roguelike.NumberOfRooms</param>
+                </action>
+                <action id="0" name="Set text" sid="109332990422725" type="Debug">
+                    <param id="0" name="Text">&quot;Left: &quot; &amp; Roguelike.GetRoomEdge(Roguelike.NumberOfRooms - 1, &quot;left&quot;) &amp; newline &amp;&quot;Top: &quot; &amp; Roguelike.GetRoomEdge(Roguelike.NumberOfRooms - 1, &quot;top&quot;) </param>
+                </action>
+                <action id="-9" name="Set value" sid="9611591307994365" type="System">
+                    <param id="0" name="Variable">currentSeed</param>
+                    <param id="1" name="Value">currentRival*100+1001</param>
+                </action>
+                <action id="0" name="Call function" sid="441020344015513" type="Function">
+                    <param id="0" name="Name">&quot;positionObjects&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-group description="" sid="668267952009912" title="Position Objects (Castle)2">
+                    <sub-events>
+                        <comment>Get room center and room edges. Useful for map object distribution.</comment>
+                        <comment>Generate Enemies</comment>
+                        <event-block sid="9286503731003429">
+                            <conditions>
+                                <condition id="7" name="For each room (Digger/Uniform)" sid="7734549920519188" type="Roguelike" />
+                                <condition id="-14" name="Compare variable" sid="1672479840020315" type="System">
+                                    <param id="0" name="Variable">levelInitiated</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment>depending on the level, place either the final goal or steps to another level.</comment>
+                                <event-block sid="2669226587980394">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="9778044138093903" type="System">
+                                            <param id="0" name="First value">Roguelike.CurRoomInd</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="6057285112596071">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="2724726158681102" type="System">
+                                                    <param id="0" name="First value">currentlyEngagedIn</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;0&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="5198930379719094" type="System">
+                                                    <param id="0" name="Object to create">Goal1Duel</param>
+                                                    <param id="1" name="Layer">&quot;Objects&quot;</param>
+                                                    <param id="2" name="X">Roguelike.RoomCenterX(Roguelike.CurRoomInd) * TILE_SIZE + TILE_SIZE / 2</param>
+                                                    <param id="3" name="Y">Roguelike.RoomCenterY(Roguelike.CurRoomInd) * TILE_SIZE + TILE_SIZE / 2</param>
+                                                </action>
+                                                <action id="9" name="Set scale" sid="9496553525954784" type="Goal1Duel">
+                                                    <param id="0" name="Scale">0.3</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8155140777354267">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="4333373387893685" type="System" />
+                                                <condition id="-8" name="Compare two values" sid="8019519204048297" type="System">
+                                                    <param id="0" name="First value">currentlyEngagedIn</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="3567955307205371" type="System">
+                                                    <param id="0" name="Object to create">Goal2Kidnap</param>
+                                                    <param id="1" name="Layer">&quot;Objects&quot;</param>
+                                                    <param id="2" name="X">Roguelike.getRoomEdge(Roguelike.CurRoomInd, &quot;left&quot;) * TILE_SIZE + TILE_SIZE / 2</param>
+                                                    <param id="3" name="Y">Roguelike.getRoomEdge(Roguelike.CurRoomInd, &quot;bottom&quot;) * TILE_SIZE + TILE_SIZE / 2</param>
+                                                </action>
+                                                <action id="9" name="Set scale" sid="9944248966039935" type="Goal2Kidnap">
+                                                    <param id="0" name="Scale">0.25</param>
+                                                </action>
+                                                <action id="-28" name="Set effect parameter" sid="3134381795699728" type="Goal2Kidnap">
+                                                    <param id="0" name="Effect">&quot;AdjustHSL&quot;</param>
+                                                    <param id="1" name="Parameter index">0</param>
+                                                    <param id="2" name="Value">50</param>
+                                                </action>
+                                                <action id="-27" name="Set effect enabled" sid="5561785242309824" type="Goal2Kidnap">
+                                                    <param id="0" name="Mode">1</param>
+                                                    <param id="1" name="Effect">&quot;AdjustHSL&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="8221836361280553">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="3392000596304408" type="System" />
+                                                <condition id="-8" name="Compare two values" sid="9274744772967934" type="System">
+                                                    <param id="0" name="First value">currentlyEngagedIn</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">&quot;2&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Create object" sid="9724952182431992" type="System">
+                                                    <param id="0" name="Object to create">Goal3Treachery</param>
+                                                    <param id="1" name="Layer">&quot;Objects&quot;</param>
+                                                    <param id="2" name="X">Roguelike.RoomCenterX(Roguelike.CurRoomInd) * TILE_SIZE + TILE_SIZE / 2</param>
+                                                    <param id="3" name="Y">Roguelike.RoomCenterY(Roguelike.CurRoomInd) * TILE_SIZE + TILE_SIZE / 2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="7021023650007035" title="Position Player2">
+                    <sub-events>
+                        <comment>Position the player and stairs on the first free cell.</comment>
+                        <event-block sid="2937576450705333">
+                            <conditions>
+                                <condition id="0" name="For each map cell" sid="2868270866720667" type="Roguelike" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1359388008756574">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1950405212715874" type="player">
+                                            <param id="0" name="Instance variable">IsPlaced</param>
+                                        </condition>
+                                        <condition id="1" name="Compare map cell char" sid="4190727093018713" type="Roguelike">
+                                            <param id="0" name="Map cell coords">Roguelike.CurrentCoordinates</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;.&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="5394272033582116" type="System">
+                                            <param id="0" name="Object to create">Steps</param>
+                                            <param id="1" name="Layer">&quot;Objects&quot;</param>
+                                            <param id="2" name="X">Walls.TileToPositionX(Roguelike.parseX(Roguelike.CurrentCoordinates))</param>
+                                            <param id="3" name="Y">Walls.TileToPositionX(Roguelike.parseY(Roguelike.CurrentCoordinates))</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="2185058598930144" type="player">
+                                            <param id="0" name="X">Steps.X+TILE_SIZE</param>
+                                            <param id="1" name="Y">Steps.Y</param>
+                                        </action>
+                                        <action id="-13" name="Set boolean" sid="549203796006916" type="player">
+                                            <param id="0" name="Instance variable">IsPlaced</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="2" name="Stop" sid="7476022997397321" type="player" />
+                                        <action id="-10" name="Set value" sid="2878682398008433" type="player">
+                                            <param id="0" name="Instance variable">animationState</param>
+                                            <param id="1" name="Value">&quot;idle&quot;</param>
+                                        </action>
+                                        <action disabled="1" id="5" name="Set frame" sid="6270896745045832" type="player">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="5457848393651645" type="Function">
+                                            <param id="0" name="Name">&quot;CreateSoldier&quot;</param>
+                                            <param id="1" name="Parameter {n}">player.UID{###}50{###}0</param>
+                                        </action>
+                                        <action id="-24" name="Stop loop" sid="1187590389895861" type="System" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1234177542989027">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="5606022794579508" type="System">
+                                            <param id="0" name="First value">currentlyEngagedIn</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;1&quot;</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="2698277526803791" type="System">
+                                            <param id="0" name="First value">capturedGoal</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action disabled="1" id="5" name="Set frame" sid="8811592585257258" type="player">
+                                            <param id="0" name="Frame number">4</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="7008593258026118" type="player">
+                                            <param id="0" name="Instance variable">animationState</param>
+                                            <param id="1" name="Value">&quot;hasGoal&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="4374334071222867" title="Collisions3">
+            <sub-events>
+                <event-block sid="4941199915926076">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="2056512944148311" type="player">
+                            <param id="0" name="Object">Steps</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="4133780480423723" type="System">
+                            <param id="0" name="Variable">levelInitiated</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="4137841580577342" type="System">
+                            <param id="0" name="Variable">currentCastleLevel</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="1474899420102184" type="player">
+                            <param id="0" name="Instance variable">IsPlaced</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6209388287018208" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="1406368557397309" type="System">
+                            <param id="0" name="Layout">CastleLevel0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

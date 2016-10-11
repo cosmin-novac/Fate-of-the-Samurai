@@ -1,0 +1,747 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Map</name>
+    <events>
+        <include>Functions</include>
+        <include>Random</include>
+        <variable constant="0" name="isNewGame" sid="5925313893943032" static="0" type="number">1</variable>
+        <variable constant="0" name="isReturnHome" sid="2293789644981604" static="0" type="number">0</variable>
+        <variable constant="0" name="speedbonus" sid="8186776090376803" static="0" type="number">100</variable>
+        <variable constant="0" name="playerDataUID" sid="8391480144764463" static="0" type="number">0</variable>
+        <variable comment="index of the castle (0=player, 1 = leader, 2-4 = rivals)" constant="0" name="playerIsAtCastle" sid="1747544628912625" static="0" type="number">999</variable>
+        <variable comment="Index of rival the player is engaged in an event with. For assassinations, battles etc." constant="0" name="currentRival" sid="5494632400956344" static="0" type="number">999</variable>
+        <variable comment="0-3 amongst rivals (depend on renown)" constant="0" name="currentPlayerStanding" sid="6661667470959479" static="0" type="number">3</variable>
+        <variable constant="0" name="fiefSizeDefault" sid="5260172366673603" static="0" type="number">60</variable>
+        <variable comment="Either the Hatamoto or the Daimyo&apos;s name, depending on the player standing." constant="0" name="leaderName" sid="8353917748442019" static="0" type="text"></variable>
+        <variable comment="CriminalDuel, LegendaryWarriorDuel, etc." constant="0" name="currentlyEngagedIn" sid="4240792964990962" static="0" type="text"></variable>
+        <variable constant="0" name="playerName" sid="2349344854059748" static="0" type="text"></variable>
+        <variable constant="0" name="clanName" sid="7084753348668177" static="0" type="text">Asai</variable>
+        <variable constant="0" name="enemyClanName" sid="3471904226877315" static="0" type="text">Mori</variable>
+        <variable comment="Samurai, Hatamoto, Daimyo" constant="0" name="currentTitle" sid="6232246295377185" static="0" type="text">samurai</variable>
+        <variable comment="Hatamoto, Daimyo, Shogun" constant="0" name="pursuedTitle" sid="820089447363599" static="0" type="text">hatamoto</variable>
+        <variable comment="Alone, Disguised, WithArmy" constant="0" name="playerIsTraveling" sid="6539346028834258" static="0" type="text">Alone</variable>
+        <comment>Add: select enemy clan name by random as +1 or -1 in the list of clans.</comment>
+        <event-block sid="6907334857105219">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="4384534482020958" type="System">
+                    <param id="0" name="Interval (seconds)">5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="4795372437654802" type="Function">
+                    <param id="0" name="Name">&quot;checkRandomEventsOnMap&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="8569331172116434" title="Start">
+            <sub-events>
+                <event-block sid="8000876300743766">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="1235617625801179" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set web font" sid="5720848856386047" type="StoryShadow">
+                            <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                            <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="4623930657127653" type="MenuSelectionShadow">
+                            <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                            <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="6773819519090313" type="CastleNameText">
+                            <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                            <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                        </action>
+                        <action behavior="8Direction" id="3" name="Set speed" sid="2959141276424919" type="Player">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="2690450820638604">
+                            <conditions>
+                                <condition id="-10" name="For" sid="4167721472642377" type="System">
+                                    <param id="0" name="Name">&quot;CastleNr&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">4</param>
+                                </condition>
+                                <condition id="0" name="Compare value" sid="3463661914524006" type="Data">
+                                    <param id="0" name="Key">&quot;index&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">loopindex</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1537465394830811" type="System">
+                                    <param id="0" name="Object to create">Castle</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">Data.Get(&quot;castleX&quot;)</param>
+                                    <param id="3" name="Y">Data.Get(&quot;castleY&quot;)</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8503178273221153" type="CastleNameText">
+                                    <param id="0" name="Text">Data.Get(&quot;name&quot;)</param>
+                                </action>
+                                <action id="5" name="Set web font" sid="7730230128815538" type="CastleNameText">
+                                    <param id="0" name="Family name">&quot;Bonzai&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;style.css&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8169111134046875" type="Castle">
+                                    <param id="0" name="Instance variable">CastleIndex</param>
+                                    <param id="1" name="Value">loopindex</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="2664370027003145" type="Castle">
+                                    <param id="0" name="Instance variable">DataUID</param>
+                                    <param id="1" name="Value">Data.UID</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="3658466253956563" type="CastleTextBG">
+                                    <param id="0" name="X">self.X-5</param>
+                                </action>
+                                <action id="-29" name="Move to object" sid="9426881843534321" type="CastleTextBG">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Object">CastleNameText</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="8837983155998605" type="CastleTextBG">
+                                    <param id="0" name="Width">len(CastleNameText.Text)*11+10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-group description="" sid="9953215278213937" title="Player Positioning">
+                            <sub-events>
+                                <comment>position player at the castle he is currently at</comment>
+                                <event-block sid="5247509622412002">
+                                    <conditions>
+                                        <condition id="0" name="Compare value" sid="6224759557644141" type="Data">
+                                            <param id="0" name="Key">&quot;index&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">playerIsAtCastle</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="344870787221165" type="Player">
+                                            <param id="0" name="X">Data.Get(&quot;castleX&quot;)+20</param>
+                                            <param id="1" name="Y">Data.Get(&quot;castleY&quot;)-50</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="4874068506926827" type="System">
+                                            <param id="0" name="Variable">playerIsAtCastle</param>
+                                            <param id="1" name="Value">999</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5803989968249307">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="1787589260636619" type="System">
+                                            <param id="0" name="Variable">isReturnHome</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                        <condition id="0" name="Compare value" sid="2515471673139797" type="Data">
+                                            <param id="0" name="Key">&quot;index&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="804729580338628" type="Player">
+                                            <param id="0" name="X">Data.Get(&quot;castleX&quot;)+20</param>
+                                            <param id="1" name="Y">Data.Get(&quot;castleY&quot;)-50</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="3050310292663661" type="System">
+                                            <param id="0" name="Variable">isReturnHome</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5053403283087243">
+                                    <conditions>
+                                        <condition id="-14" inverted="1" name="Compare variable" sid="5571219427188739" type="System">
+                                            <param id="0" name="Variable">playerIsTraveling</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;WithArmy&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="6141427196194096" type="ArmyAnimation">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="674630466256321" type="PlayerAnimation">
+                                            <param id="0" name="Scale">1.4</param>
+                                        </action>
+                                        <action id="-4" name="Set position to another object" sid="5536830443527854" type="PlayerAnimation">
+                                            <param id="0" name="Object">Player</param>
+                                            <param id="1" name="Image point (optional)">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="747601778142439" type="PlayerAnimation">
+                                            <param id="0" name="Pin to">Player</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                        <action behavior="8Direction" id="4" name="Set max speed" sid="5212268228259561" type="Player">
+                                            <param id="0" name="Max Speed">100</param>
+                                        </action>
+                                        <action behavior="8Direction" id="5" name="Set acceleration" sid="9135373491007179" type="Player">
+                                            <param id="0" name="Acceleration">600</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="3872157406428662">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="4822046330224481" type="System" />
+                                        <condition id="-14" name="Compare variable" sid="4223142377634095" type="System">
+                                            <param id="0" name="Variable">playerIsTraveling</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;WithArmy&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="3075453436685183" type="PlayerAnimation">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="9" name="Set scale" sid="569325110533486" type="ArmyAnimation">
+                                            <param id="0" name="Scale">0.6</param>
+                                        </action>
+                                        <action id="-4" name="Set position to another object" sid="2067771111143439" type="ArmyAnimation">
+                                            <param id="0" name="Object">Player</param>
+                                            <param id="1" name="Image point (optional)">0</param>
+                                        </action>
+                                        <action behavior="Pin" id="0" name="Pin to object" sid="6234073089297509" type="ArmyAnimation">
+                                            <param id="0" name="Pin to">Player</param>
+                                            <param id="1" name="Mode">1</param>
+                                        </action>
+                                        <action behavior="8Direction" id="4" name="Set max speed" sid="3637839673347935" type="Player">
+                                            <param id="0" name="Max Speed">60</param>
+                                        </action>
+                                        <action behavior="8Direction" id="5" name="Set acceleration" sid="9824007648917471" type="Player">
+                                            <param id="0" name="Acceleration">300</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="5181592019794324" title="Input">
+            <sub-events>
+                <event-block any="1" sid="5167167783174301">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="9735859721067516" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                        <condition id="6" name="On object clicked" sid="1191154115918617" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Castle</param>
+                        </condition>
+                        <condition id="6" name="On object clicked" sid="9747884789509814" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">SamuraiImage</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="736526783737925">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="3219908383838564" type="Player">
+                                    <param id="0" name="Object">Castle</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="15205996866648" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;You pressed enter on the map.&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="8039893132372637" type="System">
+                                    <param id="0" name="Variable">playerIsAtCastle</param>
+                                    <param id="1" name="Value">Castle.CastleIndex</param>
+                                </action>
+                                <action behavior="8Direction" id="3" name="Set speed" sid="9531139027272592" type="Player">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="2760713049358727">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="8127261178778407" type="Castle">
+                                            <param id="0" name="Instance variable">CastleIndex</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" sid="4386259128765324" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Push" sid="2821495859772218" type="EventsList">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Value">&quot;ReturnHome&quot;</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="3553555312629196" type="Function">
+                                            <param id="0" name="Name">&quot;checkRandomEvents&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>If player must commit seppuku, his only chance is to march with an army on his leader, else his entire family is exterminated.</comment>
+                                <event-block sid="4617271951474826">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="311321587503749" type="System" />
+                                        <condition id="0" name="Compare value" sid="6814845123325696" type="Data">
+                                            <param id="0" name="Key">&quot;index&quot;</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="3" name="Has key" sid="7593130071051558" type="Data">
+                                            <param id="0" name="Key">&quot;mustCommitSeppuku&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="7419466627938758">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="7011154208920237" type="System">
+                                                    <param id="0" name="Variable">playerIsTraveling</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;WithArmy&quot;</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="68691518652455" type="Castle">
+                                                    <param id="0" name="Instance variable">CastleIndex</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="5" name="Push" sid="8647377479856948" type="EventsList">
+                                                    <param id="0" name="Where">1</param>
+                                                    <param id="1" name="Value">&quot;OpponentCastle&quot;</param>
+                                                    <param id="2" name="Axis">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="77755843176559" type="Function">
+                                                    <param id="0" name="Name">&quot;checkRandomEvents&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block any="1" sid="7384989687455332">
+                                            <conditions>
+                                                <condition id="-14" inverted="1" name="Compare variable" sid="3744763605895565" type="System">
+                                                    <param id="0" name="Variable">playerIsTraveling</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;WithArmy&quot;</param>
+                                                </condition>
+                                                <condition id="-7" name="Compare instance variable" sid="5985224677884523" type="Castle">
+                                                    <param id="0" name="Instance variable">CastleIndex</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="6798685863633741" type="System">
+                                                    <param id="0" name="Variable">currentRival</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action id="5" name="Push" sid="407111316499189" type="EventsList">
+                                                    <param id="0" name="Where">0</param>
+                                                    <param id="1" name="Value">&quot;LoseAssassinationDuel&quot;</param>
+                                                    <param id="2" name="Axis">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="7565589145701532">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="2093677340934314" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="4026895368578102" type="Castle">
+                                            <param id="0" name="Instance variable">CastleIndex</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" sid="8705915030220287" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Push" sid="3019284176310896" type="EventsList">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Value">&quot;OpponentCastle&quot;</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="8327835218249607" type="Function">
+                                            <param id="0" name="Name">&quot;checkRandomEvents&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="704356552734333" title="RivalInfoDisplay">
+            <sub-events>
+                <variable constant="0" name="infoTextY" sid="3640836919977408" static="0" type="number">0</variable>
+                <variable constant="0" name="infoTextX" sid="8745561635535187" static="0" type="number">0</variable>
+                <event-block sid="2197558757565768">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="9062134609184649" type="Player">
+                            <param id="0" name="Object">Castle</param>
+                        </condition>
+                        <condition id="0" name="Compare value" sid="570835323501351" type="Data">
+                            <param id="0" name="Key">&quot;index&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Castle.CastleIndex</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="8122046593633089" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="6135459677532845" type="Function">
+                            <param id="0" name="Name">&quot;createImage&quot;</param>
+                            <param id="1" name="Parameter {n}">Data.Get(&quot;index&quot;){###}ViewportRight(2)-200{###}ViewportTop(2)+200</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7605334520442722" type="System">
+                            <param id="0" name="Variable">infoTextX</param>
+                            <param id="1" name="Value">ViewportRight(2)-290</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2630683919871581" type="System">
+                            <param id="0" name="Variable">infoTextY</param>
+                            <param id="1" name="Value">ViewportTop(2)+340</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="9713795728547032">
+                            <conditions>
+                                <condition id="0" name="Compare value" sid="3604353204052681" type="Data">
+                                    <param id="0" name="Key">&quot;hasDaughter&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-10" name="For" sid="3826054779014151" type="System">
+                                    <param id="0" name="Name">&quot;daughter&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">Data.Get(&quot;hasDaughter&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="8675406235277382" type="System">
+                                    <param id="0" name="Variable">infoTextY</param>
+                                    <param id="1" name="Value">30</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="4699409338621468" type="System">
+                                    <param id="0" name="Object to create">InfoTextMap</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">infoTextX</param>
+                                    <param id="3" name="Y">infoTextY</param>
+                                </action>
+                                <action id="0" name="Set text" sid="3341309949760429" type="InfoTextMap">
+                                    <param id="0" name="Text">&quot;Daughter &quot;&amp;Data.Get(&quot;daughter&quot;&amp;loopindex&amp;&quot;name&quot;)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="8967774106296115" type="System">
+                                    <param id="0" name="Variable">infoTextY</param>
+                                    <param id="1" name="Value">30</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="7674301726971875" type="System">
+                                    <param id="0" name="Object to create">InfoTextMap</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">infoTextX</param>
+                                    <param id="3" name="Y">infoTextY</param>
+                                </action>
+                                <action id="0" name="Set text" sid="8305195365217906" type="InfoTextMap">
+                                    <param id="0" name="Text">Function.Call(&quot;calculateAge&quot;,Data.Get(&quot;daughter&quot;&amp;loopindex&amp;&quot;age&quot;))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3921789933113472">
+                            <conditions>
+                                <condition id="0" name="Compare value" sid="2256937204710014" type="Data">
+                                    <param id="0" name="Key">&quot;hasSon&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-10" name="For" sid="7379878918869561" type="System">
+                                    <param id="0" name="Name">&quot;son&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">Data.Get(&quot;hasSon&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="4120050307276261" type="System">
+                                    <param id="0" name="Variable">infoTextY</param>
+                                    <param id="1" name="Value">30</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="1605636623920392" type="System">
+                                    <param id="0" name="Object to create">InfoTextMap</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">infoTextX</param>
+                                    <param id="3" name="Y">infoTextY</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="8116789840555282">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="5899687268803525" type="System">
+                                            <param id="0" name="First value">loopindex</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="2427437356812259" type="InfoTextMap">
+                                            <param id="0" name="Text">&quot;Son &quot;&amp;Data.Get(&quot;son&quot;&amp;loopindex&amp;&quot;name&quot;)&amp;&quot; (heir)&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="2717442990329887">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="3046026690412979" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set text" sid="832108439234755" type="InfoTextMap">
+                                            <param id="0" name="Text">&quot;Son &quot;&amp;Data.Get(&quot;son&quot;&amp;loopindex&amp;&quot;name&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="4652482700465173">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-10" name="Add to" sid="5268073015084242" type="System">
+                                            <param id="0" name="Variable">infoTextY</param>
+                                            <param id="1" name="Value">30</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="6639426882850302" type="System">
+                                            <param id="0" name="Object to create">InfoTextMap</param>
+                                            <param id="1" name="Layer">2</param>
+                                            <param id="2" name="X">infoTextX</param>
+                                            <param id="3" name="Y">infoTextY</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="2917880229053579" type="InfoTextMap">
+                                            <param id="0" name="Text">Function.Call(&quot;calculateAge&quot;,Data.Get(&quot;son&quot;&amp;loopindex&amp;&quot;age&quot;))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="5978136131649694">
+                            <conditions>
+                                <condition id="0" name="Compare value" sid="5926876611325401" type="Data">
+                                    <param id="0" name="Key">&quot;hasWife&quot;</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="6901202751607915" type="System">
+                                    <param id="0" name="Variable">infoTextY</param>
+                                    <param id="1" name="Value">30</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="4567090152910365" type="System">
+                                    <param id="0" name="Object to create">InfoTextMap</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">infoTextX</param>
+                                    <param id="3" name="Y">infoTextY</param>
+                                </action>
+                                <action id="0" name="Set text" sid="2314601413901974" type="InfoTextMap">
+                                    <param id="0" name="Text">&quot;Wife: &quot;&amp;Data.Get(&quot;wifeName&quot;)</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="2616532458210829" type="System">
+                                    <param id="0" name="Variable">infoTextY</param>
+                                    <param id="1" name="Value">30</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="4318095094262288" type="System">
+                                    <param id="0" name="Object to create">InfoTextMap</param>
+                                    <param id="1" name="Layer">2</param>
+                                    <param id="2" name="X">infoTextX</param>
+                                    <param id="3" name="Y">infoTextY</param>
+                                </action>
+                                <action id="0" name="Set text" sid="7696584144944977" type="InfoTextMap">
+                                    <param id="0" name="Text">&quot;    (&quot;&amp;Function.Call(&quot;calculateAge&quot;,Data.Get(&quot;wifeAge&quot;))&amp;&quot;)&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2434728136041">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="5693760590391629" type="System" />
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="3083501116750567" type="Player">
+                            <param id="0" name="Object">Castle</param>
+                        </condition>
+                        <condition id="0" name="Compare value" sid="1228255319824853" type="Data">
+                            <param id="0" name="Key">&quot;index&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Castle.CastleIndex</param>
+                        </condition>
+                        <condition id="-3" name="Is on-screen" sid="9439793406502634" type="Frames" />
+                        <condition disabled="1" id="-3" name="Is on-screen" sid="8012259956365374" type="InfoTextMap" />
+                        <condition disabled="1" id="-3" name="Is on-screen" sid="2057705625391777" type="SamuraiImage" />
+                        <condition id="-4" name="Trigger once while true" sid="4905183089787346" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1348294171825363" type="SamuraiImage" />
+                        <action id="-9" name="Destroy" sid="6659341208952005" type="SamuraiName" />
+                        <action id="-9" name="Destroy" sid="5307817715355756" type="Frames" />
+                        <action id="-9" name="Destroy" sid="5824877843530881" type="InfoTextMap" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7933086024772063" title="Movement">
+            <sub-events>
+                <comment>Allow WASD as alternate controls to the default arrow keys.</comment>
+                <event-block sid="5244681264023782">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="7647994105340168" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="6403897922583874" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2144861804008098">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="1989659521312333" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="2267977360632601" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8918222286541918">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="9958729149534639" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="2682244406694425" type="Player">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="333362483846096">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="5461637399104354" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="4504678751296064" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8644185933509802">
+                    <conditions>
+                        <condition id="2" name="Mouse button is down" sid="8764358555245134" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="3521189850234739" type="Player">
+                            <param id="0" name="X">Mouse.X</param>
+                            <param id="1" name="Y">Mouse.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3578654226158759">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="565665508154256" type="System">
+                                    <param id="0" name="First value">Mouse.X</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">Player.X-50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="8597048769679652" type="Player">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2818466936167548">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="5247247341115791" type="System">
+                                    <param id="0" name="First value">Mouse.X</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">Player.X+50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="1676138031638499" type="Player">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1706169232063496">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6032777689285128" type="System">
+                                    <param id="0" name="First value">Mouse.Y</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">Player.Y-50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="7448472103183033" type="Player">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1654572720141914">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="8702604624864791" type="System">
+                                    <param id="0" name="First value">Mouse.Y</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">Player.Y+50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="9934954478992363" type="Player">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2516847594411914">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="5523917628539921" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="1409075977367497" type="Player">
+                            <param id="0" name="Instance variable">DirectionCode</param>
+                            <param id="1" name="Value">floor( (((Player.Angle + 45) % 360) / 90) )</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8301376652892118">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" name="Is moving" sid="6068324272123239" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="6582926013114976" type="PlayerAnimation">
+                            <param id="0" name="Animation">&quot;Walk&quot; &amp; Player.DirectionCode</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="8813747556237592" type="ArmyAnimation">
+                            <param id="0" name="Animation">&quot;Walk&quot; &amp; Player.DirectionCode</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1555170768767781">
+                    <conditions>
+                        <condition behavior="8Direction" id="0" inverted="1" name="Is moving" sid="6345003201465579" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="2" name="Stop" sid="7092098514680068" type="PlayerAnimation" />
+                        <action id="2" name="Stop" sid="9053824261952983" type="ArmyAnimation" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

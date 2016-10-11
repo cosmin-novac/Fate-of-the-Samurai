@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MENU</name>
+    <events>
+        <event-group description="" sid="8505571485623188" title="MENUSELECTION">
+            <sub-events>
+                <event-block sid="7198745332597396">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="9260144242939481" type="StartGameButton" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="2195655952411221" type="System">
+                            <param id="0" name="Layout">Battlefield</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4475526378116705">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="6741811522025065" type="CreditsButton" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="5879254113758659" type="System">
+                            <param id="0" name="Layer">&quot;Credits&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="111431971784916" type="System">
+                            <param id="0" name="Layer">&quot;Menu&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7321980969543378">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="7089790008131072" type="BackButton" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="839803680666761" type="System">
+                            <param id="0" name="Layer">&quot;Credits&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="6048621792322426" type="System">
+                            <param id="0" name="Layer">&quot;Menu&quot;</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="8703783620906964" type="System">
+                            <param id="0" name="Layer">&quot;Controls&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

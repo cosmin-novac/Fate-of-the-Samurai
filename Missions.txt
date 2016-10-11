@@ -1,0 +1,82 @@
+***Alone:***
+From Hatamoto:
+1-MissionDefeatRonin 
+
+	1playerinitiates - You accompany a group of travelers as it leaves the castle. The band of rogue ronin appears, and arrogantly starts across the rice paddies toward you. You draw your sword and move to meet them.✔
+   1playerwins - The masterless samurai fall before your flashing bade, and a stain on the honor of clan y is removed. Lord z states. 'It is good to see x perform an honorable act. x is a samurai of xyz honor.'✔
+2-MissionSavePriest - An envoy from Lord x says that a rebellious band of peasants has abducted a priest and threatens to kill him unless all peasants' debts to moneylenders are canceled. Is there no one brave enough to rescue the priest? Such a one should call on Lord x at his castle.✔
+  2someonefails - x tried to save the priest held hostage by the peasants, but was killed in the attempts. Of x, Lord y later said, 'He knew his duty, and I honor him no less because he failed to achieve his goal.'✔
+
+  Map: 
+1- MapMissionRonin - You stop in a village for a cup of sake,  but your refreshment is disturbed by a group of drunken ronin who make insolent remarks about your appearence. You decide to (Avoid trouble and go on about your business.) (Draw your sword in the defense of honor.)
+2- MapMissionThieves - While traveling through the country you encounter a group of thieves who behave in a disrespectful manner. You decide to (Avoid trouble and go on about your business.) (Draw your sword in the defense of honor.)
+3-MapMissionCoastalPirates - An informer tells you that nearby he has discovered the hidden fortress of a band of coastal pirates. There is a price on the head of their notorious leader. You decide to (Avoid trouble and go on about your business.) (Draw your sword in the defense of honor.)
+
+From Opponents:
+1- HelpMissionRonin
+
+***With Army:***
+From Hatamoto:
+1-BattleAttackClanEnemy - Lord x declares that Takeaki of the neighboring Izumi province is sowing the seeds of a very large invasion force. A storm should destroy this crop before it ripens. One undertaking this task should march to Lord x's castle.✔
+2-BattleLiberatePass - Lord  says, 'A very large body of enemy troops holds the pass into Izumi. Who will sweep them away for me?' He will receive volunteers at his castle.✔
+3-BattleConquerFortress - Lord x would be pleased if a certain fortress in Izumi with a very large garrison were captured. Anyone interested in this task should come to Lord x's castle.✔
+4-BattleLiberateFortress - A border fortress is besieged by a very large force of sohei who have laid claim to that area. These monks should be forced to return to their own temple lands. Volunteers should call upon Lord x.✔
+
+From Opponents:
+1- HelpBattleIkkoIkki - A moderate unit of Ikko-ikki is attacking the holdings of Nobukimi, inflaming the peasants and calling for his overthrow. Nobukimi urges all true samurai to join him in crushing the invaders.✔
+  1- someoneInitiatesBattleIkkoIkki - x is facing the rebellious monks.✔
+  1- someoneLosesBattleIkkoIkki - x's attempt to defeat the enemy forces has ended in ignominious failure.✔
+2- HelpBattleBandits - A moderate gang of bandits menaces the peasants in x's fief. He rushes home to take personal command of his warriors. x urges all true samurai to join him in crushing the invaders.✔
+   2someonewins - x has driven the intruders from his domain. It is good to see x do an honorable deed. x is a samurai of y honor.✔
+   
+   
+InitiateAssasinate:
+
+Somewhere inside, Lord x sleeps. You must find his room, slay him, and escape without being identified. If a guard sees you, you must still his tongue by taking his head.✔
+
+hatamoto:
+As you prepare for combat, you search Lord x's eyes for anger or contempt, but find only sadness. Your hands tremble as you grip your sword. Lord x's hands are steady.✔
+
+win: Your lawful lord lies dead at your feet. Your head spins with conflicting emotions: you feel deep shame at having committed such a terrible crime, yet at the same time you feel a joyous liberation.✔
+
+lose: You have violated the sacred duty of a retainer to his lord. As an example to others who might contemplate disloyalty, your lord orders your entire family exterminated.✔
+
+You evaluate your chances of becoming daimyo of clan Asai. You decide to
+- Declare that yo must be the new daimyo.
+- Announce yourself unworthy to be daimyo.
+
+x is proclaimed the new daimyo. You vow that next time the title will be yours!
+
+Recent events have cause you to fall out of favour. You must work hard to improve your reputation.
+
+-------------
+When you become high enough rank, one of your rivals, usually the lowest, 
+will begin threatening you and should you refuse to heed his demands he 
+will commit treachery against you. However, keep in mind that you, too, can
+ commit treachery against him. By taking the disguise of a poor ronin, you 
+can head to their fief and choose either to incite his peasants to revolt 
+against him or commit some manner of treachery against him. If you choose 
+to incite his peasants to revolt against him you will be sent to kill his 
+tax collector, which will set off a revolt. If you choose to commit some 
+treachery against him, you can choose to commit treachery, which will lower
+ his honor significantly, kidnap a member of his family to hold for ransom 
+or to keep him from attacking you, or assassinate him. Failing in the 
+former two will cause you to lose honor and land- failing in the latter 
+will make your lord command you to commit seppuku, ritual suicide, or he 
+will kill your entire family. So make sure you do not fail. 
+http://www.gamefaqs.com/pc/915698-sword-of-the-samurai/faqs/37891
+
+
+-----------
+Treachery against the lord of this manor:
+1)The daimyo has presented lordname with an heirloom sword; he will be expected to wear it when next he visits lord clanname. You plan to find this sword and take it. Anyone who sees you must die.✔
+WIN: lordname has appeared at court without the heirloom sword the daimyo had presented him! He is dishonored.✔
+2)An envoy from the daimyo is sleeping within. To bring shame to lordname, you must find the envoy, and kill him as he sleeps. No one who sees you can be allowed to live. ✔
+LOSE: You have been captured in the house of lordname while obviously engaged on a mission of treachery. The daimyo has no choice but to order you to commit seppuku. You have until sunset to prepare yourself for death. ✔
+(-> This adds 'commit seppuku' option to homecastle. If I go to the lord's house, he exterminates my family.)
+-> When disguised, you can sneak into lord's manor and kill him. -> Everyone will know it was you, if you dont commit seppuku, so this will make all other Rivals attack you. 
+
+
+-> Conquest Mode (as daimyo) similar to Risk - position armies in different territories - enemies will attack your territories on the edge - so strategic positioning will become equally important.
+
+"One who is a samurai must before all things keep constantly in mind…the fact that he has to die. If he is always mindful of this, he will be able to live in accordance with the paths of loyalty and filial duty, will avoid myriads of evils and adversities, keep himself free of disease and calamity and moreover enjoy a long life. He will also be a fine personality with many admirable qualities. For existence is impermanent as the dew of evening, and the hoarfrost of morning, and particularly uncertain is the life of the warrior…"
