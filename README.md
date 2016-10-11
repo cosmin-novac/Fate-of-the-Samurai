@@ -18,3 +18,5 @@ Right now, the game is comprised of 4 projects:
 These are, as of now, separate Construct 2 projects that would need to be brought together eventually but should absolutely be enjoyable by themselves.
 
 -Cos
+
+For discussions and questions, see the Scirra Forums: https://www.scirra.com/forum/viewtopic.php?f=180&t=182841
